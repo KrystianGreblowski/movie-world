@@ -2,17 +2,18 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   html {
-    box-sizing: border-box;
-    overflow-y: scroll;
+      box-sizing: border-box;
+      overflow-y: scroll;
   }
 
   *, ::after, ::before {
-    box-sizing: inherit;
+      box-sizing: inherit;
   }
 
   body {
-    font-family: 'Poppins', sans-serif;
-    word-break: break-word;
-    background-color: ${({ theme }) => theme.color.black};
+      font-family: 'Poppins', sans-serif;\
+      word-break: break-word;
+      background-color: ${({ theme }) => theme.color.black};
+      color: ${({ theme }) => theme.color.white};
 }
 `;
