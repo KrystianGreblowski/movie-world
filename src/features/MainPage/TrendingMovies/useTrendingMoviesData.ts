@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchDataFromApi } from "../../../common/fetchDataFromApi";
 
-interface Movie {
+interface Movies {
   id: number;
   original_title: string;
   backdrop_path: string;
 }
 
 interface TrendingMoviesData {
-  results: Movie[];
+  results: Movies[];
 }
 
 export const useTrendingMoviesData = () => {
