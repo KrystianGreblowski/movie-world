@@ -6,9 +6,9 @@ interface QueryKey {
   queryKey: [string, Record<string, string>];
 }
 
-export const fetchDataFromApi = async <T>({
+export const fetchDataFromApi = async <TypeData>({
   queryKey,
-}: QueryKey): Promise<AxiosResponse<T>> => {
+}: QueryKey): Promise<AxiosResponse<TypeData>> => {
   const [endPoint, params] = queryKey;
   const searchParams = new URLSearchParams(params);
 
