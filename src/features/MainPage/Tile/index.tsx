@@ -8,7 +8,7 @@ interface MainPageTileProps {
   asideTile?: boolean;
 }
 
-export const MainPageTile = ({
+export const Tile = ({
   title,
   imagePath,
   imageSize,
