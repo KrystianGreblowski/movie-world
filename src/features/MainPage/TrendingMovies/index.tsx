@@ -1,7 +1,7 @@
 import { useTrendingMoviesData } from "./useTrendingMoviesData";
 import { Wrapper, TilesContainer, AsideTiles } from "./styled";
 import { SectionTitle } from "../styled";
-import { MainPageTile } from "../../../common/Tiles/MainPageTile";
+import { Tile } from "../Tile";
 
 export const TrendingMovies = () => {
   const { isLoading, error, trendingMoviesData } = useTrendingMoviesData();
@@ -15,15 +15,16 @@ export const TrendingMovies = () => {
       <SectionTitle>Trending</SectionTitle>
 
       <TilesContainer>
-        <MainPageTile
+        <Tile
           mainTile
           title={trendingMoviesData[0].original_title}
           imagePath={trendingMoviesData[0].backdrop_path}
           imageSize="w1280"
         />
+
         <AsideTiles>
           {trendingMoviesData.slice(1, 3).map((movie) => (
-            <MainPageTile
+            <Tile
               key={movie.id}
               asideTile
               title={movie.original_title}
