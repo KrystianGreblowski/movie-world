@@ -6,21 +6,15 @@ interface TileProps {
 }
 
 const siteMaxWidth: number = 1368;
+const mainTileWidth: number = 900;
+const mainTileHeight: number = 500;
+const numberOfAsideTiles: number = 2;
+const gapWidth: number = 12;
 
-const trendingTiles = {
-  mainTileWidth: 900,
-  mainTileHeight: 500,
-  numberOfAsideTiles: 2,
-  gapWidth: 12,
-} as const;
-
-const asideTileWidth: number =
-  siteMaxWidth - trendingTiles.mainTileWidth - trendingTiles.gapWidth;
+const asideTileWidth: number = siteMaxWidth - mainTileWidth - gapWidth;
 
 const asideTileHeight: number =
-  (trendingTiles.mainTileHeight -
-    (trendingTiles.numberOfAsideTiles - 1) * trendingTiles.gapWidth) /
-  trendingTiles.numberOfAsideTiles;
+  (mainTileHeight - (numberOfAsideTiles - 1) * gapWidth) / numberOfAsideTiles;
 
 export const Container = styled.div`
   position: relative;
@@ -60,8 +54,8 @@ export const ImageContainer = styled.div<TileProps>`
   ${({ $mainTile }) =>
     $mainTile &&
     css`
-      width: ${trendingTiles.mainTileWidth}px;
-      height: ${trendingTiles.mainTileHeight}px;
+      width: ${mainTileWidth}px;
+      height: ${mainTileHeight}px;
     `};
 
   ${({ $asideTile }) =>
@@ -87,8 +81,8 @@ export const Image = styled.img<TileProps>`
   ${({ $mainTile }) =>
     $mainTile &&
     css`
-      width: ${trendingTiles.mainTileWidth}px;
-      height: ${trendingTiles.mainTileHeight}px;
+      width: ${mainTileWidth}px;
+      height: ${mainTileHeight}px;
     `}
 
   ${({ $asideTile }) =>
