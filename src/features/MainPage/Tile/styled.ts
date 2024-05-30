@@ -35,7 +35,7 @@ export const Title = styled.h2<TileProps>`
   position: absolute;
   z-index: 1;
   left: 3%;
-  bottom: 15%;
+  bottom: 16%;
   width: 100%;
   margin: 0;
   font-size: 18px;
