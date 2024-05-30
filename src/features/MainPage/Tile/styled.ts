@@ -86,6 +86,8 @@ export const Genre = styled.p`
 `;
 
 export const ImageContainer = styled.div<TileProps>`
+  position: relative;
+  overflow: hidden;
   width: ${defaultTileWidth}px;
   height: ${defaultTileHeight}px;
   box-shadow: inset 0 -110px 120px -60px ${({ theme }) => theme.color.black};
@@ -103,6 +105,10 @@ export const ImageContainer = styled.div<TileProps>`
       width: ${asideTileWidth}px;
       height: ${asideTileHeight}px;
     `}
+
+  ${Container}:hover & img {
+    transform: scale(1.1);
+  }
 `;
 
 export const Image = styled.img<TileProps>`
@@ -113,7 +119,7 @@ export const Image = styled.img<TileProps>`
   position: relative;
   z-index: -1;
   box-shadow: 0 0 3px 0 ${({ theme }) => theme.color.gray};
-  transition: filter 0.3s ease;
+  transition: transform 0.5s ease;
 
   ${({ $mainTile }) =>
     $mainTile &&
@@ -128,8 +134,4 @@ export const Image = styled.img<TileProps>`
       width: ${asideTileWidth}px;
       height: ${asideTileHeight}px;
     `}
-
-  ${Container}:hover & {
-    filter: brightness(1.2);
-  }
 `;
