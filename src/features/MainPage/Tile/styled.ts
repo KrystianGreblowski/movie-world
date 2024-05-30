@@ -97,4 +97,8 @@ export const Image = styled.img<TileProps>`
       width: ${asideTileWidth}px;
       height: ${asideTileHeight}px;
     `}
+
+  ${ImageContainer}:hover & {
+    filter: brightness(1.15);
+  }
 `;
