@@ -17,7 +17,9 @@ export const TrendingMovies = () => {
       <TilesContainer>
         <Tile
           mainTile
+          tileType="movie"
           title={trendingMoviesData[0].original_title}
+          genres={trendingMoviesData[0].genre_ids}
           imagePath={trendingMoviesData[0].backdrop_path}
           imageSize="w1280"
         />
@@ -27,7 +29,9 @@ export const TrendingMovies = () => {
             <Tile
               key={movie.id}
               asideTile
+              tileType="movie"
               title={movie.original_title}
+              genres={movie.genre_ids}
               imagePath={movie.backdrop_path}
               imageSize="w780"
             />

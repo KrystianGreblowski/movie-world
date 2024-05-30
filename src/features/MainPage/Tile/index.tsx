@@ -1,7 +1,17 @@
-import { Container, Image, ImageContainer, Title } from "./styled";
+import {
+  Container,
+  GenresContainer,
+  Genre,
+  Image,
+  ImageContainer,
+  Title,
+} from "./styled";
+import { getGenresNamesFromGenresIds } from "../../../common/getGenresNamesFromGenresIds";
 
 interface MainPageTileProps {
+  tileType: "movie" | "series";
   title: string;
+  genres: number[];
   imagePath: string;
   imageSize: "w320" | "w780" | "w1280" | "original";
   mainTile?: boolean;
@@ -9,7 +19,9 @@ interface MainPageTileProps {
 }
 
 export const Tile = ({
+  tileType,
   title,
+  genres,
   imagePath,
   imageSize,
   mainTile,
@@ -20,6 +32,11 @@ export const Tile = ({
       <Title $mainTile={mainTile} $asideTile={asideTile}>
         {title}
       </Title>
+      <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
+        {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
+          <Genre key={name}>{name}</Genre>
+        ))}
+      </GenresContainer>
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>
         <Image
           src={`https://image.tmdb.org/t/p/${imageSize}` + imagePath}

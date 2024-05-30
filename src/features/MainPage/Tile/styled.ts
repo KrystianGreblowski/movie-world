@@ -25,36 +25,70 @@ const asideTileHeight: number =
 export const Container = styled.div`
   position: relative;
   display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Title = styled.h2<TileProps>`
   position: absolute;
   z-index: 1;
-  left: 5%;
-  bottom: 10%;
+  left: 3%;
+  bottom: 15%;
   width: 100%;
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 
   ${({ $mainTile }) =>
     $mainTile &&
     css`
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 500;
     `}
 
   ${({ $asideTile }) =>
     $asideTile &&
     css`
-      font-size: 20px;
+      font-size: 22px;
     `}
+`;
+
+export const GenresContainer = styled.div<TileProps>`
+  position: absolute;
+  z-index: 1;
+  left: 3%;
+  bottom: 7%;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+
+  ${({ $mainTile }) =>
+    $mainTile &&
+    css`
+      font-size: 28px;
+      font-weight: 500;
+    `}
+
+  ${({ $asideTile }) =>
+    $asideTile &&
+    css`
+      font-size: 14px;
+    `}
+`;
+
+export const Genre = styled.p`
+  margin: 0 8px 0 0;
 `;
 
 export const ImageContainer = styled.div<TileProps>`
   width: ${defaultTileWidth}px;
   height: ${defaultTileHeight}px;
-  box-shadow: inset 0 -100px 120px -60px ${({ theme }) => theme.color.black};
+  box-shadow: inset 0 -110px 120px -60px ${({ theme }) => theme.color.black};
 
   ${({ $mainTile }) =>
     $mainTile &&
@@ -69,10 +103,6 @@ export const ImageContainer = styled.div<TileProps>`
       width: ${asideTileWidth}px;
       height: ${asideTileHeight}px;
     `}
-
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const Image = styled.img<TileProps>`
@@ -83,6 +113,7 @@ export const Image = styled.img<TileProps>`
   position: relative;
   z-index: -1;
   box-shadow: 0 0 3px 0 ${({ theme }) => theme.color.gray};
+  transition: filter 0.3s ease;
 
   ${({ $mainTile }) =>
     $mainTile &&
@@ -98,7 +129,7 @@ export const Image = styled.img<TileProps>`
       height: ${asideTileHeight}px;
     `}
 
-  ${ImageContainer}:hover & {
-    filter: brightness(1.15);
+  ${Container}:hover & {
+    filter: brightness(1.2);
   }
 `;

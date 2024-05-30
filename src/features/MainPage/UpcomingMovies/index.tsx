@@ -17,7 +17,9 @@ export const UpcomingMovies = () => {
         {upcomingMoviesData.slice(0, 4).map((movie) => (
           <Tile
             key={movie.id}
+            tileType="movie"
             title={movie.original_title}
+            genres={movie.genre_ids}
             imagePath={movie.backdrop_path}
             imageSize="w780"
           />

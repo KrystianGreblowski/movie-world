@@ -4,6 +4,7 @@ import { fetchDataFromApi } from "../../../common/fetchDataFromApi";
 interface Movie {
   id: number;
   original_title: string;
+  genre_ids: number[];
   backdrop_path: string;
 }
 

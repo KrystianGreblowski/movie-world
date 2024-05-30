@@ -4,6 +4,7 @@ import { fetchDataFromApi } from "../../../common/fetchDataFromApi";
 interface Series {
   id: number;
   name: string;
+  genre_ids: number[];
   backdrop_path: string;
 }
 

@@ -17,7 +17,9 @@ export const PopularSeries = () => {
         {popularSeriesData.slice(0, 4).map((series) => (
           <Tile
             key={series.id}
+            tileType="series"
             title={series.name}
+            genres={series.genre_ids}
             imagePath={series.backdrop_path}
             imageSize="w780"
           />
