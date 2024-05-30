@@ -9,7 +9,6 @@ export const UpcomingMovies = () => {
 
   if (error) return <div>Error: {error.message}</div>;
 
-  console.log(upcomingMoviesData);
   return (
     <SectionWrapper>
       <SectionTitle>Upcoming</SectionTitle>
