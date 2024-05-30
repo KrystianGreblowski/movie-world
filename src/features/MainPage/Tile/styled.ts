@@ -81,7 +81,8 @@ export const Image = styled.img<TileProps>`
   object-fit: cover;
   border-radius: 2px;
   position: relative;
-  z-index: -2;
+  z-index: -1;
+  box-shadow: 0 0 3px 0 ${({ theme }) => theme.color.gray};
 
   ${({ $mainTile }) =>
     $mainTile &&
