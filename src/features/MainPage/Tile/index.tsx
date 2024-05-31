@@ -7,6 +7,7 @@ import {
   Title,
 } from "./styled";
 import { getGenresNamesFromGenresIds } from "../../../common/getGenresNamesFromGenresIds";
+import { getImageSrc } from "./getImageSrc";
 
 interface MainPageTileProps {
   tileType: "movie" | "series";
@@ -39,7 +40,7 @@ export const Tile = ({
       </GenresContainer>
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>
         <Image
-          src={`https://image.tmdb.org/t/p/${imageSize}` + imagePath}
+          src={getImageSrc(imagePath, imageSize)}
           alt={title}
           $mainTile={mainTile}
           $asideTile={asideTile}
