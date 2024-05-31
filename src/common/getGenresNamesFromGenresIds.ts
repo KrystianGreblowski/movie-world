@@ -1,12 +1,12 @@
-import { movieGenres } from "./movieGenres";
-import { seriesGenres } from "./seriesGenres";
+import { movieGenres } from "./data/movieGenres";
+import { seriesGenres } from "./data/seriesGenres";
 
 export const getGenresNamesFromGenresIds = (
   genresIds: number[],
-  genresType: "movie" | "series",
+  tileType: "movie" | "series",
   numberOfGenresToDisplay: number,
 ) => {
-  if (genresType === "movie")
+  if (tileType === "movie")
     return movieGenres
       .filter((genre) =>
         genresIds.slice(0, numberOfGenresToDisplay).includes(genre.id),
