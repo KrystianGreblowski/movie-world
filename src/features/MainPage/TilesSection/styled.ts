@@ -16,7 +16,7 @@ export const Title = styled.h2`
 
 export const TilesContainer = styled.div<TilesSectionProps>`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: ${sectionTilesGap}px;
   line-height: 0;
 
