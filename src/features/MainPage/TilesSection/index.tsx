@@ -1,5 +1,5 @@
 import { TilesContainer, Title, Wrapper, AsideTiles } from "./styled";
-import { Tile } from "../Tile";
+import { Tile } from "./Tile";
 import { getArrayForPlaceholders } from "../../../common/getArrayForPlaceholders";
 import { useData } from "./useData";
 import { SectionTitle } from "../styled";

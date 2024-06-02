@@ -6,7 +6,7 @@ import {
   ImageContainer,
   Title,
 } from "./styled";
-import { getGenresNamesFromGenresIds } from "../../../common/getGenresNamesFromGenresIds";
+import { getGenresNamesFromGenresIds } from "../../../../common/getGenresNamesFromGenresIds";
 import { getImageSrc } from "./getImageSrc";
 
 interface MainPageTileProps {
