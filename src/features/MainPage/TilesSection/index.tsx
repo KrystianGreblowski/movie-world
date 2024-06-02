@@ -65,7 +65,7 @@ export const TilesSection = ({
         <Wrapper>
           <SectionTitle>Trending</SectionTitle>
 
-          <TilesContainer>
+          <TilesContainer $mainSection={mainSection}>
             <Tile
               mainTile
               tileType={tileType}
