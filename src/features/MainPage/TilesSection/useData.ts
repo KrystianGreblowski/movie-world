@@ -3,7 +3,7 @@ import { fetchDataFromApi } from "../../../common/fetchDataFromApi";
 
 interface Result {
   id: number;
-  original_title: string;
+  title: string;
   name: string;
   genre_ids: number[];
   backdrop_path: string;

@@ -69,7 +69,7 @@ export const TilesSection = ({
             <Tile
               mainTile
               tileType={tileType}
-              title={dataResults[0].original_title}
+              title={dataResults[0].title}
               genres={dataResults[0].genre_ids}
               imagePath={dataResults[0].backdrop_path}
               imageSize="w1280"
@@ -81,7 +81,7 @@ export const TilesSection = ({
                   key={result.id}
                   asideTile
                   tileType={tileType}
-                  title={result.original_title}
+                  title={result.title}
                   genres={result.genre_ids}
                   imagePath={result.backdrop_path}
                   imageSize="w780"
@@ -125,9 +125,7 @@ export const TilesSection = ({
                 key={dataResult.id}
                 tileType={tileType}
                 title={
-                  tileType === "movie"
-                    ? dataResult.original_title
-                    : dataResult.name
+                  tileType === "movie" ? dataResult.title : dataResult.name
                 }
                 genres={dataResult.genre_ids}
                 imagePath={dataResult.backdrop_path}
