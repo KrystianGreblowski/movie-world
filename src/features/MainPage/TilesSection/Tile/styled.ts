@@ -5,26 +5,8 @@ interface TileProps {
   $asideTile?: boolean;
 }
 
-const siteMaxWidth: number = 1368;
-const gapWidth: number = 12;
-
-const numberOfDefaultTiles: number = 4;
-const numberOfAsideTiles: number = 2;
-
-const defaultTileWidth: number =
-  (siteMaxWidth - (numberOfDefaultTiles - 1) * gapWidth) / numberOfDefaultTiles;
-const defaultTileHeight: number = 250;
-
-const mainTileWidth: number = 900;
-const mainTileHeight: number = 500;
-
-const asideTileWidth: number = siteMaxWidth - mainTileWidth - gapWidth;
-const asideTileHeight: number =
-  (mainTileHeight - (numberOfAsideTiles - 1) * gapWidth) / numberOfAsideTiles;
-
 export const Container = styled.div`
   position: relative;
-  display: inline-block;
 
   &:hover {
     cursor: pointer;
@@ -36,7 +18,6 @@ export const Title = styled.h2<TileProps>`
   z-index: 1;
   left: 3%;
   bottom: 16%;
-  width: 100%;
   margin: 0;
   font-size: 18px;
   font-weight: 400;
@@ -60,12 +41,12 @@ export const GenresContainer = styled.div<TileProps>`
   z-index: 1;
   left: 3%;
   bottom: 7%;
-  width: 100%;
   margin: 0;
   font-size: 14px;
   font-weight: 400;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   ${({ $mainTile }) =>
     $mainTile &&
@@ -88,23 +69,9 @@ export const Genre = styled.p`
 export const ImageContainer = styled.div<TileProps>`
   position: relative;
   overflow: hidden;
-  width: ${defaultTileWidth}px;
-  height: ${defaultTileHeight}px;
+  width: 100%;
+  height: 100%;
   box-shadow: inset 0 -110px 120px -60px ${({ theme }) => theme.color.black};
-
-  ${({ $mainTile }) =>
-    $mainTile &&
-    css`
-      width: ${mainTileWidth}px;
-      height: ${mainTileHeight}px;
-    `};
-
-  ${({ $asideTile }) =>
-    $asideTile &&
-    css`
-      width: ${asideTileWidth}px;
-      height: ${asideTileHeight}px;
-    `}
 
   ${Container}:hover & img {
     transform: scale(1.1);
@@ -112,25 +79,11 @@ export const ImageContainer = styled.div<TileProps>`
 `;
 
 export const Image = styled.img<TileProps>`
-  width: ${defaultTileWidth}px;
-  height: ${defaultTileHeight}px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 2px;
   position: relative;
   z-index: -1;
   transition: transform 0.5s ease;
-
-  ${({ $mainTile }) =>
-    $mainTile &&
-    css`
-      width: ${mainTileWidth}px;
-      height: ${mainTileHeight}px;
-    `}
-
-  ${({ $asideTile }) =>
-    $asideTile &&
-    css`
-      width: ${asideTileWidth}px;
-      height: ${asideTileHeight}px;
-    `}
 `;
