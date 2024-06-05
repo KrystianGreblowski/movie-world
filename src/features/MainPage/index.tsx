@@ -16,7 +16,7 @@ export const MainPage = () => {
 
       <TilesSection
         title="Popular Movies"
-        numberOfTiles={4}
+        numberOfTiles={8}
         tileType="movie"
         endpoint="movie/popular"
         params={{ language: "en-US", page: "1" }}
@@ -24,7 +24,7 @@ export const MainPage = () => {
 
       <TilesSection
         title="Popular Series"
-        numberOfTiles={4}
+        numberOfTiles={8}
         tileType="series"
         endpoint="tv/popular"
         params={{ language: "en-US", page: "1" }}
@@ -32,7 +32,7 @@ export const MainPage = () => {
 
       <TilesSection
         title="Upcoming"
-        numberOfTiles={4}
+        numberOfTiles={8}
         tileType="movie"
         endpoint="movie/upcoming"
         params={{ language: "en-US", page: "1" }}
