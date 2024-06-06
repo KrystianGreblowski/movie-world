@@ -100,12 +100,26 @@ export const ImageContainer = styled.div<TileProps>`
   height: 100%;
   box-shadow: inset 0 -110px 120px -60px ${({ theme }) => theme.color.black};
 
+  ${({ $asideTile }) =>
+    $asideTile &&
+    css`
+      max-height: 280px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+        max-height: 220px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+        max-height: 200px;
+      }
+    `}
+
   ${Container}:hover & img {
     transform: scale(1.1);
   }
 `;
 
-export const Image = styled.img<TileProps>`
+export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
