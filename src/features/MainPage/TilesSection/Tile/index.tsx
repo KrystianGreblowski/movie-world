@@ -39,12 +39,7 @@ export const Tile = ({
         ))}
       </GenresContainer>
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>
-        <Image
-          src={getImageSrc(imagePath, imageSize)}
-          alt={title}
-          $mainTile={mainTile}
-          $asideTile={asideTile}
-        />
+        <Image src={getImageSrc(imagePath, imageSize)} alt={title} />
       </ImageContainer>
     </Container>
   );
