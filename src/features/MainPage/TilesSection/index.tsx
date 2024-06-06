@@ -1,8 +1,7 @@
-import { TilesContainer, Title, Wrapper, AsideTiles } from "./styled";
+import { Wrapper, TilesContainer, Title, AsideTiles } from "./styled";
 import { Tile } from "./Tile";
 import { getArrayForPlaceholders } from "../../../common/getArrayForPlaceholders";
 import { useData } from "./useData";
-import { SectionTitle } from "../styled";
 
 interface TilesSectionProps {
   title: string;
@@ -28,7 +27,7 @@ export const TilesSection = ({
       if (isLoading)
         return (
           <Wrapper>
-            <SectionTitle>{title}</SectionTitle>
+            <Title $mainSection={mainSection}>{title}</Title>
 
             <TilesContainer $mainSection={mainSection}>
               <Tile
@@ -63,7 +62,7 @@ export const TilesSection = ({
 
       return (
         <Wrapper>
-          <SectionTitle>Trending</SectionTitle>
+          <Title $mainSection={mainSection}>{title}</Title>
 
           <TilesContainer $mainSection={mainSection}>
             <Tile
