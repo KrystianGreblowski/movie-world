@@ -17,48 +17,75 @@ export const Title = styled.h2<TileProps>`
   position: absolute;
   z-index: 1;
   left: 3%;
-  bottom: 16%;
+  bottom: 14%;
   margin: 0;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    font-size: 1.3vw;
+    bottom: 15%;
+  }
 
   ${({ $mainTile }) =>
     $mainTile &&
     css`
       font-size: 36px;
-      font-weight: 500;
+      bottom: 11%;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+        font-size: 3vw;
+        bottom: 11%;
+      }
     `}
 
   ${({ $asideTile }) =>
     $asideTile &&
     css`
-      font-size: 22px;
-    `}
+      font-size: 20px;
+      bottom: 13%;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+        font-size: 1.6vw;
+        bottom: 13%;
+      }
+    `};
 `;
 
 export const GenresContainer = styled.div<TileProps>`
   position: absolute;
   z-index: 1;
   left: 3%;
-  bottom: 7%;
+  bottom: 5%;
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    font-size: 1vw;
+  }
+
   ${({ $mainTile }) =>
     $mainTile &&
     css`
-      font-size: 28px;
-      font-weight: 500;
+      font-size: 22px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+        font-size: 1.8vw;
+      }
     `}
 
   ${({ $asideTile }) =>
     $asideTile &&
     css`
-      font-size: 14px;
+      font-size: 15px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+        font-size: 1.2vw;
+      }
     `}
 `;
 
