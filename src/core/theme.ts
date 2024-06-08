@@ -21,7 +21,4 @@ export const theme = {
       vw: 1.6,
     },
   },
-  gapBetweenTilesForTablet: {
-    vw: 1.6,
-  },
 } as const;
