@@ -51,15 +51,7 @@ export const TilesContainer = styled.div<TilesSectionProps>`
   ${({ $mainSection }) =>
     $mainSection &&
     css`
-      grid-template-columns: 850px auto;
-
-      @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-        grid-template-columns: 700px auto;
-      }
-
-      @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-        grid-template-columns: 530px auto;
-      }
+      grid-template-columns: 2fr 1fr;
     `}
 `;
 
