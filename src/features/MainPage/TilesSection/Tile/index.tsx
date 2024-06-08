@@ -35,7 +35,9 @@ export const Tile = ({
       </Title>
       <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
         {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
-          <Genre key={name}>{name}</Genre>
+          <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
+            {name}
+          </Genre>
         ))}
       </GenresContainer>
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>
