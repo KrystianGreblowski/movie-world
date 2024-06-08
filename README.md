@@ -1,46 +1,22 @@
-# Getting Started with Create React App
+# MOVIE WORLD
+The application is under development. I am working hard to release it as soon as possible :muscle:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
+Here is a demo of the project:
+[Movie World](https://krystiangreblowski.github.io/movie-world/)
 
-## Available Scripts
+## Technology used
+<p>
+<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=white&style=flat" />
+<img alt="React" src="https://img.shields.io/badge/React-61DAFB?logo=React&logoColor=white&style=flat" />
+<img alt="React-Hooks" src="https://img.shields.io/badge/React Hooks-0088CC?logo=React&logoColor=white&style=flat" />
+<img alt="React-Router" src="https://img.shields.io/badge/React Router-CA4245?logo=React&logoColor=white&style=flat" />
+<img alt="Styled-components" src="https://img.shields.io/badge/Styled Components-DB7093?logo=styled-components&logoColor=white&style=flat" />
+<img alt="JavaScript(ES6+)" src="https://img.shields.io/badge/JavaScript(ES6+)-F7DF1E?logo=JavaScript&logoColor=white&style=flat" />
+<img alt="Axios" src="https://img.shields.io/badge/Axios-5A29E46?logo=Axios&logoColor=white&style=flat" />
+<img alt="Grid" src="https://img.shields.io/badge/Grid-E61414?logo=CSS3&logoColor=white&style=flat" />
+<img alt="Flexbox" src="https://img.shields.io/badge/Flexbox-7D00FF?logo=CSS3&logoColor=white&style=flat" />
+</p>
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API
+The application uses data from [The Movie DataBase](https://developer.themoviedb.org/).
