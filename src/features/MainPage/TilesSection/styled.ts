@@ -84,5 +84,6 @@ export const AsideTiles = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     grid-template-columns: 1fr 1fr;
+    grid-gap: ${({ theme }) => theme.gapBetweenTiles.tablet.vw}vw;
   }
 `;
