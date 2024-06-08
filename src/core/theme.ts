@@ -10,4 +10,8 @@ export const theme = {
     tablet: 768,
     mobile: 480,
   },
+  gapBetweenTiles: {
+    px: 12,
+    vw: 1,
+  },
 } as const;
