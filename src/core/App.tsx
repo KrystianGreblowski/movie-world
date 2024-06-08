@@ -1,7 +1,13 @@
 import { MainPage } from "../features/MainPage";
+import { Header } from "../common/Header";
 
 const App = () => {
-  return <MainPage />;
+  return (
+    <>
+      <Header />
+      <MainPage />
+    </>
+  );
 };
 
 export default App;
