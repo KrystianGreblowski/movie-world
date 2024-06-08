@@ -11,7 +11,17 @@ export const theme = {
     mobile: 480,
   },
   gapBetweenTiles: {
-    px: 12,
-    vw: 1,
+    wideScreen: {
+      px: 12,
+    },
+    desktop: {
+      vw: 1,
+    },
+    tablet: {
+      vw: 1.6,
+    },
+  },
+  gapBetweenTilesForTablet: {
+    vw: 1.6,
   },
 } as const;
