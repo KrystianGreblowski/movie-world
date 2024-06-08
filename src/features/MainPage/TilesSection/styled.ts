@@ -4,9 +4,6 @@ interface TilesSectionProps {
   $mainSection?: boolean;
 }
 
-const gapBetweenTilesPX: number = 12;
-const gapBetweenTilesVW: number = 1;
-
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -42,10 +39,10 @@ export const Title = styled.h2<TilesSectionProps>`
 export const TilesContainer = styled.div<TilesSectionProps>`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: ${gapBetweenTilesPX}px;
+  grid-gap: ${({ theme }) => theme.gapBetweenTiles.px}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-    grid-gap: ${gapBetweenTilesVW}vw;
+    grid-gap: ${({ theme }) => theme.gapBetweenTiles.vw}vw;
   }
 
   ${({ $mainSection }) =>
@@ -58,9 +55,9 @@ export const TilesContainer = styled.div<TilesSectionProps>`
 export const AsideTiles = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: ${gapBetweenTilesPX}px;
+  grid-gap: ${({ theme }) => theme.gapBetweenTiles.px}px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-    grid-gap: ${gapBetweenTilesVW}vw;
+    grid-gap: ${({ theme }) => theme.gapBetweenTiles.vw}vw;
   }
 `;
