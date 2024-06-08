@@ -18,7 +18,10 @@ export const theme = {
       vw: 1,
     },
     tablet: {
-      vw: 1.4,
+      vw: 1.8,
+    },
+    mobile: {
+      vw: 2.6,
     },
   },
 } as const;

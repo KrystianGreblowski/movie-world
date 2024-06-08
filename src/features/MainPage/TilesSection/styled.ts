@@ -14,36 +14,48 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    grid-gap: 1.8vw;
+    grid-gap: 2.3vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: 2.8vw;
   }
 `;
 
 export const Title = styled.h2<TilesSectionProps>`
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 600;
   margin: 0;
   display: flex;
   justify-content: flex-start;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-    font-size: 2.6vw;
+    font-size: 3.2vw;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 3.6vw;
+    font-size: 5vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: 7vw;
   }
 
   ${({ $mainSection }) =>
     $mainSection &&
     css`
-      font-size: 44px;
+      font-size: 50px;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-        font-size: 3.6vw;
+        font-size: 4.4vw;
       }
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-        font-size: 4.8vw;
+        font-size: 7vw;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        font-size: 9vw;
       }
     `}
 `;
@@ -60,6 +72,14 @@ export const TilesContainer = styled.div<TilesSectionProps>`
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: ${({ theme }) => theme.gapBetweenTiles.tablet.vw}vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: ${({ theme }) => theme.gapBetweenTiles.mobile.vw}vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: ${({ theme }) => theme.gapBetweenTiles.mobile.vw}vw;
   }
 
   ${({ $mainSection }) =>
@@ -85,5 +105,9 @@ export const AsideTiles = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: ${({ theme }) => theme.gapBetweenTiles.tablet.vw}vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: ${({ theme }) => theme.gapBetweenTiles.mobile.vw}vw;
   }
 `;

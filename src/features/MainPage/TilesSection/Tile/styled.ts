@@ -20,52 +20,67 @@ export const Title = styled.h2<TileProps>`
   position: absolute;
   z-index: 1;
   left: 3%;
-  bottom: 13%;
+  bottom: 14%;
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-    font-size: 1.3vw;
-    bottom: 14%;
+    font-size: 1.6vw;
+    bottom: 15%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 2.2vw;
-    bottom: 11%;
+    font-size: 3vw;
+    bottom: 14%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: 3.5vw;
+    bottom: 15%;
   }
 
   ${({ $mainTile }) =>
     $mainTile &&
     css`
-      font-size: 36px;
-      bottom: 10%;
+      font-size: 40px;
+      bottom: 9%;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-        font-size: 3vw;
+        font-size: 3.4vw;
         bottom: 10%;
       }
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-        font-size: 4vw;
-        bottom: 9%;
+        font-size: 6vw;
+        bottom: 11%;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        font-size: 6.4vw;
+        bottom: 11%;
       }
     `}
 
   ${({ $asideTile }) =>
     $asideTile &&
     css`
-      font-size: 20px;
+      font-size: 24px;
       bottom: 12%;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-        font-size: 1.6vw;
-        bottom: 12%;
+        font-size: 2vw;
+        bottom: 13%;
       }
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-        font-size: 2.2vw;
-        bottom: 11%;
+        font-size: 3vw;
+        bottom: 14%;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        font-size: 3.5vw;
+        bottom: 15%;
       }
     `};
 `;
@@ -76,18 +91,22 @@ export const GenresContainer = styled.div<TileProps>`
   left: 3%;
   bottom: 4%;
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-    font-size: 1vw;
+    font-size: 1.2vw;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 1.4vw;
+    font-size: 2vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: 2.3vw;
   }
 
   ${({ $mainTile }) =>
@@ -100,7 +119,11 @@ export const GenresContainer = styled.div<TileProps>`
       }
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-        font-size: 2vw;
+        font-size: 3vw;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        font-size: 3.2vw;
       }
     `}
 
@@ -110,11 +133,15 @@ export const GenresContainer = styled.div<TileProps>`
       font-size: 15px;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-        font-size: 1.2vw;
+        font-size: 1.3vw;
       }
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-        font-size: 1.4vw;
+        font-size: 2vw;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        font-size: 2.2vw;
       }
     `}
 `;
