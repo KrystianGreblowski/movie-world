@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/movie-world/static/js/main.9048f94d.js",
+    "main.js": "/movie-world/static/js/main.ad16301d.js",
+    "static/media/noImage.png": "/movie-world/static/media/noImage.ad3dbbf9d406f2962715.png",
     "index.html": "/movie-world/index.html",
-    "main.9048f94d.js.map": "/movie-world/static/js/main.9048f94d.js.map"
+    "main.ad16301d.js.map": "/movie-world/static/js/main.ad16301d.js.map"
   },
   "entrypoints": [
-    "static/js/main.9048f94d.js"
+    "static/js/main.ad16301d.js"
   ]
 }
