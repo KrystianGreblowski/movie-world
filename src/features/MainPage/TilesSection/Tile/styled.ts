@@ -30,6 +30,11 @@ export const Title = styled.h2<TileProps>`
     bottom: 14%;
   }
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 2.2vw;
+    bottom: 11%;
+  }
+
   ${({ $mainTile }) =>
     $mainTile &&
     css`
@@ -39,6 +44,11 @@ export const Title = styled.h2<TileProps>`
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
         font-size: 3vw;
         bottom: 10%;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        font-size: 4vw;
+        bottom: 9%;
       }
     `}
 
@@ -51,6 +61,11 @@ export const Title = styled.h2<TileProps>`
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
         font-size: 1.6vw;
         bottom: 12%;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        font-size: 2.2vw;
+        bottom: 11%;
       }
     `};
 `;
@@ -71,6 +86,10 @@ export const GenresContainer = styled.div<TileProps>`
     font-size: 1vw;
   }
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 1.4vw;
+  }
+
   ${({ $mainTile }) =>
     $mainTile &&
     css`
@@ -78,6 +97,10 @@ export const GenresContainer = styled.div<TileProps>`
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
         font-size: 1.8vw;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        font-size: 2vw;
       }
     `}
 
@@ -88,6 +111,10 @@ export const GenresContainer = styled.div<TileProps>`
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
         font-size: 1.2vw;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        font-size: 1.4vw;
       }
     `}
 `;
@@ -114,18 +141,31 @@ export const ImageContainer = styled.div<TileProps>`
   width: 100%;
   height: 100%;
   max-height: ${defaultTileMaxHeightPX}px;
-  box-shadow: inset 0 -110px 120px -60px ${({ theme }) => theme.color.black};
+  box-shadow: inset 0 -110px 120px -80px ${({ theme }) => theme.color.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    max-height: 180px;
+  }
 
   ${({ $mainTile, theme }) =>
     $mainTile &&
     css`
-      max-height: ${asideTileMaxHeightPX * 2 + theme.gapBetweenTiles.px}px;
+      max-height: ${asideTileMaxHeightPX * 2 +
+      theme.gapBetweenTiles.wideScreen.px}px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        max-height: 360px;
+      }
     `}
 
   ${({ $asideTile }) =>
     $asideTile &&
     css`
       max-height: ${asideTileMaxHeightPX}px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        max-height: 180px;
+      }
     `}
 
   ${Container}:hover & img {
