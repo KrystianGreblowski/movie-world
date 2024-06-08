@@ -5,6 +5,9 @@ interface TileProps {
   $asideTile?: boolean;
 }
 
+const defaultTileMaxHeightPX = 190;
+const asideTileMaxHeightPX = 250;
+
 export const Container = styled.div`
   position: relative;
 
@@ -17,25 +20,25 @@ export const Title = styled.h2<TileProps>`
   position: absolute;
   z-index: 1;
   left: 3%;
-  bottom: 14%;
+  bottom: 13%;
   margin: 0;
   font-size: 16px;
   font-weight: 500;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
     font-size: 1.3vw;
-    bottom: 15%;
+    bottom: 14%;
   }
 
   ${({ $mainTile }) =>
     $mainTile &&
     css`
       font-size: 36px;
-      bottom: 11%;
+      bottom: 10%;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
         font-size: 3vw;
-        bottom: 11%;
+        bottom: 10%;
       }
     `}
 
@@ -43,11 +46,11 @@ export const Title = styled.h2<TileProps>`
     $asideTile &&
     css`
       font-size: 20px;
-      bottom: 13%;
+      bottom: 12%;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
         font-size: 1.6vw;
-        bottom: 13%;
+        bottom: 12%;
       }
     `};
 `;
@@ -56,7 +59,7 @@ export const GenresContainer = styled.div<TileProps>`
   position: absolute;
   z-index: 1;
   left: 3%;
-  bottom: 5%;
+  bottom: 4%;
   margin: 0;
   font-size: 12px;
   font-weight: 400;
@@ -89,8 +92,20 @@ export const GenresContainer = styled.div<TileProps>`
     `}
 `;
 
-export const Genre = styled.p`
-  margin: 0 8px 0 0;
+export const Genre = styled.p<TileProps>`
+  margin: 0 0.4vw 0 0;
+
+  ${({ $mainTile }) =>
+    $mainTile &&
+    css`
+      margin: 0 0.7vw 0 0;
+    `}
+
+  ${({ $asideTile }) =>
+    $asideTile &&
+    css`
+      margin: 0 0.5vw 0 0;
+    `}
 `;
 
 export const ImageContainer = styled.div<TileProps>`
@@ -98,20 +113,19 @@ export const ImageContainer = styled.div<TileProps>`
   overflow: hidden;
   width: 100%;
   height: 100%;
+  max-height: ${defaultTileMaxHeightPX}px;
   box-shadow: inset 0 -110px 120px -60px ${({ theme }) => theme.color.black};
+
+  ${({ $mainTile, theme }) =>
+    $mainTile &&
+    css`
+      max-height: ${asideTileMaxHeightPX * 2 - theme.gapBetweenTiles.px}px;
+    `}
 
   ${({ $asideTile }) =>
     $asideTile &&
     css`
-      max-height: 280px;
-
-      @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
-        max-height: 220px;
-      }
-
-      @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-        max-height: 200px;
-      }
+      max-height: ${asideTileMaxHeightPX}px;
     `}
 
   ${Container}:hover & img {
