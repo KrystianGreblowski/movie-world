@@ -119,7 +119,7 @@ export const ImageContainer = styled.div<TileProps>`
   ${({ $mainTile, theme }) =>
     $mainTile &&
     css`
-      max-height: ${asideTileMaxHeightPX * 2 - theme.gapBetweenTiles.px}px;
+      max-height: ${asideTileMaxHeightPX * 2 + theme.gapBetweenTiles.px}px;
     `}
 
   ${({ $asideTile }) =>
