@@ -9,6 +9,17 @@ export const Wrapper = styled.main`
   grid-gap: 64px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    margin: 48px auto;
     grid-gap: 6vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 32px auto;
+    grid-gap: 8vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    margin: 16px auto;
+    grid-gap: 10vw;
   }
 `;
