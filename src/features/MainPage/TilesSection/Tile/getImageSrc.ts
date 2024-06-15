@@ -8,7 +8,7 @@ export const getImageSrc = (
   switch (imagePath) {
     case "placeholder":
       return placeholder;
-    case "":
+    case null:
       return noImage;
     default:
       return `https://image.tmdb.org/t/p/${imageSize}` + imagePath;
