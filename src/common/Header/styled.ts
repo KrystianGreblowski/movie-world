@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { ReactComponent as MovieIcon } from "./images/app-logo.svg";
-import { ReactComponent as Arrow } from "./images/arrow.svg";
+import { ReactComponent as Arrow } from "./images/arrow-down.svg";
 import { ReactComponent as SearchLoop } from "./images/search-loop.svg";
-import { ReactComponent as MenuIcon } from "./images/menu.svg";
 
 export const Wrapper = styled.header`
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: ${({ theme }) => theme.color.codGray};
 `;
 
@@ -48,7 +47,7 @@ export const SearchBar = styled.div`
   display: flex;
   flex-basis: auto;
   flex-grow: 1;
-  height: 44px;
+  height: 40px;
 `;
 
 export const SearchTypeContainer = styled.button`
@@ -109,31 +108,4 @@ export const SearchInputImage = styled(SearchLoop)`
   width: 24px;
   height: 24px;
   margin: 0 12px;
-`;
-
-export const Menu = styled.button`
-  border: none;
-  background-color: inherit;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  align-items: center;
-  margin: 0 48px;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-export const MenuImage = styled(MenuIcon)`
-  width: 40px;
-  height: 40px;
-  margin-right: 8px;
-`;
-export const MenuText = styled.p`
-  margin: 0;
-  color: ${({ theme }) => theme.color.white};
-  font-size: 24px;
-  font-weight: 500;
 `;

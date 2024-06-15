@@ -11,10 +11,8 @@ import {
   SearchInputContainer,
   SearchInputText,
   SearchInputImage,
-  Menu,
-  MenuImage,
-  MenuText,
 } from "./styled";
+import { Menu } from "./Menu";
 
 export const Header = () => {
   return (
@@ -25,10 +23,7 @@ export const Header = () => {
           <AppName>MOVIE WORLD</AppName>
         </AppInfo>
 
-        <Menu>
-          <MenuImage />
-          <MenuText>Menu</MenuText>
-        </Menu>
+        <Menu />
 
         <SearchBar>
           <SearchTypeContainer>
