@@ -1,42 +1,14 @@
-import {
-  Wrapper,
-  Content,
-  AppInfo,
-  AppLogo,
-  AppName,
-  SearchBar,
-  SearchTypeContainer,
-  SearchTypeName,
-  SearchTypeArrow,
-  SearchInputContainer,
-  SearchInputText,
-  SearchInputImage,
-} from "./styled";
-import { Menu } from "./Menu";
+import { Container, Content } from "./styled";
+import { NavigationBar } from "./NavigationBar";
+import { SearchBar } from "./SearchBar";
 
 export const Header = () => {
   return (
-    <Wrapper>
+    <Container>
       <Content>
-        <AppInfo>
-          <AppLogo />
-          <AppName>MOVIE WORLD</AppName>
-        </AppInfo>
-
-        <Menu />
-
-        <SearchBar>
-          <SearchTypeContainer>
-            <SearchTypeName>All</SearchTypeName>
-            <SearchTypeArrow />
-          </SearchTypeContainer>
-
-          <SearchInputContainer>
-            <SearchInputText placeholder="Search Movie World" />
-            <SearchInputImage />
-          </SearchInputContainer>
-        </SearchBar>
+        <NavigationBar />
+        <SearchBar />
       </Content>
-    </Wrapper>
+    </Container>
   );
 };

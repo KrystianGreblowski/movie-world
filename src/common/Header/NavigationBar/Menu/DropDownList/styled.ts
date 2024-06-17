@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as ArrowRight } from "../../images/arrow-right.svg";
+import { ReactComponent as ArrowRight } from "../../../images/arrow-right.svg";
 
 interface DropDownListProps {
   $asideList?: boolean;

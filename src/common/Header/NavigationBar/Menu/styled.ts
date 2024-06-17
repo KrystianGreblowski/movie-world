@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as MenuIcon } from "../images/menu.svg";
+import { ReactComponent as MenuIcon } from "../../images/menu.svg";
 
 export const Wrapper = styled.div`
   position: relative;
