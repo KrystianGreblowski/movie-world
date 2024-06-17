@@ -19,7 +19,7 @@ export const Menu = () => {
         <MenuText>Menu</MenuText>
       </MenuButton>
 
-      {open && <DropdownItems items={["Movies", "Series", "People"]} />}
+      <DropdownItems items={["Movies", "Series", "People"]} open={open} />
     </Wrapper>
   );
 };

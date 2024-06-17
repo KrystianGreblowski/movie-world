@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as ArrowRight } from "../../../images/arrow-right.svg";
 
-interface DropDownListProps {
-  $asideList?: boolean;
+interface DropDownItemsProps {
+  $open: boolean;
 }
 
-export const DropdownItemsContainer = styled.ul<DropDownListProps>`
+export const DropdownItemsContainer = styled.ul<DropDownItemsProps>`
+  ${({ $open }) => $open && css``}
   list-style-type: none;
   margin: 0;
   position: absolute;
@@ -17,10 +18,10 @@ export const DropdownItemsContainer = styled.ul<DropDownListProps>`
   background-color: ${({ theme }) => theme.color.codGray};
   padding: 6px 0;
 
-  ${({ $asideList }) =>
-    $asideList &&
+  ${({ $open }) =>
+    !$open &&
     css`
-      left: 118px;
+      display: none;
     `}
 `;
 
