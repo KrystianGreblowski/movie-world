@@ -1,20 +1,18 @@
 import { useState } from "react";
 import { Wrapper, MenuButton, MenuImage, MenuText } from "./styled";
-import { DropDownList } from "./DropDownList";
+import { DropdownItems } from "./DropdownItems";
 
 export const Menu = () => {
-  const [mainListActive, setMainListActive] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <Wrapper>
-      <MenuButton onClick={() => setMainListActive(!mainListActive)}>
+      <MenuButton onClick={() => setOpen(!open)}>
         <MenuImage />
         <MenuText>Menu</MenuText>
       </MenuButton>
 
-      {mainListActive && (
-        <DropDownList listItems={["Movies", "Series", "People"]} />
-      )}
+      {open && <DropdownItems items={["Movies", "Series", "People"]} />}
     </Wrapper>
   );
 };

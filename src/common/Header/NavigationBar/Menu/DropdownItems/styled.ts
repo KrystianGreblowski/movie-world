@@ -5,7 +5,7 @@ interface DropDownListProps {
   $asideList?: boolean;
 }
 
-export const DropDownListContainer = styled.ul<DropDownListProps>`
+export const DropdownItemsContainer = styled.ul<DropDownListProps>`
   list-style-type: none;
   margin: 0;
   position: absolute;
@@ -24,7 +24,7 @@ export const DropDownListContainer = styled.ul<DropDownListProps>`
     `}
 `;
 
-export const DropDownItem = styled.li`
+export const DropdownItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,13 +40,13 @@ export const DropDownItem = styled.li`
   }
 `;
 
-export const DropDownItemText = styled.p`
+export const Title = styled.p`
   margin: 0;
   font-size: 18px;
   font-weight: 500;
 `;
 
-export const DropDownItemImage = styled(ArrowRight)`
+export const Image = styled(ArrowRight)`
   width: 12px;
   height: 16px;
 `;
