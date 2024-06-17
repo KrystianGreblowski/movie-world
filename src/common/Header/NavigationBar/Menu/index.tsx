@@ -12,7 +12,9 @@ export const Menu = () => {
 
   return (
     <Wrapper ref={ref}>
-      <MenuButton onClick={() => setOpen(!open)}>
+      <MenuButton
+        onClick={() => setOpen((previousOpenState) => !previousOpenState)}
+      >
         <MenuImage />
         <MenuText>Menu</MenuText>
       </MenuButton>
