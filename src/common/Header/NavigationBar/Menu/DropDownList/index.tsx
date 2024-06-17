@@ -13,7 +13,7 @@ export const DropDownList = ({ listItems }: DropDownListProps) => {
   return (
     <DropDownListContainer>
       {listItems.map((title, index) => (
-        <DropDownItem key={title + index}>
+        <DropDownItem key={index}>
           <DropDownItemText>{title}</DropDownItemText>
           <DropDownItemImage />
         </DropDownItem>
