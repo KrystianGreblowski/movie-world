@@ -1,9 +1,24 @@
 import { useState } from "react";
-import { Wrapper, MenuButton, MenuImage, MenuText } from "./styled";
-import { DropdownItems } from "./DropdownItems";
+import {
+  Wrapper,
+  MenuButton,
+  MenuImage,
+  MenuText,
+  DropdownItem,
+  DropdownItemLink,
+  DropdownItemArrow,
+  DropdownItemTitle,
+} from "./styled";
+import { Dropdown } from "./Dropdown";
 import { useOutsideClick } from "../../../useOutsideClick";
+import { MenuItemsData } from "../menuItemsData";
 
-export const Menu = () => {
+interface MenuProps {
+  items: MenuItemsData | undefined;
+  depthLevel: number;
+}
+
+export const Menu = ({ items, depthLevel }: MenuProps) => {
   const [open, setOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
@@ -11,15 +26,47 @@ export const Menu = () => {
   });
 
   return (
-    <Wrapper ref={ref}>
-      <MenuButton
-        onClick={() => setOpen((previousOpenState) => !previousOpenState)}
-      >
-        <MenuImage />
-        <MenuText>Menu</MenuText>
-      </MenuButton>
+    <Wrapper ref={ref} $submenu={depthLevel > 0}>
+      {!depthLevel ? (
+        <>
+          <MenuButton
+            onClick={() => setOpen((previousOpenState) => !previousOpenState)}
+          >
+            <MenuImage />
+            <MenuText>{items?.title}</MenuText>
+          </MenuButton>
 
-      <DropdownItems items={["Movies", "Series", "People"]} open={open} />
+          <Dropdown
+            submenus={items?.submenu}
+            open={open}
+            depthLevel={depthLevel}
+          />
+        </>
+      ) : (
+        <DropdownItem
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+        >
+          {items?.submenu ? (
+            <>
+              <DropdownItemLink href={items.url}>
+                <DropdownItemTitle>{items.title}</DropdownItemTitle>
+                <DropdownItemArrow />
+              </DropdownItemLink>
+
+              <Dropdown
+                submenus={items.submenu}
+                open={open}
+                depthLevel={depthLevel}
+              />
+            </>
+          ) : (
+            <DropdownItemLink href={items?.url}>
+              <DropdownItemTitle>{items?.title}</DropdownItemTitle>
+            </DropdownItemLink>
+          )}
+        </DropdownItem>
+      )}
     </Wrapper>
   );
 };
