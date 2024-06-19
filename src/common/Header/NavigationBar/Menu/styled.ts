@@ -45,6 +45,8 @@ export const MenuText = styled.p`
 `;
 
 export const DropdownItem = styled.li`
+  position: relative;
+  z-index: 10;
   padding: 0 12px;
   transition: background-color 0.4s;
   background-color: inherit;
