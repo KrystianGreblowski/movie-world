@@ -1,5 +1,5 @@
 import { DropdownItemsContainer } from "./styled";
-import { Menu } from "../index";
+import { MenuItems } from "../index";
 import { MenuItemsData } from "../../menuItemsData";
 
 interface DropdownItemsProps {
@@ -18,7 +18,7 @@ export const Dropdown = ({
   return (
     <DropdownItemsContainer $open={open} $submenu={depthLevel > 1}>
       {submenus?.map((submenu, index) => (
-        <Menu items={submenu} key={index} depthLevel={depthLevel} />
+        <MenuItems items={submenu} key={index} depthLevel={depthLevel} />
       ))}
     </DropdownItemsContainer>
   );

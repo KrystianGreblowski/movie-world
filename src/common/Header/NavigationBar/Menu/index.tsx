@@ -18,7 +18,7 @@ interface MenuProps {
   depthLevel: number;
 }
 
-export const Menu = ({ items, depthLevel }: MenuProps) => {
+export const MenuItems = ({ items, depthLevel }: MenuProps) => {
   const [open, setOpen] = useState(false);
 
   const ref = useOutsideClick(() => {

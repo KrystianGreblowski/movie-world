@@ -1,5 +1,5 @@
 import { Wrapper } from "./styled";
-import { Menu } from "./Menu";
+import { MenuItems } from "./Menu";
 import { Home } from "./Home";
 import { menuItemsData } from "./menuItemsData";
 
@@ -10,7 +10,7 @@ export const NavigationBar = () => {
     <Wrapper>
       <Home />
       {menuItemsData.map((menu, index) => (
-        <Menu items={menu} key={index} depthLevel={depthLevel} />
+        <MenuItems items={menu} key={index} depthLevel={depthLevel} />
       ))}
     </Wrapper>
   );
