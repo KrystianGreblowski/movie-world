@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { ReactComponent as MovieIcon } from "../../images/app-logo.svg";
 
-export const AppInfo = styled.div`
+export const AppInfo = styled.a`
+  text-decoration: none;
+  color: inherit;
   display: flex;
   flex-basis: 300px;
   flex-shrink: 0;
