@@ -1,25 +1,12 @@
-import {
-  Wrapper,
-  SearchInputContainer,
-  SearchInputImage,
-  SearchInputText,
-  SearchTypeArrow,
-  SearchTypeContainer,
-  SearchTypeName,
-} from "./styled";
+import { Wrapper } from "./styled";
+import { SearchType } from "./SearchType";
+import { SearchInput } from "./SearchInput";
 
 export const SearchBar = () => {
   return (
     <Wrapper>
-      <SearchTypeContainer>
-        <SearchTypeName>All</SearchTypeName>
-        <SearchTypeArrow />
-      </SearchTypeContainer>
-
-      <SearchInputContainer>
-        <SearchInputText placeholder="Search Movie World" />
-        <SearchInputImage />
-      </SearchInputContainer>
+      <SearchType />
+      <SearchInput />
     </Wrapper>
   );
 };
