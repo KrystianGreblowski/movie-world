@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 
-interface DropdownItemsProps {
+interface DropdownProps {
   $open?: boolean;
   $submenu?: boolean;
 }
 
-export const DropdownItemsContainer = styled.ul<DropdownItemsProps>`
+export const DropdownItemsContainer = styled.ul<DropdownProps>`
   list-style-type: none;
   margin: 0;
   position: absolute;
