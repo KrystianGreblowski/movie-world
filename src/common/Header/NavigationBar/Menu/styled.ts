@@ -61,7 +61,6 @@ export const DropdownItemLink = styled.a`
   text-decoration: none;
   color: inherit;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   height: 38px;
