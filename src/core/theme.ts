@@ -5,7 +5,7 @@ export const theme = {
     gray: "#8C8787",
     scorpion: "#565656",
     mineShaft: "#3E3E3E",
-    mineShaftDark: "#212121",
+    codGray: "#171717",
     black: "#000000",
   },
   breakpoint: {
