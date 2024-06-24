@@ -1,12 +1,14 @@
-import { Wrapper } from "./styled";
+import { Wrapper, SearchContainer } from "./styled";
 import { SearchType } from "./SearchType";
 import { SearchInput } from "./SearchInput";
 
 export const SearchBar = () => {
   return (
     <Wrapper>
-      <SearchType />
-      <SearchInput />
+      <SearchContainer>
+        <SearchType />
+        <SearchInput />
+      </SearchContainer>
     </Wrapper>
   );
 };
