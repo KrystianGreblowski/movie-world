@@ -5,7 +5,7 @@ export const AppInfo = styled.a`
   text-decoration: none;
   color: inherit;
   display: flex;
-  flex-basis: 300px;
+  flex-basis: auto;
   flex-shrink: 0;
   align-items: center;
 
@@ -23,4 +23,9 @@ export const AppName = styled.p`
   font-size: 32px;
   font-weight: 600;
   margin: 0 0 0 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: 30px;
+    margin: 0 0 0 8px;
+  }
 `;

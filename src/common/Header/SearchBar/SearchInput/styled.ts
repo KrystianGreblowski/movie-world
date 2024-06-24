@@ -18,12 +18,21 @@ export const SearchInputText = styled.input`
   outline: none;
   padding: 0;
   margin-left: 12px;
-  font-size: 16px;
+  font-size: 14px;
   flex-grow: 1;
+  width: 100px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin-left: 8px;
+  }
 `;
 
 export const SearchInputImage = styled(SearchLoop)`
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   margin: 0 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 0 8px;
+  }
 `;

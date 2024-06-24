@@ -2,8 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
-  height: 80px;
-  background-color: ${({ theme }) => theme.color.codGray};
+  height: 76px;
+  background-color: ${({ theme }) => theme.color.mineShaftDark};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    height: auto;
+  }
 `;
 
 export const Content = styled.div`
@@ -13,7 +17,10 @@ export const Content = styled.div`
   height: inherit;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    display: block;
+  }
 `;

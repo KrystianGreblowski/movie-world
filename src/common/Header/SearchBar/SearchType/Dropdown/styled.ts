@@ -13,8 +13,12 @@ export const DropdownItemsContainer = styled.ul<DropdownProps>`
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.color.codGray};
+  background-color: ${({ theme }) => theme.color.mineShaftDark};
   padding: 6px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    top: 182px;
+  }
 
   ${({ $open }) =>
     !$open &&

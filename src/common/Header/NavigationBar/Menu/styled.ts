@@ -10,10 +10,34 @@ export const Wrapper = styled.div<MenuProps>`
   position: relative;
   margin: 0 48px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    margin: 0 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 8px 0 0 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    margin: 8px 0 0 0;
+  }
+
   ${({ $submenu }) =>
     $submenu &&
     css`
       margin: 0;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+        margin: 0;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        margin: 0;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        margin: 0;
+      }
     `}
 `;
 
@@ -21,7 +45,6 @@ export const MenuButton = styled.button`
   border: none;
   padding: 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
   background-color: inherit;
 
@@ -35,13 +58,31 @@ export const MenuImage = styled(MenuIcon)`
   height: 40px;
   margin-right: 8px;
   flex-shrink: 0;
+  fill: ${({ theme }) => theme.color.white};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    margin-right: 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin-right: 8px;
+  }
 `;
-export const MenuText = styled.p`
+
+export const MenuTitle = styled.p`
   margin: 0;
   color: ${({ theme }) => theme.color.white};
   font-size: 24px;
   font-weight: 500;
   flex-shrink: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    display: none;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    display: block;
+  }
 `;
 
 export const DropdownItem = styled.li`
