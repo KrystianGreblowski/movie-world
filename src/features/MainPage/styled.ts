@@ -19,7 +19,6 @@ export const Wrapper = styled.main`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    margin: 16px auto;
     grid-gap: 16vw;
   }
 `;
