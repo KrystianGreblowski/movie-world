@@ -3,7 +3,7 @@ import {
   Wrapper,
   MenuButton,
   MenuImage,
-  MenuText,
+  MenuTitle,
   DropdownItem,
   DropdownItemLink,
   DropdownItemArrow,
@@ -33,7 +33,7 @@ export const Menu = ({ items, depthLevel }: MenuProps) => {
             onClick={() => setOpen((previousOpenState) => !previousOpenState)}
           >
             <MenuImage />
-            <MenuText>{items?.title}</MenuText>
+            <MenuTitle>{items?.title}</MenuTitle>
           </MenuButton>
 
           <Dropdown
@@ -49,7 +49,7 @@ export const Menu = ({ items, depthLevel }: MenuProps) => {
         >
           {items?.submenu ? (
             <>
-              <DropdownItemLink href={items.url}>
+              <DropdownItemLink href={depthLevel === 1 ? undefined : items.url}>
                 <DropdownItemTitle>{items.title}</DropdownItemTitle>
                 <DropdownItemArrow />
               </DropdownItemLink>
