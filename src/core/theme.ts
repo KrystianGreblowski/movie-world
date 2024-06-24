@@ -1,10 +1,11 @@
 export const theme = {
   color: {
     white: "#FFFFFF",
+    alto: "#DFDFDF",
     gray: "#8C8787",
     scorpion: "#565656",
-    codGray: "#131313",
-    mineShaft: "#2F2F2F",
+    mineShaft: "#3E3E3E",
+    mineShaftDark: "#212121",
     black: "#000000",
   },
   breakpoint: {
