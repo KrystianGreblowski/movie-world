@@ -9,7 +9,7 @@ export const DropdownItemsContainer = styled.ul<DropdownProps>`
   list-style-type: none;
   margin: 0;
   position: absolute;
-  top: 52px;
+  top: 54px;
   border: 1px solid ${({ theme }) => theme.color.scorpion};
   border-radius: 6px;
   display: flex;
@@ -18,14 +18,14 @@ export const DropdownItemsContainer = styled.ul<DropdownProps>`
   padding: 6px 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    top: 44px;
+    top: 50px;
   }
 
   ${({ $submenu }) =>
     $submenu &&
     css`
       top: -7px;
-      left: 118px;
+      left: 128px;
 
       @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
         top: -7px;

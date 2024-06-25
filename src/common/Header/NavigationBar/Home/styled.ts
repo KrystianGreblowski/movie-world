@@ -5,8 +5,6 @@ export const AppInfo = styled.a`
   text-decoration: none;
   color: inherit;
   display: flex;
-  flex-basis: auto;
-  flex-shrink: 0;
   align-items: center;
 
   &:hover {
@@ -17,6 +15,7 @@ export const AppInfo = styled.a`
 export const AppLogo = styled(MovieIcon)`
   width: 60px;
   height: 60px;
+  flex-shrink: 0;
 `;
 
 export const AppName = styled.p`

@@ -17,8 +17,6 @@ export const Content = styled.div`
   height: inherit;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: block;

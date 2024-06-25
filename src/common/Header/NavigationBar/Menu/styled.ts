@@ -8,18 +8,14 @@ interface MenuProps {
 
 export const Wrapper = styled.div<MenuProps>`
   position: relative;
-  margin: 0 48px;
+  margin: 0 36px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
     margin: 0 20px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    margin: 8px 0 0 8px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    margin: 8px 0 0 0;
+    margin: 8px 0 0 4px;
   }
 
   ${({ $submenu }) =>
@@ -43,13 +39,24 @@ export const Wrapper = styled.div<MenuProps>`
 
 export const MenuButton = styled.button`
   border: none;
-  padding: 0;
+  padding: 2px 8px 2px 6px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   background-color: inherit;
+  transition: background-color 0.3s;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    padding: 4px 6px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    padding: 2px 8px 2px 6px;
+  }
 
   &:hover {
     cursor: pointer;
+    background-color: ${({ theme }) => theme.color.mineShaft};
   }
 `;
 
@@ -88,7 +95,7 @@ export const MenuTitle = styled.p`
 export const DropdownItem = styled.li`
   position: relative;
   z-index: 10;
-  padding: 0 12px;
+  padding: 0 14px;
   transition: background-color 0.4s;
   background-color: inherit;
 
@@ -105,7 +112,7 @@ export const DropdownItemLink = styled.a`
   align-items: center;
   justify-content: space-between;
   height: 38px;
-  width: 94px;
+  width: 100px;
 `;
 
 export const DropdownItemTitle = styled.p`

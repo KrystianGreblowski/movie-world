@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
 export const SearchTypeContainer = styled.button`
   border: none;
   padding: 0 8px 0 12px;
-  outline: none;
   display: flex;
   height: inherit;
   background-color: ${({ theme }) => theme.color.white};

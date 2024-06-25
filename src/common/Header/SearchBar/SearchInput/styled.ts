@@ -5,9 +5,7 @@ export const SearchInputContainer = styled.div`
   display: flex;
   flex-basis: auto;
   flex-grow: 1;
-  justify-content: space-between;
   align-items: center;
-  height: inherit;
   background-color: ${({ theme }) => theme.color.white};
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
