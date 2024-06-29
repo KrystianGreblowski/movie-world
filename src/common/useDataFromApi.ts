@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchDataFromApi } from "../../../common/fetchDataFromApi";
+import { fetchDataFromApi } from "./fetchDataFromApi";
 
 interface Result {
   id: number;
@@ -18,7 +18,7 @@ interface useDataParameters {
   params: Record<string, string>;
 }
 
-export const useData = ({ endpoint, params }: useDataParameters) => {
+export const useDataFromApi = ({ endpoint, params }: useDataParameters) => {
   const { isLoading, error, data } = useQuery({
     queryKey: [endpoint, params],
     queryFn: fetchDataFromApi<DataResults>,
