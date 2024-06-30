@@ -7,7 +7,12 @@ const App = () => {
     <>
       <Header />
       {/*<MainPage />*/}
-      <SubPage />
+      <SubPage
+        title="Popular Movies"
+        endpoint="movie/popular"
+        params={{ language: "en-US", page: "1" }}
+        tileType="movie"
+      />
     </>
   );
 };
