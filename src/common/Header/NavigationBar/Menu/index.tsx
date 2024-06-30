@@ -10,7 +10,7 @@ import {
   DropdownItemTitle,
 } from "./styled";
 import { Dropdown } from "./Dropdown";
-import { useOutsideClick } from "../../../useOutsideClick";
+import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { MenuItemsData } from "../menuItemsData";
 
 interface MenuProps {

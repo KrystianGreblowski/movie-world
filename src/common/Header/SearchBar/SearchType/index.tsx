@@ -7,7 +7,7 @@ import {
 import { useState } from "react";
 import { Dropdown } from "./Dropdown";
 import { searchTypeItemsData } from "./searchTypeItemsData";
-import { useOutsideClick } from "../../../useOutsideClick";
+import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
 export const SearchType = () => {
   const [open, setOpen] = useState(false);

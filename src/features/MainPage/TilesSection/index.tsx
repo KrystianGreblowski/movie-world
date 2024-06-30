@@ -1,7 +1,7 @@
 import { Wrapper, TilesContainer, Title, AsideTiles } from "./styled";
 import { Tile } from "./Tile";
-import { getArrayForPlaceholders } from "../../../common/getArrayForPlaceholders";
-import { useData } from "./useData";
+import { getArrayForPlaceholders } from "../../../common/functions/getArrayForPlaceholders";
+import { useDataFromApi } from "../../../common/api/useDataFromApi";
 
 interface TilesSectionProps {
   title: string;
@@ -20,7 +20,10 @@ export const TilesSection = ({
   params,
   mainSection,
 }: TilesSectionProps) => {
-  const { isLoading, error, dataResults } = useData({ endpoint, params });
+  const { isLoading, error, dataResults } = useDataFromApi({
+    endpoint,
+    params,
+  });
 
   switch (mainSection) {
     case true: {
