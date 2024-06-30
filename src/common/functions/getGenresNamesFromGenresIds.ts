@@ -1,5 +1,5 @@
-import { movieGenres } from "./data/movieGenres";
-import { seriesGenres } from "./data/seriesGenres";
+import { movieGenres } from "../data/movieGenres";
+import { seriesGenres } from "../data/seriesGenres";
 
 export const getGenresNamesFromGenresIds = (
   genresIds: number[],
