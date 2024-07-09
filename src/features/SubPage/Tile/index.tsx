@@ -49,7 +49,8 @@ export const Tile = ({
         <Details>
           <Title>{title}</Title>
           <ReleaseYear>{getYearFromDate(releaseDate)}</ReleaseYear>
-          <Overview>{overview}</Overview>
+          {overview.length < 500 && <Overview>{overview}</Overview>}
+
           <GenresContainer>
             {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
               <Genre key={name}>{name}</Genre>
