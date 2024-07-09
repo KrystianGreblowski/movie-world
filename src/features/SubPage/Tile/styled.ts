@@ -56,6 +56,7 @@ export const Title = styled.h2`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 6vw;
+    padding-top: 0;
   }
 `;
 
