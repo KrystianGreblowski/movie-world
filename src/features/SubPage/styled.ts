@@ -7,13 +7,30 @@ export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    grid-gap: 12px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 32px auto;
+    grid-gap: 10px;
+  }
 `;
 
 export const Title = styled.h1`
   font-size: 50px;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 8px 0;
   display: flex;
   justify-content: flex-start;
-  padding-left: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 7vw;
+    margin: 0 0 1.4vw 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: 9vw;
+  }
 `;
