@@ -7,7 +7,7 @@ import {
   Title,
 } from "./styled";
 import { getGenresNamesFromGenresIds } from "../../../../common/functions/getGenresNamesFromGenresIds";
-import { getImageSrc } from "../../../../common/functions/getImageSrc/getImageSrc";
+import { getImageSrc } from "./getImageSrc/getImageSrc";
 
 interface MainPageTileProps {
   tileType: "movie" | "series";
@@ -17,6 +17,7 @@ interface MainPageTileProps {
   imageSize: string;
   mainTile?: boolean;
   asideTile?: boolean;
+  isLoading?: boolean;
 }
 
 export const Tile = ({
@@ -27,20 +28,25 @@ export const Tile = ({
   imageSize,
   mainTile,
   asideTile,
+  isLoading,
 }: MainPageTileProps) => {
   return (
     <Container>
-      <Title $mainTile={mainTile} $asideTile={asideTile}>
-        {title}
-      </Title>
+      {!isLoading && (
+        <Title $mainTile={mainTile} $asideTile={asideTile}>
+          {title}
+        </Title>
+      )}
 
-      <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
-        {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
-          <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
-            {name}
-          </Genre>
-        ))}
-      </GenresContainer>
+      {!isLoading && (
+        <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
+          {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
+            <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
+              {name}
+            </Genre>
+          ))}
+        </GenresContainer>
+      )}
 
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>
         <Image src={getImageSrc(imagePath, imageSize)} alt={title} />
