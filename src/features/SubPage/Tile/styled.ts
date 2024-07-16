@@ -23,7 +23,7 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   max-height: 340px;
-  width: 100%;
+  max-width: 230px;
   object-fit: cover;
   border-radius: 2px;
 
