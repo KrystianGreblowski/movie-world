@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { ReactComponent as MovieIcon } from "../../images/app-logo.svg";
 
-export const AppInfo = styled.a`
+export const AppInfo = styled(NavLink)`
   text-decoration: none;
   color: inherit;
   display: flex;

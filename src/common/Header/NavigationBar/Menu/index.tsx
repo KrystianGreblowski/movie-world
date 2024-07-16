@@ -14,7 +14,7 @@ import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { MenuItemsData } from "../menuItemsData";
 
 interface MenuProps {
-  items: MenuItemsData | undefined;
+  items: MenuItemsData;
   depthLevel: number;
 }
 
@@ -49,7 +49,7 @@ export const Menu = ({ items, depthLevel }: MenuProps) => {
         >
           {items?.submenu ? (
             <>
-              <DropdownItemLink href={depthLevel === 1 ? undefined : items.url}>
+              <DropdownItemLink to={items.url}>
                 <DropdownItemTitle>{items.title}</DropdownItemTitle>
                 <DropdownItemArrow />
               </DropdownItemLink>
@@ -61,7 +61,7 @@ export const Menu = ({ items, depthLevel }: MenuProps) => {
               />
             </>
           ) : (
-            <DropdownItemLink href={items?.url}>
+            <DropdownItemLink to={items.url}>
               <DropdownItemTitle>{items?.title}</DropdownItemTitle>
             </DropdownItemLink>
           )}

@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 import { ReactComponent as MenuIcon } from "../../images/menu.svg";
 import { ReactComponent as ArrowRight } from "../../images/arrow-right.svg";
 
@@ -105,7 +106,7 @@ export const DropdownItem = styled.li`
   }
 `;
 
-export const DropdownItemLink = styled.a`
+export const DropdownItemLink = styled(NavLink)`
   text-decoration: none;
   color: inherit;
   display: flex;

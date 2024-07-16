@@ -1,3 +1,10 @@
+import {
+  toPopularMovies,
+  toTopRatedMovies,
+  toTrendingMovies,
+  toUpcomingMovies,
+} from "../../../core/routes";
+
 export interface MenuItemsData {
   title: string;
   url: string;
@@ -11,14 +18,15 @@ export const menuItemsData: MenuItemsData[] = [
     submenu: [
       {
         title: "Movies",
-        url: "movies",
+        url: toPopularMovies(),
         submenu: [
+          { title: "Popular", url: toPopularMovies() },
           {
             title: "Trending",
-            url: "trending",
+            url: toTrendingMovies(),
           },
-          { title: "Popular", url: "popular" },
-          { title: "Top Rated", url: "top-rated" },
+          { title: "Upcoming", url: toUpcomingMovies() },
+          { title: "Top Rated", url: toTopRatedMovies() },
         ],
       },
       {
