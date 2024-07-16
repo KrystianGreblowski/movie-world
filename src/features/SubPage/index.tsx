@@ -6,14 +6,14 @@ interface SubPageProps {
   title: string;
   endpoint: string;
   params: Record<string, string>;
-  tileType: "movie" | "series";
+  dataType: "movie" | "series";
 }
 
 export const SubPage = ({
   title,
   endpoint,
   params,
-  tileType,
+  dataType,
 }: SubPageProps) => {
   const { isLoading, error, dataResults } = useDataFromApi({
     endpoint,
@@ -27,12 +27,16 @@ export const SubPage = ({
       {dataResults?.map((dataResult) => (
         <Tile
           key={dataResult.id}
-          title={dataResult.title}
+          title={dataType === "movie" ? dataResult.title : dataResult.name}
           imagePath={dataResult.poster_path}
           imageSize="w500"
           genres={dataResult.genre_ids}
-          tileType={tileType}
-          releaseDate={dataResult.release_date}
+          tileType={dataType}
+          releaseDate={
+            dataType === "movie"
+              ? dataResult.release_date
+              : dataResult.first_air_date
+          }
           voteAverage={dataResult.vote_average}
           numberOfVotes={dataResult.vote_count}
           overview={dataResult.overview}
