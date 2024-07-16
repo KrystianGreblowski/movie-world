@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { ReactComponent as Star } from "./star.svg";
 
 export const Container = styled.div`
-  width: 100%;
   height: auto;
+  width: 100%;
   border-radius: 2px;
   background-color: ${({ theme }) => theme.color.mineShaftDark};
   display: grid;
@@ -22,15 +22,21 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  max-height: 340px;
-  max-width: 230px;
+  height: 330px;
+  width: 220px;
   object-fit: cover;
   border-radius: 2px;
   position: relative;
   z-index: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    max-height: 60vw;
+    height: 300px;
+    width: 200px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    height: 210px;
+    width: 140px;
   }
 `;
 
@@ -80,7 +86,7 @@ export const Title = styled.h2`
   padding-top: 2px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 6vw;
+    font-size: 5.4vw;
     padding-top: 0;
   }
 `;
@@ -91,7 +97,7 @@ export const ReleaseYear = styled.p`
   font-weight: 500;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 3.6vw;
+    font-size: 3vw;
   }
 `;
 
@@ -111,7 +117,7 @@ export const Genre = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     margin: 0 8px 8px 0;
     padding: 1.4vw;
-    font-size: 3vw;
+    font-size: 2.6vw;
   }
 `;
 
