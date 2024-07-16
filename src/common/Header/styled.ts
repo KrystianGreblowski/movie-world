@@ -4,6 +4,9 @@ export const Container = styled.header`
   width: 100%;
   height: 76px;
   background-color: ${({ theme }) => theme.color.codGray};
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     height: auto;
