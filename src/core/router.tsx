@@ -68,6 +68,7 @@ export const router = createBrowserRouter([
             endpoint="movie/top_rated"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
+            topRated
           />
         ),
       },
@@ -112,6 +113,7 @@ export const router = createBrowserRouter([
             endpoint="tv/top_rated"
             params={{ language: "en-US", page: "1" }}
             dataType="series"
+            topRated
           />
         ),
       },

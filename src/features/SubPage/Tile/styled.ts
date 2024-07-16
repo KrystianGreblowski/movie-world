@@ -26,9 +26,34 @@ export const Image = styled.img`
   max-width: 230px;
   object-fit: cover;
   border-radius: 2px;
+  position: relative;
+  z-index: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     max-height: 60vw;
+  }
+`;
+
+export const TopRatedPosition = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: ${({ theme }) => theme.color.doveGray};
+  color: ${({ theme }) => theme.color.white};
+  width: 32px;
+  height: 32px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
   }
 `;
 

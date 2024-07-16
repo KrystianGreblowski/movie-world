@@ -7,6 +7,7 @@ interface SubPageProps {
   endpoint: string;
   params: Record<string, string>;
   dataType: "movie" | "series";
+  topRated?: boolean;
 }
 
 export const SubPage = ({
@@ -14,6 +15,7 @@ export const SubPage = ({
   endpoint,
   params,
   dataType,
+  topRated,
 }: SubPageProps) => {
   const { isLoading, error, dataResults } = useDataFromApi({
     endpoint,
@@ -24,7 +26,7 @@ export const SubPage = ({
     <Wrapper>
       <Title>{title}</Title>
 
-      {dataResults?.map((dataResult) => (
+      {dataResults?.map((dataResult, index) => (
         <Tile
           key={dataResult.id}
           title={dataType === "movie" ? dataResult.title : dataResult.name}
@@ -40,6 +42,8 @@ export const SubPage = ({
           voteAverage={dataResult.vote_average}
           numberOfVotes={dataResult.vote_count}
           overview={dataResult.overview}
+          topRated={topRated}
+          topRatedPosition={index + 1}
         />
       ))}
     </Wrapper>

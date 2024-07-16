@@ -4,6 +4,7 @@ import {
   Information,
   Details,
   Title,
+  TopRatedPosition,
   GenresContainer,
   Genre,
   ReleaseYear,
@@ -28,6 +29,8 @@ interface TileProps {
   voteAverage: number;
   numberOfVotes: number;
   overview: string;
+  topRated?: boolean;
+  topRatedPosition: number;
 }
 
 export const Tile = ({
@@ -40,14 +43,18 @@ export const Tile = ({
   voteAverage,
   numberOfVotes,
   overview,
+  topRated,
+  topRatedPosition,
 }: TileProps) => {
   return (
     <Container>
       <Image src={getImageSrc(imagePath, imageSize)} />
+      {topRated && <TopRatedPosition>{topRatedPosition}</TopRatedPosition>}
 
       <Information>
         <Details>
           <Title>{title}</Title>
+
           <ReleaseYear>{getYearFromDate(releaseDate)}</ReleaseYear>
           {overview.length < 500 && <Overview>{overview}</Overview>}
 
