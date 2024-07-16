@@ -5,9 +5,13 @@ import { SubPage } from "../features/SubPage";
 import {
   toMainPage,
   toPopularMovies,
+  toPopularSeries,
   toTopRatedMovies,
+  toTopRatedSeries,
   toTrendingMovies,
+  toTrendingSeries,
   toUpcomingMovies,
+  toUpcomingSeries,
 } from "./routes";
 
 export const router = createBrowserRouter([
@@ -30,7 +34,7 @@ export const router = createBrowserRouter([
             title="Popular Movies"
             endpoint="movie/popular"
             params={{ language: "en-US", page: "1" }}
-            tileType="movie"
+            dataType="movie"
           />
         ),
       },
@@ -41,7 +45,7 @@ export const router = createBrowserRouter([
             title="Trending Movies"
             endpoint="trending/movie/day"
             params={{ language: "en-US", page: "1" }}
-            tileType="movie"
+            dataType="movie"
           />
         ),
       },
@@ -49,14 +53,13 @@ export const router = createBrowserRouter([
         path: toUpcomingMovies(),
         element: (
           <SubPage
-            title="Upcoming"
+            title="Upcoming Movies"
             endpoint="movie/upcoming"
             params={{ language: "en-US", page: "1" }}
-            tileType="movie"
+            dataType="movie"
           />
         ),
       },
-
       {
         path: toTopRatedMovies(),
         element: (
@@ -64,7 +67,51 @@ export const router = createBrowserRouter([
             title="Top Rated Movies"
             endpoint="movie/top_rated"
             params={{ language: "en-US", page: "1" }}
-            tileType="movie"
+            dataType="movie"
+          />
+        ),
+      },
+      {
+        path: toPopularSeries(),
+        element: (
+          <SubPage
+            title="Popular Series"
+            endpoint="tv/popular"
+            params={{ language: "en-US", page: "1" }}
+            dataType="series"
+          />
+        ),
+      },
+      {
+        path: toTrendingSeries(),
+        element: (
+          <SubPage
+            title="Trending Series"
+            endpoint="trending/tv/day"
+            params={{ language: "en-US", page: "1" }}
+            dataType="series"
+          />
+        ),
+      },
+      {
+        path: toUpcomingSeries(),
+        element: (
+          <SubPage
+            title="Upcoming Series"
+            endpoint="tv/on_the_air"
+            params={{ language: "en-US", page: "1" }}
+            dataType="series"
+          />
+        ),
+      },
+      {
+        path: toTopRatedSeries(),
+        element: (
+          <SubPage
+            title="Top Rated Series"
+            endpoint="tv/top_rated"
+            params={{ language: "en-US", page: "1" }}
+            dataType="series"
           />
         ),
       },

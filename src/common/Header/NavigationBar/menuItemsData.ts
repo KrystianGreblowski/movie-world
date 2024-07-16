@@ -1,8 +1,12 @@
 import {
   toPopularMovies,
+  toPopularSeries,
   toTopRatedMovies,
+  toTopRatedSeries,
   toTrendingMovies,
+  toTrendingSeries,
   toUpcomingMovies,
+  toUpcomingSeries,
 } from "../../../core/routes";
 
 export interface MenuItemsData {
@@ -31,14 +35,15 @@ export const menuItemsData: MenuItemsData[] = [
       },
       {
         title: "Series",
-        url: "series",
+        url: toPopularSeries(),
         submenu: [
+          { title: "Popular", url: toPopularSeries() },
           {
             title: "Trending",
-            url: "trending",
+            url: toTrendingSeries(),
           },
-          { title: "Popular", url: "popular" },
-          { title: "Top Rated", url: "top-rated" },
+          { title: "Upcoming", url: toUpcomingSeries() },
+          { title: "Top Rated", url: toTopRatedSeries() },
         ],
       },
       {
