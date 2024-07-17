@@ -46,18 +46,6 @@ export const menuItemsData: MenuItemsData[] = [
           { title: "Top Rated", url: toTopRatedSeries() },
         ],
       },
-      {
-        title: "People",
-        url: "people",
-        submenu: [
-          {
-            title: "Trending",
-            url: "trending",
-          },
-          { title: "Popular", url: "popular" },
-          { title: "Top Rated", url: "top-rated" },
-        ],
-      },
     ],
   },
 ];
