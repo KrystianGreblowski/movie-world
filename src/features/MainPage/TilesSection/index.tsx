@@ -40,7 +40,6 @@ export const TilesSection = ({
                 genres={[]}
                 imagePath="placeholder"
                 imageSize="w1280"
-                isLoading
               />
 
               <AsideTiles>
@@ -110,7 +109,6 @@ export const TilesSection = ({
                   genres={[]}
                   imagePath="placeholder"
                   imageSize="w780"
-                  isLoading
                 />
               ))}
             </TilesContainer>

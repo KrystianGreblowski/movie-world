@@ -17,7 +17,6 @@ interface MainPageTileProps {
   imageSize: string;
   mainTile?: boolean;
   asideTile?: boolean;
-  isLoading?: boolean;
 }
 
 export const Tile = ({
@@ -28,25 +27,20 @@ export const Tile = ({
   imageSize,
   mainTile,
   asideTile,
-  isLoading,
 }: MainPageTileProps) => {
   return (
     <Container>
-      {!isLoading && (
-        <Title $mainTile={mainTile} $asideTile={asideTile}>
-          {title}
-        </Title>
-      )}
+      <Title $mainTile={mainTile} $asideTile={asideTile}>
+        {title}
+      </Title>
 
-      {!isLoading && (
-        <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
-          {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
-            <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
-              {name}
-            </Genre>
-          ))}
-        </GenresContainer>
-      )}
+      <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
+        {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
+          <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
+            {name}
+          </Genre>
+        ))}
+      </GenresContainer>
 
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>
         <Image src={getImageSrc(imagePath, imageSize)} alt={title} />
