@@ -9,7 +9,7 @@ export const MainPage = () => {
         mainSection
         title="Trending"
         numberOfTiles={3}
-        tileType="movie"
+        dataType="movie"
         endpoint="trending/movie/day"
         params={{ language: "en-US" }}
       />
@@ -17,7 +17,7 @@ export const MainPage = () => {
       <TilesSection
         title="Popular Movies"
         numberOfTiles={8}
-        tileType="movie"
+        dataType="movie"
         endpoint="movie/popular"
         params={{ language: "en-US", page: "1" }}
       />
@@ -25,7 +25,7 @@ export const MainPage = () => {
       <TilesSection
         title="Popular Series"
         numberOfTiles={8}
-        tileType="series"
+        dataType="series"
         endpoint="tv/popular"
         params={{ language: "en-US", page: "1" }}
       />
@@ -33,7 +33,7 @@ export const MainPage = () => {
       <TilesSection
         title="Upcoming"
         numberOfTiles={8}
-        tileType="movie"
+        dataType="movie"
         endpoint="movie/upcoming"
         params={{ language: "en-US", page: "1" }}
       />

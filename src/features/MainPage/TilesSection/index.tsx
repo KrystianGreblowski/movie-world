@@ -6,7 +6,7 @@ import { useDataFromApi } from "../../../common/api/useDataFromApi";
 interface TilesSectionProps {
   title: string;
   numberOfTiles: number;
-  tileType: "movie" | "series";
+  dataType: "movie" | "series";
   endpoint: string;
   params: Record<string, string>;
   mainSection?: boolean;
@@ -15,7 +15,7 @@ interface TilesSectionProps {
 export const TilesSection = ({
   title,
   numberOfTiles,
-  tileType,
+  dataType,
   endpoint,
   params,
   mainSection,
@@ -35,7 +35,7 @@ export const TilesSection = ({
             <TilesContainer $mainSection={mainSection}>
               <Tile
                 mainTile
-                tileType={tileType}
+                tileType={dataType}
                 title=""
                 genres={[]}
                 imagePath="placeholder"
@@ -48,7 +48,7 @@ export const TilesSection = ({
                     <Tile
                       key={placeholder}
                       asideTile
-                      tileType={tileType}
+                      tileType={dataType}
                       title=""
                       genres={[]}
                       imagePath="placeholder"
@@ -70,7 +70,7 @@ export const TilesSection = ({
           <TilesContainer $mainSection={mainSection}>
             <Tile
               mainTile
-              tileType={tileType}
+              tileType={dataType}
               title={dataResults[0].title}
               genres={dataResults[0].genre_ids}
               imagePath={dataResults[0].backdrop_path}
@@ -82,7 +82,7 @@ export const TilesSection = ({
                 <Tile
                   key={result.id}
                   asideTile
-                  tileType={tileType}
+                  tileType={dataType}
                   title={result.title}
                   genres={result.genre_ids}
                   imagePath={result.backdrop_path}
@@ -104,7 +104,7 @@ export const TilesSection = ({
               {getArrayForPlaceholders(numberOfTiles).map((placeholder) => (
                 <Tile
                   key={placeholder}
-                  tileType={tileType}
+                  tileType={dataType}
                   title=""
                   genres={[]}
                   imagePath="placeholder"
@@ -125,9 +125,9 @@ export const TilesSection = ({
             {dataResults.slice(0, numberOfTiles).map((dataResult) => (
               <Tile
                 key={dataResult.id}
-                tileType={tileType}
+                tileType={dataType}
                 title={
-                  tileType === "movie" ? dataResult.title : dataResult.name
+                  dataType === "movie" ? dataResult.title : dataResult.name
                 }
                 genres={dataResult.genre_ids}
                 imagePath={dataResult.backdrop_path}
