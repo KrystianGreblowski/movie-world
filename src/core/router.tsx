@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import { App } from "./App";
 import { MainPage } from "../features/MainPage";
 import { SubPage } from "../features/SubPage";
@@ -14,15 +14,11 @@ import {
   toUpcomingSeries,
 } from "./routes";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     element: <App />,
     errorElement: <>Error</>,
     children: [
-      {
-        path: "/",
-        element: <MainPage />,
-      },
       {
         path: toMainPage(),
         element: <MainPage />,
