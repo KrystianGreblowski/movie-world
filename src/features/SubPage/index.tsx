@@ -41,7 +41,6 @@ export const SubPage = ({
             numberOfVotes={0}
             overview=""
             topRatedPosition={placeholder + 1}
-            isLoading
           />
         ))}
       </Wrapper>
