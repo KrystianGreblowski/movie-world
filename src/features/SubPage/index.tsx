@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Wrapper, Title } from "./styled";
 import { Tile } from "./Tile";
 import { useDataFromApi } from "../../common/api/useDataFromApi";
@@ -22,6 +23,12 @@ export const SubPage = ({
     endpoint,
     params,
   });
+
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    setKey((previousKey) => previousKey + 1);
+  }, [title, endpoint, params, dataType, topRated]);
 
   if (isLoading) {
     return (
@@ -52,7 +59,7 @@ export const SubPage = ({
   }
 
   return (
-    <Wrapper>
+    <Wrapper key={key}>
       <Title>{title}</Title>
 
       {dataResults?.map((dataResult, index) => (
