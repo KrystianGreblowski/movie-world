@@ -1,13 +1,24 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 interface TilesSectionProps {
   $mainSection?: boolean;
 }
 
-export const Wrapper = styled.div`
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
+
+export const Wrapper = styled.div<TilesSectionProps>`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  opacity: 0;
+  animation: ${fadeIn} 0.2s ease-in-out 0.5s forwards;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
     grid-gap: 1.3vw;
@@ -21,7 +32,6 @@ export const Wrapper = styled.div`
     grid-gap: 2.8vw;
   }
 `;
-
 export const Title = styled.h2<TilesSectionProps>`
   font-size: 36px;
   font-weight: 600;
@@ -72,10 +82,6 @@ export const TilesContainer = styled.div<TilesSectionProps>`
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: ${({ theme }) => theme.gapBetweenTiles.tablet.vw}vw;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    grid-gap: ${({ theme }) => theme.gapBetweenTiles.mobile.vw}vw;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
