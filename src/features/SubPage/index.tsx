@@ -23,8 +23,6 @@ export const SubPage = ({
     params,
   });
 
-  console.log(isLoading);
-
   if (isLoading) {
     return (
       <Wrapper>
