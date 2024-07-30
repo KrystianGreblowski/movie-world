@@ -3,7 +3,7 @@ import { Menu } from "../index";
 import { MenuItemsData } from "../../menuItemsData";
 
 interface DropdownProps {
-  submenus: MenuItemsData[] | undefined;
+  submenus?: MenuItemsData[];
   open: boolean;
   depthLevel: number;
 }
