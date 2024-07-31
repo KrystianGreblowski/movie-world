@@ -16,21 +16,40 @@ import { MenuItemsData } from "../menuItemsData";
 interface MenuProps {
   items: MenuItemsData;
   depthLevel: number;
+  menuOpen: boolean;
+  setMenuOpen: (
+    open: boolean | ((previousOpenState: boolean) => boolean),
+  ) => void;
+  closeMenu: () => void;
 }
 
-export const Menu = ({ items, depthLevel }: MenuProps) => {
+export const Menu = ({
+  items,
+  depthLevel,
+  menuOpen,
+  setMenuOpen,
+  closeMenu,
+}: MenuProps) => {
   const [open, setOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
     setOpen(false);
+    closeMenu();
   });
+
+  const handleItemClick = () => {
+    setOpen(false);
+    closeMenu();
+  };
 
   return (
     <Wrapper ref={ref} $submenu={depthLevel > 0}>
       {!depthLevel ? (
         <>
           <MenuButton
-            onClick={() => setOpen((previousOpenState) => !previousOpenState)}
+            onClick={() =>
+              setMenuOpen((previousOpenState) => !previousOpenState)
+            }
           >
             <MenuImage />
             <MenuTitle>{items?.title}</MenuTitle>
@@ -38,14 +57,17 @@ export const Menu = ({ items, depthLevel }: MenuProps) => {
 
           <Dropdown
             submenus={items?.submenu}
-            open={open}
+            open={menuOpen}
             depthLevel={depthLevel}
+            setMenuOpen={setMenuOpen}
+            closeMenu={closeMenu}
           />
         </>
       ) : (
         <DropdownItem
           onMouseEnter={() => setOpen(true)}
           onMouseLeave={() => setOpen(false)}
+          onClick={handleItemClick}
         >
           {items?.submenu ? (
             <>
@@ -58,6 +80,8 @@ export const Menu = ({ items, depthLevel }: MenuProps) => {
                 submenus={items.submenu}
                 open={open}
                 depthLevel={depthLevel}
+                setMenuOpen={setMenuOpen}
+                closeMenu={closeMenu}
               />
             </>
           ) : (
