@@ -16,6 +16,11 @@ export const DropdownItemsContainer = styled.ul<DropdownProps>`
   flex-direction: column;
   background-color: ${({ theme }) => theme.color.codGray};
   padding: 6px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     top: 50px;
@@ -33,8 +38,9 @@ export const DropdownItemsContainer = styled.ul<DropdownProps>`
     `}
 
   ${({ $open }) =>
-    !$open &&
+    $open &&
     css`
-      display: none;
+      opacity: 1;
+      visibility: visible;
     `}
 `;
