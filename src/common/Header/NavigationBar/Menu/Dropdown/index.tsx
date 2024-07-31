@@ -7,7 +7,7 @@ interface DropdownProps {
   open: boolean;
   depthLevel: number;
   setMenuOpen: (
-    open: boolean | ((previousOpenState: boolean) => boolean),
+    open: boolean | ((previousMenuOpenState: boolean) => boolean),
   ) => void;
   closeMenu: () => void;
 }
