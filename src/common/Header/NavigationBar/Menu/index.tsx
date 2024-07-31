@@ -21,7 +21,6 @@ interface MenuProps {
   setMenuOpen: (
     open: boolean | ((previousMenuOpenState: boolean) => boolean),
   ) => void;
-  closeMenu: () => void;
 }
 
 export const Menu = ({
@@ -29,13 +28,12 @@ export const Menu = ({
   depthLevel,
   menuOpen,
   setMenuOpen,
-  closeMenu,
 }: MenuProps) => {
   const [open, setOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
     setOpen(false);
-    closeMenu();
+    setMenuOpen(false);
   });
 
   const handleDropdownItemButtonClick = () => {
@@ -45,7 +43,7 @@ export const Menu = ({
 
   const handleDropdownItemLinkClick = () => {
     setOpen(false);
-    closeMenu();
+    setMenuOpen(false);
   };
 
   return (
@@ -54,7 +52,7 @@ export const Menu = ({
         <>
           <MenuButton
             onClick={() =>
-              setMenuOpen((previousOpenState) => !previousOpenState)
+              setMenuOpen((previousMenuOpenState) => !previousMenuOpenState)
             }
           >
             <MenuImage />
@@ -66,7 +64,7 @@ export const Menu = ({
             open={menuOpen}
             depthLevel={depthLevel}
             setMenuOpen={setMenuOpen}
-            closeMenu={closeMenu}
+            // closeMenu={closeMenu}
           />
         </>
       ) : items?.submenu ? (
@@ -84,7 +82,7 @@ export const Menu = ({
             open={open}
             depthLevel={depthLevel}
             setMenuOpen={setMenuOpen}
-            closeMenu={closeMenu}
+            // closeMenu={closeMenu}
           />
         </DropdownItem>
       ) : (

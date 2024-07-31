@@ -9,7 +9,6 @@ interface DropdownProps {
   setMenuOpen: (
     open: boolean | ((previousMenuOpenState: boolean) => boolean),
   ) => void;
-  closeMenu: () => void;
 }
 
 export const Dropdown = ({
@@ -17,7 +16,6 @@ export const Dropdown = ({
   open,
   depthLevel,
   setMenuOpen,
-  closeMenu,
 }: DropdownProps) => {
   depthLevel = depthLevel + 1;
 
@@ -30,7 +28,6 @@ export const Dropdown = ({
           depthLevel={depthLevel}
           menuOpen={open}
           setMenuOpen={setMenuOpen}
-          closeMenu={closeMenu}
         />
       ))}
     </DropdownItemsContainer>

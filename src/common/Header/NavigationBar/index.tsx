@@ -8,8 +8,6 @@ export const NavigationBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const depthLevel = 0;
 
-  const closeMenu = () => setMenuOpen(false);
-
   return (
     <Wrapper>
       <Home />
@@ -20,7 +18,6 @@ export const NavigationBar = () => {
           depthLevel={depthLevel}
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
-          closeMenu={closeMenu}
         />
       ))}
     </Wrapper>
