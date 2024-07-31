@@ -41,6 +41,7 @@ export const SubPage = ({
             numberOfVotes={0}
             overview=""
             topRatedPosition={placeholder + 1}
+            isLoading={isLoading}
           />
         ))}
       </Wrapper>
@@ -73,6 +74,7 @@ export const SubPage = ({
           overview={dataResult.overview}
           topRated={topRated}
           topRatedPosition={index + 1}
+          isLoading={isLoading}
         />
       ))}
     </Wrapper>

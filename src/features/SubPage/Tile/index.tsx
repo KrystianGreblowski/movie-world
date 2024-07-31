@@ -31,6 +31,7 @@ interface TileProps {
   overview: string;
   topRated?: boolean;
   topRatedPosition: number;
+  isLoading: boolean;
 }
 
 export const Tile = ({
@@ -45,38 +46,41 @@ export const Tile = ({
   overview,
   topRated,
   topRatedPosition,
+  isLoading,
 }: TileProps) => {
   return (
     <Container>
       <Image src={getImageSrc(imagePath, imageSize)} />
       {topRated && <TopRatedPosition>{topRatedPosition}</TopRatedPosition>}
 
-      <Information>
-        <Details>
-          <Title>{title}</Title>
+      {!isLoading && (
+        <Information>
+          <Details>
+            <Title>{title}</Title>
 
-          <ReleaseYear>{getYearFromDate(releaseDate)}</ReleaseYear>
-          {overview.length < 400 && <Overview>{overview}</Overview>}
+            <ReleaseYear>{getYearFromDate(releaseDate)}</ReleaseYear>
+            {overview.length < 400 && <Overview>{overview}</Overview>}
 
-          <GenresContainer>
-            {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
-              <Genre key={name}>{name}</Genre>
-            ))}
-          </GenresContainer>
-        </Details>
+            <GenresContainer>
+              {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
+                <Genre key={name}>{name}</Genre>
+              ))}
+            </GenresContainer>
+          </Details>
 
-        {numberOfVotes > 0 ? (
-          <RatingContainer>
-            <RatingIcon />
-            <Rating>{voteAverage.toFixed(1)}</Rating>
-            <NumberOfVotes>
-              {numberOfVotes} {numberOfVotes === 1 ? "vote" : "votes"}
-            </NumberOfVotes>
-          </RatingContainer>
-        ) : (
-          <NoVotes>No votes yet</NoVotes>
-        )}
-      </Information>
+          {numberOfVotes > 0 ? (
+            <RatingContainer>
+              <RatingIcon />
+              <Rating>{voteAverage.toFixed(1)}</Rating>
+              <NumberOfVotes>
+                {numberOfVotes} {numberOfVotes === 1 ? "vote" : "votes"}
+              </NumberOfVotes>
+            </RatingContainer>
+          ) : (
+            <NoVotes>No votes yet</NoVotes>
+          )}
+        </Information>
+      )}
     </Container>
   );
 };
