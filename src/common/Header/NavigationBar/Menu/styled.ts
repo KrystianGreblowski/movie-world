@@ -116,6 +116,19 @@ export const DropdownItemLink = styled(NavLink)`
   width: 100px;
 `;
 
+export const DropdownItemButton = styled.button`
+  background-color: inherit;
+  padding: 0;
+  color: inherit;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 38px;
+  width: 100px;
+  cursor: pointer;
+`;
+
 export const DropdownItemTitle = styled.p`
   margin: 0;
   font-size: 18px;

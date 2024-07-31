@@ -5,6 +5,7 @@ import {
   MenuImage,
   MenuTitle,
   DropdownItem,
+  DropdownItemButton,
   DropdownItemLink,
   DropdownItemArrow,
   DropdownItemTitle,
@@ -18,7 +19,7 @@ interface MenuProps {
   depthLevel: number;
   menuOpen: boolean;
   setMenuOpen: (
-    open: boolean | ((previousOpenState: boolean) => boolean),
+    open: boolean | ((previousMenuOpenState: boolean) => boolean),
   ) => void;
   closeMenu: () => void;
 }
@@ -37,7 +38,12 @@ export const Menu = ({
     closeMenu();
   });
 
-  const handleItemClick = () => {
+  const handleDropdownItemButtonClick = () => {
+    setOpen(true);
+    setMenuOpen(true);
+  };
+
+  const handleDropdownItemLinkClick = () => {
     setOpen(false);
     closeMenu();
   };
@@ -63,32 +69,32 @@ export const Menu = ({
             closeMenu={closeMenu}
           />
         </>
-      ) : (
+      ) : items?.submenu ? (
         <DropdownItem
           onMouseEnter={() => setOpen(true)}
           onMouseLeave={() => setOpen(false)}
-          onClick={handleItemClick}
         >
-          {items?.submenu ? (
-            <>
-              <DropdownItemLink to={items.url}>
-                <DropdownItemTitle>{items.title}</DropdownItemTitle>
-                <DropdownItemArrow />
-              </DropdownItemLink>
+          <DropdownItemButton onClick={handleDropdownItemButtonClick}>
+            <DropdownItemTitle>{items.title}</DropdownItemTitle>
+            <DropdownItemArrow />
+          </DropdownItemButton>
 
-              <Dropdown
-                submenus={items.submenu}
-                open={open}
-                depthLevel={depthLevel}
-                setMenuOpen={setMenuOpen}
-                closeMenu={closeMenu}
-              />
-            </>
-          ) : (
-            <DropdownItemLink to={items.url}>
-              <DropdownItemTitle>{items?.title}</DropdownItemTitle>
-            </DropdownItemLink>
-          )}
+          <Dropdown
+            submenus={items.submenu}
+            open={open}
+            depthLevel={depthLevel}
+            setMenuOpen={setMenuOpen}
+            closeMenu={closeMenu}
+          />
+        </DropdownItem>
+      ) : (
+        <DropdownItem>
+          <DropdownItemLink
+            to={items.url}
+            onClick={handleDropdownItemLinkClick}
+          >
+            <DropdownItemTitle>{items?.title}</DropdownItemTitle>
+          </DropdownItemLink>
         </DropdownItem>
       )}
     </Wrapper>
