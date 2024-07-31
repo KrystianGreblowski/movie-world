@@ -64,7 +64,6 @@ export const Menu = ({
             open={menuOpen}
             depthLevel={depthLevel}
             setMenuOpen={setMenuOpen}
-            // closeMenu={closeMenu}
           />
         </>
       ) : items?.submenu ? (
@@ -82,7 +81,6 @@ export const Menu = ({
             open={open}
             depthLevel={depthLevel}
             setMenuOpen={setMenuOpen}
-            // closeMenu={closeMenu}
           />
         </DropdownItem>
       ) : (
