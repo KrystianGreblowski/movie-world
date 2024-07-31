@@ -3,7 +3,7 @@ import { toMainPage } from "../../../../core/routes";
 
 export const Home = () => {
   return (
-    <AppInfo href={toMainPage()}>
+    <AppInfo to={toMainPage()}>
       <AppLogo />
       <AppName>MOVIE WORLD</AppName>
     </AppInfo>
