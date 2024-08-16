@@ -1,9 +1,11 @@
 # MOVIE WORLD
+![Readme Preview](https://i.postimg.cc/t4B3s9dS/movie-world-main-page.png)
+![Readme Preview](https://i.postimg.cc/wvG4Lhhr/movie-world-sub-page.png)
+
 The application is under development. I am working hard to release it as soon as possible :muscle:
 
 ## Demo
-Here is a demo of the project:
-[Movie World](https://krystiangreblowski.github.io/movie-world/)
+[Click here](https://krystiangreblowski.github.io/movie-world/)
 
 ## Technology used
 <p>
