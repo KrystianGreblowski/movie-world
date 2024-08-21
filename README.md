@@ -1,8 +1,14 @@
 # MOVIE WORLD
+
+​Movie World is a place where you can find lots of information about films, TV series and people from the film industry.
+
+The application is still under development. I am working hard to release it as soon as possible :muscle:
+
 ![Readme Preview](https://i.postimg.cc/t4B3s9dS/movie-world-main-page.png)
+
 ![Readme Preview](https://i.postimg.cc/wvG4Lhhr/movie-world-sub-page.png)
 
-The application is under development. I am working hard to release it as soon as possible :muscle:
+
 
 ## Demo
 [Click here](https://krystiangreblowski.github.io/movie-world/)
