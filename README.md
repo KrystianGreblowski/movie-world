@@ -1,6 +1,6 @@
 # MOVIE WORLD
 
-​Movie World is a place where you can find lots of information about films, TV series and people from the film industry.
+​Movie World is a place where you can find information about films, TV series and people from the film industry.
 
 The application is still under development. I am working hard to release it as soon as possible :muscle:
 
