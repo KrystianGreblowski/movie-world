@@ -6,7 +6,7 @@ interface Data {
   title: string;
   name: string;
   genre_ids: number[];
-  backdrop_path: string;
+  backdrop_path?: string;
   poster_path: string;
   release_date: string;
   first_air_date: string;
@@ -29,7 +29,7 @@ export const useDetailsDataFromApi = ({
     queryFn: fetchDataFromApi<Data>,
   });
 
-  const dataResults = data?.data || {};
+  const dataResults = data?.data;
 
   return { isLoading, error, dataResults };
 };
