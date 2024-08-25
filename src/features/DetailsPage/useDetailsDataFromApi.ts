@@ -1,11 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchDataFromApi } from "../../common/api/fetchDataFromApi";
 
+interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface ProductionCountry {
+  iso_3166_1: string;
+  name: string;
+}
+
 interface Data {
   id: number;
   title: string;
   name: string;
-  genre_ids: number[];
+  genres: Genre[];
+  production_countries: ProductionCountry[];
   backdrop_path?: string;
   poster_path: string;
   release_date: string;

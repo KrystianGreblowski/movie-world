@@ -15,6 +15,9 @@ export const Wrapper = styled.main`
   margin: 0 auto;
   opacity: 0;
   animation: ${fadeIn} 0.2s ease-in-out 0.5s forwards;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 64px;
 `;
 
 export const Header = styled.header``;
