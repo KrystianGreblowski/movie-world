@@ -19,26 +19,3 @@ export const Wrapper = styled.main`
   grid-template-columns: 1fr;
   grid-gap: 64px;
 `;
-
-export const Header = styled.header``;
-
-export const HeaderImageContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  max-width: 1384px;
-  max-height: 800px;
-  box-shadow: inset 0 0 90px 70px ${({ theme }) => theme.color.black};
-`;
-
-export const HeaderImage = styled.img`
-  width: 100%;
-  height: 100%;
-  max-width: 1384px;
-  max-height: 800px;
-  object-fit: cover;
-  border-radius: 2px;
-  position: relative;
-  z-index: -1;
-`;

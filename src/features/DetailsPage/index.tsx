@@ -1,8 +1,8 @@
-import { Wrapper, Header, HeaderImage, HeaderImageContainer } from "./styled";
+import { Wrapper } from "./styled";
 import { useDetailsDataFromApi } from "./useDetailsDataFromApi";
-import { getImageSrc } from "./getImageSrc/getImageSrc";
 import { MainInfo } from "./MainInfo";
 import { ExtraInfo } from "./ExtraInfo";
+import { Header } from "./Header";
 
 export const DetailsPage = () => {
   const { isLoading, error, dataResults } = useDetailsDataFromApi({
@@ -13,13 +13,7 @@ export const DetailsPage = () => {
   return (
     <Wrapper>
       {dataResults && (
-        <Header>
-          <HeaderImageContainer>
-            <HeaderImage
-              src={getImageSrc(dataResults.backdrop_path, "original")}
-            />
-          </HeaderImageContainer>
-        </Header>
+        <Header imagePath={dataResults.backdrop_path} imageSize="original" />
       )}
 
       {dataResults && (
