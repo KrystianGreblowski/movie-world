@@ -11,19 +11,29 @@ export interface ProductionCountry {
   name: string;
 }
 
+export interface CastMember {
+  id: number;
+  profile_path: string;
+  name: string;
+  character: string;
+}
+
 interface Data {
   id: number;
   title: string;
   name: string;
   genres: Genre[];
   production_countries: ProductionCountry[];
-  backdrop_path?: string;
+  backdrop_path: string;
   poster_path: string;
   release_date: string;
   first_air_date: string;
   vote_average: number;
   vote_count: number;
   overview: string;
+  credits: {
+    cast: CastMember[];
+  };
 }
 
 interface useDataParameters {
