@@ -1,7 +1,7 @@
 import placeholder from "./placeholder.png";
 import noImage from "./noImage.png";
 
-export const getImageSrc = (imagePath?: string, imageSize?: string) => {
+export const getImageSrc = (imagePath: string, imageSize: string) => {
   switch (imagePath) {
     case "placeholder":
       return placeholder;
