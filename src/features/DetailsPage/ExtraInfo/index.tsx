@@ -17,7 +17,6 @@ interface ExtraInfoProps {
 }
 
 export const ExtraInfo = ({ title, castData }: ExtraInfoProps) => {
-  console.log(castData);
   return (
     <Container>
       <Title>{title}</Title>
