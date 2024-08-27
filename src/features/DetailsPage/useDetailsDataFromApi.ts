@@ -18,6 +18,11 @@ export interface CastMember {
   character: string;
 }
 
+interface CrewMember {
+  name: string;
+  job: string;
+}
+
 interface Data {
   id: number;
   title: string;
@@ -33,6 +38,7 @@ interface Data {
   overview: string;
   credits: {
     cast: CastMember[];
+    crew: CrewMember[];
   };
 }
 

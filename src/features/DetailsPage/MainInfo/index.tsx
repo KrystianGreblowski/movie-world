@@ -30,6 +30,7 @@ interface MainInfoProps {
   tileType: "movie" | "series";
   productionCountries: string[];
   releaseDate: string;
+  director: string;
   voteAverage: number;
   numberOfVotes: number;
   overview: string;
@@ -43,6 +44,7 @@ export const MainInfo = ({
   tileType,
   productionCountries,
   releaseDate,
+  director,
   voteAverage,
   numberOfVotes,
   overview,
@@ -71,6 +73,11 @@ export const MainInfo = ({
             <ExtraInfoContainer>
               <ExtraInfoTitle>Release date:</ExtraInfoTitle>
               <ExtraInfoContent>{formatDate(releaseDate)}</ExtraInfoContent>
+            </ExtraInfoContainer>
+
+            <ExtraInfoContainer>
+              <ExtraInfoTitle>Director:</ExtraInfoTitle>
+              <ExtraInfoContent>{director}</ExtraInfoContent>
             </ExtraInfoContainer>
 
             <GenresContainer>

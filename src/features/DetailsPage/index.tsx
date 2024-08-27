@@ -27,6 +27,11 @@ export const DetailsPage = () => {
             (productionCountry) => productionCountry.name,
           )}
           releaseDate={dataResults.release_date}
+          director={
+            dataResults.credits.crew.filter(
+              (crew) => crew.job === "Director",
+            )[0].name
+          }
           voteAverage={dataResults.vote_average}
           numberOfVotes={dataResults.vote_count}
           overview={dataResults.overview}
