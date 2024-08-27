@@ -8,8 +8,6 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 12px;
-  padding: 12px;
-  margin-bottom: 128px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
     padding: 10px;
