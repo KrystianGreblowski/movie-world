@@ -6,7 +6,7 @@ import { Header } from "./Header";
 
 export const DetailsPage = () => {
   const { isLoading, error, dataResults } = useDetailsDataFromApi({
-    endpoint: "movie/533535",
+    endpoint: "movie/121",
     params: { language: "en-US", append_to_response: "credits" },
   });
 
