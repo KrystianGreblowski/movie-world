@@ -43,13 +43,13 @@ export const Tile = styled.div`
   border-radius: 2px;
 `;
 
-export const TileImage = styled.img`
+export const Image = styled.img`
   width: 100%;
   object-fit: cover;
   border-radius: inherit;
 `;
 
-export const TileInfo = styled.div`
+export const Info = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -57,12 +57,12 @@ export const TileInfo = styled.div`
   padding: 0 12px 12px 12px;
 `;
 
-export const TileName = styled.p`
+export const Name = styled.p`
   margin: 0 0 12px 0;
   font-size: 22px;
   font-weight: 600;
 `;
-export const TileExtraInfo = styled.p`
+export const About = styled.p`
   margin: 0;
   font-size: 16px;
   font-weight: 400;

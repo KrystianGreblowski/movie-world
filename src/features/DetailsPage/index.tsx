@@ -34,7 +34,7 @@ export const DetailsPage = () => {
       )}
 
       {dataResults && (
-        <ExtraInfo title="Cast" castData={dataResults.credits.cast} />
+        <ExtraInfo title="Cast" data={dataResults.credits.cast} />
       )}
     </Wrapper>
   );

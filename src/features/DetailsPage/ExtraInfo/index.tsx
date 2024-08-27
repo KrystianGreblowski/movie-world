@@ -3,35 +3,32 @@ import {
   Title,
   TilesContainer,
   Tile,
-  TileImage,
-  TileInfo,
-  TileName,
-  TileExtraInfo,
+  Image,
+  Info,
+  Name,
+  About,
 } from "./styled";
 import { CastMember } from "../useDetailsDataFromApi";
 import { getImageSrc } from "./getImageSrc/getImageSrc";
 
 interface ExtraInfoProps {
   title: string;
-  castData: CastMember[];
+  data: CastMember[];
 }
 
-export const ExtraInfo = ({ title, castData }: ExtraInfoProps) => {
+export const ExtraInfo = ({ title, data }: ExtraInfoProps) => {
   return (
     <Container>
       <Title>{title}</Title>
 
       <TilesContainer>
-        {castData.map((cast) => (
+        {data.map((cast) => (
           <Tile key={cast.id}>
-            <TileImage
-              src={getImageSrc(cast.profile_path, "h632")}
-              alt={title}
-            />
-            <TileInfo>
-              <TileName>{cast.name}</TileName>
-              <TileExtraInfo>{cast.character}</TileExtraInfo>
-            </TileInfo>
+            <Image src={getImageSrc(cast.profile_path, "h632")} alt={title} />
+            <Info>
+              <Name>{cast.name}</Name>
+              <About>{cast.character}</About>
+            </Info>
           </Tile>
         ))}
       </TilesContainer>
