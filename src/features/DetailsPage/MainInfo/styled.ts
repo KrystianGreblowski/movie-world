@@ -12,9 +12,16 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 12px;
+  margin-top: 64px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     grid-gap: 8px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: 8px;
+    margin-top: 24px;
   }
 `;
 
