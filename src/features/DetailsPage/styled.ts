@@ -18,4 +18,12 @@ export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 64px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    grid-gap: 32px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: 24px;
+  }
 `;
