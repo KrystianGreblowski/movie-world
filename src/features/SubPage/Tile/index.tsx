@@ -18,8 +18,10 @@ import {
 import { getImageSrc } from "./getImageSrc/getImageSrc";
 import { getGenresNamesFromGenresIds } from "../../../common/functions/getGenresNamesFromGenresIds";
 import { getYearFromDate } from "../../../common/functions/getYearFromDate";
+import { toMovieDetails } from "../../../core/routes";
 
 interface TileProps {
+  id: number;
   title: string;
   imagePath: string;
   imageSize: string;
@@ -35,6 +37,7 @@ interface TileProps {
 }
 
 export const Tile = ({
+  id,
   title,
   imagePath,
   imageSize,
@@ -49,7 +52,7 @@ export const Tile = ({
   isLoading,
 }: TileProps) => {
   return (
-    <Container>
+    <Container to={toMovieDetails(id.toString())}>
       <Image src={getImageSrc(imagePath, imageSize)} />
       {topRated && <TopRatedPosition>{topRatedPosition}</TopRatedPosition>}
 

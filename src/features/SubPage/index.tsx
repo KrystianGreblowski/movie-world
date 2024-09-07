@@ -30,6 +30,7 @@ export const SubPage = ({
 
         {getArrayForPlaceholders(20).map((placeholder) => (
           <Tile
+            id={0}
             key={placeholder}
             title=""
             imagePath="placeholder"
@@ -58,6 +59,7 @@ export const SubPage = ({
 
       {dataResults?.map((dataResult, index) => (
         <Tile
+          id={dataResult.id}
           key={dataResult.id}
           title={dataType === "movie" ? dataResult.title : dataResult.name}
           imagePath={dataResult.poster_path}

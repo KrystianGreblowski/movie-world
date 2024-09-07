@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { ReactComponent as Star } from "./star.svg";
 
-export const Container = styled.div`
+export const Container = styled(NavLink)`
+  color: inherit;
+  text-decoration: none;
   height: auto;
   width: 100%;
   border-radius: 2px;
@@ -10,6 +13,12 @@ export const Container = styled.div`
   grid-template-columns: auto 1fr;
   grid-gap: 12px;
   padding: 12px;
+  transition: transform 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
     padding: 10px;
