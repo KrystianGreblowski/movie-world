@@ -9,13 +9,8 @@ export const Container = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-    padding: 10px;
-  }
-
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    padding: 1.6vw;
-    grid-gap: 2.8vw;
+    grid-gap: 8px;
   }
 `;
 
@@ -23,6 +18,10 @@ export const InformationContainer = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    grid-gap: 8px;
+  }
 `;
 
 export const Image = styled.img`
@@ -34,36 +33,13 @@ export const Image = styled.img`
   z-index: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    height: 300px;
-    width: 200px;
+    height: 315px;
+    width: 210px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    height: 210px;
-    width: 140px;
-  }
-`;
-
-export const TopRatedPosition = styled.p`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid ${({ theme }) => theme.color.gray};
-  border-radius: 2px;
-  margin: 0;
-  position: absolute;
-  z-index: 1;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: ${({ theme }) => theme.color.doveGray};
-  color: ${({ theme }) => theme.color.white};
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: 14px;
-    width: 24px;
-    height: 24px;
+    height: 225px;
+    width: 150px;
   }
 `;
 
@@ -74,6 +50,10 @@ export const Information = styled.div`
   background-color: ${({ theme }) => theme.color.mineShaftDark};
   padding: 10px;
   border-radius: 2px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    padding: 6px;
+  }
 `;
 
 export const Details = styled.article`
@@ -81,20 +61,30 @@ export const Details = styled.article`
   grid-template-columns: 1fr;
   grid-gap: 16px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    grid-gap: 1.4vw;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    grid-gap: 2.4vw;
+    grid-gap: 1.8vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: 2vw;
   }
 `;
 
 export const Title = styled.h2`
   margin: 0;
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 600;
-  padding-top: 2px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 4.4vw;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 5.4vw;
-    padding-top: 0;
+    font-size: 3.8vw;
   }
 `;
 
@@ -102,15 +92,27 @@ export const ExtraInfoContainer = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 6px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    grid-gap: 5px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: 4px;
+  }
 `;
 
 export const ExtraInfoTitle = styled.div`
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 2vw;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 3vw;
+    font-size: 2.6vw;
   }
 `;
 
@@ -118,11 +120,15 @@ export const ExtraInfoContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 2vw;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 3vw;
+    font-size: 2.6vw;
   }
 `;
 
@@ -140,19 +146,27 @@ export const Genre = styled.p`
   padding: 8px;
   border-radius: 2px;
   background-color: ${({ theme }) => theme.color.doveGray};
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 1.8vw;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     margin: 0 8px 8px 0;
-    padding: 1.4vw;
-    font-size: 2.6vw;
+    padding: 1.2vw;
+    font-size: 2.2vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 0 6px 6px 0;
   }
 `;
 
 export const Overview = styled.p`
   margin: 0;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.4;
   background-color: ${({ theme }) => theme.color.mineShaftDark};
@@ -160,61 +174,105 @@ export const Overview = styled.p`
   border-radius: 2px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-    padding-right: 0;
-    font-size: 16px;
-    line-height: 1.3;
+    font-size: 2.2vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 2.9vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    padding: 6px;
   }
 `;
 
 export const RatingContainer = styled.div`
   display: flex;
   align-items: flex-end;
+  margin-top: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin-top: 0;
+  }
 `;
 
 export const RatingIcon = styled(Star)`
-  width: 28px;
-  height: 28px;
-  margin-right: 8px;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    width: 26px;
-    height: 26px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: 24px;
+    height: 24px;
     margin-right: 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: 20px;
+    height: 20px;
   }
 `;
 
 export const Rating = styled.p`
   margin: 0 8px 0 0;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   flex-shrink: 0;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 21px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 16px;
+    margin: 0 6px 0 0;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: 18px;
+    font-size: 14px;
   }
 `;
 
 export const NumberOfVotes = styled.p`
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   padding-bottom: 1px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 16px;
+    padding-bottom: 3px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 14px;
     padding-bottom: 2px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: 14px;
+    font-size: 11px;
   }
 `;
 
 export const NoVotes = styled.p`
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 18px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    font-size: 12px;
   }
 `;
