@@ -9,3 +9,5 @@ export const toPopularSeries = () => `/series/popular`;
 export const toTrendingSeries = () => `/series/trending`;
 export const toUpcomingSeries = () => `/series/upcoming`;
 export const toTopRatedSeries = () => `/series/top-rated`;
+
+export const toMovieDetails = (id: string) => `/movie/${id}`;

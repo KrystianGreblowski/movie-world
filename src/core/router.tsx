@@ -1,10 +1,11 @@
 import { createHashRouter } from "react-router-dom";
 import { App } from "./App";
-// import { MainPage } from "../features/MainPage";
+import { MainPage } from "../features/MainPage";
 import { SubPage } from "../features/SubPage";
 import { DetailsPage } from "../features/DetailsPage";
 import {
   toMainPage,
+  toMovieDetails,
   toPopularMovies,
   toPopularSeries,
   toTopRatedMovies,
@@ -22,8 +23,7 @@ export const router = createHashRouter([
     children: [
       {
         path: toMainPage(),
-        // element: <MainPage />,
-        element: <DetailsPage />,
+        element: <MainPage />,
       },
       {
         path: toPopularMovies(),
@@ -114,6 +114,11 @@ export const router = createHashRouter([
             topRated
           />
         ),
+      },
+
+      {
+        path: toMovieDetails(":id"),
+        element: <DetailsPage />,
       },
     ],
   },

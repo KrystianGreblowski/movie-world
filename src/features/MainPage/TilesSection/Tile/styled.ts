@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 interface TileProps {
   $mainTile?: boolean;
@@ -8,8 +9,9 @@ interface TileProps {
 const defaultTileMaxHeightPX = 190;
 const asideTileMaxHeightPX = 250;
 
-export const Container = styled.div`
+export const Container = styled(NavLink)`
   position: relative;
+  color: inherit;
 
   &:hover {
     cursor: pointer;

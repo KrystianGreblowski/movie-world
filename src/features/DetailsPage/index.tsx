@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import { Wrapper } from "./styled";
 import { useDetailsDataFromApi } from "./useDetailsDataFromApi";
 import { MainInfo } from "./MainInfo";
@@ -5,8 +6,10 @@ import { ExtraInfo } from "./ExtraInfo";
 import { Header } from "./Header";
 
 export const DetailsPage = () => {
+  const { id } = useParams();
+
   const { isLoading, error, dataResults } = useDetailsDataFromApi({
-    endpoint: "movie/122",
+    endpoint: `movie/${id}`,
     params: { language: "en-US", append_to_response: "credits" },
   });
 

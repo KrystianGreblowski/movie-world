@@ -8,8 +8,10 @@ import {
 } from "./styled";
 import { getGenresNamesFromGenresIds } from "../../../../common/functions/getGenresNamesFromGenresIds";
 import { getImageSrc } from "./getImageSrc/getImageSrc";
+import { toMovieDetails } from "../../../../core/routes";
 
 interface MainPageTileProps {
+  id: number;
   tileType: "movie" | "series";
   title: string;
   genres: number[];
@@ -20,6 +22,7 @@ interface MainPageTileProps {
 }
 
 export const Tile = ({
+  id,
   tileType,
   title,
   genres,
@@ -29,7 +32,7 @@ export const Tile = ({
   asideTile,
 }: MainPageTileProps) => {
   return (
-    <Container>
+    <Container to={toMovieDetails(id.toString())}>
       <Title $mainTile={mainTile} $asideTile={asideTile}>
         {title}
       </Title>

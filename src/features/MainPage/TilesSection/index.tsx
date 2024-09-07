@@ -34,6 +34,7 @@ export const TilesSection = ({
 
             <TilesContainer $mainSection={mainSection}>
               <Tile
+                id={0}
                 mainTile
                 tileType={dataType}
                 title=""
@@ -46,6 +47,7 @@ export const TilesSection = ({
                 {getArrayForPlaceholders(numberOfTiles - 1).map(
                   (placeholder) => (
                     <Tile
+                      id={0}
                       key={placeholder}
                       asideTile
                       tileType={dataType}
@@ -69,6 +71,7 @@ export const TilesSection = ({
 
           <TilesContainer $mainSection={mainSection}>
             <Tile
+              id={dataResults[0].id}
               mainTile
               tileType={dataType}
               title={dataResults[0].title}
@@ -80,6 +83,7 @@ export const TilesSection = ({
             <AsideTiles>
               {dataResults.slice(1, numberOfTiles).map((result) => (
                 <Tile
+                  id={result.id}
                   key={result.id}
                   asideTile
                   tileType={dataType}
@@ -103,6 +107,7 @@ export const TilesSection = ({
             <TilesContainer>
               {getArrayForPlaceholders(numberOfTiles).map((placeholder) => (
                 <Tile
+                  id={0}
                   key={placeholder}
                   tileType={dataType}
                   title=""
@@ -124,6 +129,7 @@ export const TilesSection = ({
           <TilesContainer>
             {dataResults.slice(0, numberOfTiles).map((dataResult) => (
               <Tile
+                id={dataResult.id}
                 key={dataResult.id}
                 tileType={dataType}
                 title={
