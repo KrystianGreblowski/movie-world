@@ -12,7 +12,7 @@ const fadeIn = keyframes`
 export const Wrapper = styled.main`
   max-width: 1384px;
   padding: 0 8px;
-  margin: 0 auto;
+  margin: 0 auto 64px;
   opacity: 0;
   animation: ${fadeIn} 0.2s ease-in-out 0.5s forwards;
   display: grid;
