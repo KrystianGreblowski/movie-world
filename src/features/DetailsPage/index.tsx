@@ -6,9 +6,38 @@ import { Header } from "./Header";
 
 export const DetailsPage = () => {
   const { isLoading, error, dataResults } = useDetailsDataFromApi({
-    endpoint: "movie/121",
+    endpoint: "movie/122",
     params: { language: "en-US", append_to_response: "credits" },
   });
+
+  if (isLoading) {
+    return (
+      <Wrapper>
+        <Header imagePath="placeholder" imageSize="original" />
+
+        <MainInfo
+          title=""
+          imagePath="placeholder"
+          imageSize="w500"
+          genres={[]}
+          tileType="movie"
+          productionCountries={[]}
+          releaseDate=""
+          director=""
+          voteAverage={0}
+          numberOfVotes={0}
+          overview=""
+          isLoading
+        />
+
+        <ExtraInfo title="" data={[]} />
+      </Wrapper>
+    );
+  }
+
+  if (error) {
+    return <>Error</>;
+  }
 
   return (
     <Wrapper>

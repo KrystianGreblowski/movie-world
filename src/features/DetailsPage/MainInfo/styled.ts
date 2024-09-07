@@ -1,5 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as Star } from "./star.svg";
+
+interface MainInfoStyledProps {
+  $isLoading?: boolean;
+}
 
 export const Container = styled.div`
   height: auto;
@@ -164,7 +168,7 @@ export const Genre = styled.p`
   }
 `;
 
-export const Overview = styled.p`
+export const Overview = styled.p<MainInfoStyledProps>`
   margin: 0;
   font-size: 22px;
   font-weight: 400;
@@ -184,6 +188,16 @@ export const Overview = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     padding: 6px;
   }
+
+  ${({ $isLoading }) =>
+    $isLoading &&
+    css`
+      height: 400px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        height: 200px;
+      }
+    `}
 `;
 
 export const RatingContainer = styled.div`
@@ -242,7 +256,7 @@ export const NumberOfVotes = styled.p`
   margin: 0;
   font-size: 18px;
   font-weight: 400;
-  padding-bottom: 1px;
+  padding-bottom: 2px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
     font-size: 16px;
