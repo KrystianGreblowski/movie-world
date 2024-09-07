@@ -50,6 +50,12 @@ export const Tile = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 12px;
   border-radius: 2px;
+  transition: transform 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
 `;
 
 export const Image = styled.img`
