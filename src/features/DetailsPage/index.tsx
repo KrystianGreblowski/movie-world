@@ -5,11 +5,15 @@ import { MainInfo } from "./MainInfo";
 import { ExtraInfo } from "./ExtraInfo";
 import { Header } from "./Header";
 
-export const DetailsPage = () => {
+interface DetailsPageProps {
+  detailsType: "movie" | "tv";
+}
+
+export const DetailsPage = ({ detailsType }: DetailsPageProps) => {
   const { id } = useParams();
 
   const { isLoading, error, dataResults } = useDetailsDataFromApi({
-    endpoint: `movie/${id}`,
+    endpoint: `${detailsType}/${id}`,
     params: { language: "en-US", append_to_response: "credits" },
   });
 
@@ -50,19 +54,25 @@ export const DetailsPage = () => {
 
       {dataResults && (
         <MainInfo
-          title={dataResults.title}
+          title={detailsType === "movie" ? dataResults.title : dataResults.name}
           imagePath={dataResults.poster_path}
           imageSize="w500"
           genres={dataResults.genres.map((genre) => genre.id)}
-          tileType="movie"
+          tileType={detailsType === "movie" ? "movie" : "series"}
           productionCountries={dataResults.production_countries.map(
             (productionCountry) => productionCountry.name,
           )}
-          releaseDate={dataResults.release_date}
+          releaseDate={
+            detailsType === "movie"
+              ? dataResults.release_date
+              : dataResults.first_air_date
+          }
           director={
-            dataResults.credits.crew.filter(
-              (crew) => crew.job === "Director",
-            )[0].name
+            dataResults.credits.crew.some((crew) => crew.job === "Director")
+              ? dataResults.credits.crew.filter(
+                  (crew) => crew.job === "Director",
+                )[0].name
+              : ""
           }
           voteAverage={dataResults.vote_average}
           numberOfVotes={dataResults.vote_count}

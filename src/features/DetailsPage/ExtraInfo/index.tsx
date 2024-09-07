@@ -19,7 +19,7 @@ interface ExtraInfoProps {
 export const ExtraInfo = ({ title, data }: ExtraInfoProps) => {
   return (
     <Container>
-      <Title>{title}</Title>
+      {data.length > 0 && <Title>{title}</Title>}
 
       <TilesContainer>
         {data.map((cast) => (

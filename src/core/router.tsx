@@ -8,6 +8,7 @@ import {
   toMovieDetails,
   toPopularMovies,
   toPopularSeries,
+  toSeriesDetails,
   toTopRatedMovies,
   toTopRatedSeries,
   toTrendingMovies,
@@ -118,7 +119,11 @@ export const router = createHashRouter([
 
       {
         path: toMovieDetails(":id"),
-        element: <DetailsPage />,
+        element: <DetailsPage detailsType="movie" />,
+      },
+      {
+        path: toSeriesDetails(":id"),
+        element: <DetailsPage detailsType="tv" />,
       },
     ],
   },

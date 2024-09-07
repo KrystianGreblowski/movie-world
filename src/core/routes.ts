@@ -11,3 +11,4 @@ export const toUpcomingSeries = () => `/series/upcoming`;
 export const toTopRatedSeries = () => `/series/top-rated`;
 
 export const toMovieDetails = (id: string) => `/movie/${id}`;
+export const toSeriesDetails = (id: string) => `/series/${id}`;
