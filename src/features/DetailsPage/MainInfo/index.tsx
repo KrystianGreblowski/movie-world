@@ -61,27 +61,33 @@ export const MainInfo = ({
             <Details>
               <Title>{title}</Title>
 
-              <ExtraInfoContainer>
-                <ExtraInfoTitle>Production:</ExtraInfoTitle>
-                <ExtraInfoContent>
-                  {productionCountries.map((country, index) => (
-                    <ProductionCountryName key={country}>
-                      {country}
-                      {index !== productionCountries.length - 1 && ","}
-                    </ProductionCountryName>
-                  ))}
-                </ExtraInfoContent>
-              </ExtraInfoContainer>
+              {productionCountries.length !== 0 && (
+                <ExtraInfoContainer>
+                  <ExtraInfoTitle>Production:</ExtraInfoTitle>
+                  <ExtraInfoContent>
+                    {productionCountries.map((country, index) => (
+                      <ProductionCountryName key={country}>
+                        {country}
+                        {index !== productionCountries.length - 1 && ","}
+                      </ProductionCountryName>
+                    ))}
+                  </ExtraInfoContent>
+                </ExtraInfoContainer>
+              )}
 
-              <ExtraInfoContainer>
-                <ExtraInfoTitle>Release date:</ExtraInfoTitle>
-                <ExtraInfoContent>{formatDate(releaseDate)}</ExtraInfoContent>
-              </ExtraInfoContainer>
+              {releaseDate && (
+                <ExtraInfoContainer>
+                  <ExtraInfoTitle>Release date:</ExtraInfoTitle>
+                  <ExtraInfoContent>{formatDate(releaseDate)}</ExtraInfoContent>
+                </ExtraInfoContainer>
+              )}
 
-              <ExtraInfoContainer>
-                <ExtraInfoTitle>Director:</ExtraInfoTitle>
-                <ExtraInfoContent>{director}</ExtraInfoContent>
-              </ExtraInfoContainer>
+              {director && (
+                <ExtraInfoContainer>
+                  <ExtraInfoTitle>Director:</ExtraInfoTitle>
+                  <ExtraInfoContent>{director}</ExtraInfoContent>
+                </ExtraInfoContainer>
+              )}
 
               <GenresContainer>
                 {getGenresNamesFromGenresIds(genres, tileType, 3)?.map(

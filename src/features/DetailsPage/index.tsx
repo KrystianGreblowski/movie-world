@@ -41,7 +41,7 @@ export const DetailsPage = () => {
 
   return (
     <Wrapper>
-      {dataResults && (
+      {dataResults && dataResults.backdrop_path && (
         <Header imagePath={dataResults.backdrop_path} imageSize="original" />
       )}
 
