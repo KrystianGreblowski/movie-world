@@ -119,11 +119,21 @@ export const router = createHashRouter([
 
       {
         path: toMovieDetails(":id"),
-        element: <DetailsPage detailsType="movie" />,
+        element: (
+          <DetailsPage
+            detailsType="movie"
+            params={{ language: "en-US", append_to_response: "credits" }}
+          />
+        ),
       },
       {
         path: toSeriesDetails(":id"),
-        element: <DetailsPage detailsType="tv" />,
+        element: (
+          <DetailsPage
+            detailsType="tv"
+            params={{ language: "en-US", append_to_response: "credits" }}
+          />
+        ),
       },
     ],
   },

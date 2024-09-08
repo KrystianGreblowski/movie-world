@@ -7,14 +7,15 @@ import { Header } from "./Header";
 
 interface DetailsPageProps {
   detailsType: "movie" | "tv";
+  params: Record<string, string>;
 }
 
-export const DetailsPage = ({ detailsType }: DetailsPageProps) => {
+export const DetailsPage = ({ detailsType, params }: DetailsPageProps) => {
   const { id } = useParams();
 
   const { isLoading, error, dataResults } = useDetailsDataFromApi({
     endpoint: `${detailsType}/${id}`,
-    params: { language: "en-US", append_to_response: "credits" },
+    params: params,
   });
 
   if (isLoading) {
