@@ -13,11 +13,9 @@ export const Container = styled(NavLink)`
   grid-template-columns: auto 1fr;
   grid-gap: 12px;
   padding: 12px;
-  transition: transform 0.4s;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.02);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
