@@ -10,6 +10,7 @@ import {
 } from "./styled";
 import { CastMember } from "../useDetailsDataFromApi";
 import { getImageSrc } from "./getImageSrc/getImageSrc";
+import { toPersonDetails } from "../../../core/routes";
 
 interface ExtraInfoProps {
   title: string;
@@ -23,7 +24,7 @@ export const ExtraInfo = ({ title, data }: ExtraInfoProps) => {
 
       <TilesContainer>
         {data.map((cast) => (
-          <Tile key={cast.id}>
+          <Tile to={toPersonDetails(cast.id.toString())} key={cast.id}>
             <Image src={getImageSrc(cast.profile_path, "h632")} alt={title} />
             <Info>
               <Name>{cast.name}</Name>

@@ -27,13 +27,16 @@ interface MainInfoProps {
   imagePath: string;
   imageSize: string;
   genres: number[];
-  tileType: "movie" | "series";
+  tileType: "movie" | "series" | "person";
   productionCountries: string[];
   releaseDate: string;
   director: string;
   voteAverage: number;
   numberOfVotes: number;
   overview: string;
+  dateOfBirth: string;
+  dateOfDeath: string;
+  placeOfBirth: string;
   isLoading?: boolean;
 }
 
@@ -49,8 +52,55 @@ export const MainInfo = ({
   voteAverage,
   numberOfVotes,
   overview,
+  dateOfBirth,
+  dateOfDeath,
+  placeOfBirth,
   isLoading,
 }: MainInfoProps) => {
+  if (tileType === "person") {
+    return (
+      <Container>
+        <InformationContainer>
+          <Image src={getImageSrc(imagePath, imageSize)} />
+
+          <Information>
+            {!isLoading && (
+              <Details>
+                <Title>{title}</Title>
+
+                {placeOfBirth && (
+                  <ExtraInfoContainer>
+                    <ExtraInfoTitle>Place of birth:</ExtraInfoTitle>
+                    <ExtraInfoContent>{placeOfBirth}</ExtraInfoContent>
+                  </ExtraInfoContainer>
+                )}
+
+                {dateOfBirth && (
+                  <ExtraInfoContainer>
+                    <ExtraInfoTitle>Date of birth:</ExtraInfoTitle>
+                    <ExtraInfoContent>
+                      {formatDate(dateOfBirth)}
+                    </ExtraInfoContent>
+                  </ExtraInfoContainer>
+                )}
+
+                {dateOfDeath && (
+                  <ExtraInfoContainer>
+                    <ExtraInfoTitle>Date of death:</ExtraInfoTitle>
+                    <ExtraInfoContent>
+                      {formatDate(dateOfDeath)}
+                    </ExtraInfoContent>
+                  </ExtraInfoContainer>
+                )}
+              </Details>
+            )}
+          </Information>
+        </InformationContainer>
+        {overview && <Overview $isLoading={isLoading}>{overview}</Overview>}
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <InformationContainer>
@@ -115,7 +165,7 @@ export const MainInfo = ({
         </Information>
       </InformationContainer>
 
-      <Overview $isLoading={isLoading}>{overview}</Overview>
+      {overview && <Overview $isLoading={isLoading}>{overview}</Overview>}
     </Container>
   );
 };

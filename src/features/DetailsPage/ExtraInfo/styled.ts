@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
   height: auto;
@@ -43,7 +44,9 @@ export const TilesContainer = styled.div`
   }
 `;
 
-export const Tile = styled.div`
+export const Tile = styled(NavLink)`
+  color: inherit;
+  text-decoration: none;
   height: auto;
   background-color: ${({ theme }) => theme.color.mineShaftDark};
   display: grid;

@@ -6,6 +6,7 @@ import { DetailsPage } from "../features/DetailsPage";
 import {
   toMainPage,
   toMovieDetails,
+  toPersonDetails,
   toPopularMovies,
   toPopularSeries,
   toSeriesDetails,
@@ -26,6 +27,7 @@ export const router = createHashRouter([
         path: toMainPage(),
         element: <MainPage />,
       },
+
       {
         path: toPopularMovies(),
         element: (
@@ -37,6 +39,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toTrendingMovies(),
         element: (
@@ -48,6 +51,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toUpcomingMovies(),
         element: (
@@ -59,6 +63,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toTopRatedMovies(),
         element: (
@@ -71,6 +76,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toPopularSeries(),
         element: (
@@ -82,6 +88,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toTrendingSeries(),
         element: (
@@ -93,6 +100,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toUpcomingSeries(),
         element: (
@@ -104,6 +112,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toTopRatedSeries(),
         element: (
@@ -118,6 +127,13 @@ export const router = createHashRouter([
       },
 
       {
+        path: toPersonDetails(":id"),
+        element: (
+          <DetailsPage detailsType="person" params={{ language: "en-US" }} />
+        ),
+      },
+
+      {
         path: toMovieDetails(":id"),
         element: (
           <DetailsPage
@@ -126,6 +142,7 @@ export const router = createHashRouter([
           />
         ),
       },
+
       {
         path: toSeriesDetails(":id"),
         element: (

@@ -36,6 +36,11 @@ interface Data {
   vote_average: number;
   vote_count: number;
   overview: string;
+  profile_path: string;
+  birthday: string;
+  deathday: string;
+  place_of_birth: string;
+  biography: string;
   credits: {
     cast: CastMember[];
     crew: CrewMember[];
