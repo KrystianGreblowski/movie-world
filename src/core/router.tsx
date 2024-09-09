@@ -1,8 +1,9 @@
 import { createHashRouter } from "react-router-dom";
 import { App } from "./App";
-import { MainPage } from "../features/MainPage";
+// import { MainPage } from "../features/MainPage";
 import { SubPage } from "../features/SubPage";
 import { DetailsPage } from "../features/DetailsPage";
+import { ErrorPage } from "../common/ErrorPage";
 import {
   toMainPage,
   toMovieDetails,
@@ -25,7 +26,8 @@ export const router = createHashRouter([
     children: [
       {
         path: toMainPage(),
-        element: <MainPage />,
+        // element: <MainPage />,
+        element: <ErrorPage />,
       },
 
       {
