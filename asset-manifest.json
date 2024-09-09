@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.js": "/movie-world/static/js/main.2ee1c24a.js",
+    "main.js": "/movie-world/static/js/main.68e3322f.js",
     "static/media/noImage.png": "/movie-world/static/media/noImage.405acb0907e8014c7ec3.png",
     "static/media/placeholder.png": "/movie-world/static/media/placeholder.3546548d1d0b92f9f486.png",
     "index.html": "/movie-world/index.html",
+    "static/media/error.svg": "/movie-world/static/media/error.875adbd821038ab9b0c09aeaef1231f8.svg",
     "static/media/search-loop.svg": "/movie-world/static/media/search-loop.a5ef9e5c5feecd1bd17b671c9d77c011.svg",
     "static/media/app-logo.svg": "/movie-world/static/media/app-logo.a4e0bfe691494b4b18c680c0e7fe580b.svg",
     "static/media/star.svg": "/movie-world/static/media/star.36e3654cdf102ea28072f0aeb8dba57e.svg",
     "static/media/menu.svg": "/movie-world/static/media/menu.c056f13de8116f8bbdd15ab00b6e121b.svg",
     "static/media/arrow-down.svg": "/movie-world/static/media/arrow-down.08c20bae324f0408c657e485bae01063.svg",
     "static/media/arrow-right.svg": "/movie-world/static/media/arrow-right.2198ddcda5041ec6e34d1baaa1c78ea7.svg",
-    "main.2ee1c24a.js.map": "/movie-world/static/js/main.2ee1c24a.js.map"
+    "main.68e3322f.js.map": "/movie-world/static/js/main.68e3322f.js.map"
   },
   "entrypoints": [
-    "static/js/main.2ee1c24a.js"
+    "static/js/main.68e3322f.js"
   ]
 }
