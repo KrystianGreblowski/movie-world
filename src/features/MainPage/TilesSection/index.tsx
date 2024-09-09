@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Wrapper, TilesContainer, Title, AsideTiles } from "./styled";
 import { Tile } from "./Tile";
 import { getArrayForPlaceholders } from "../../../common/functions/getArrayForPlaceholders";
@@ -10,6 +11,7 @@ interface TilesSectionProps {
   endpoint: string;
   params: Record<string, string>;
   mainSection?: boolean;
+  sendErrorStatus: (error: boolean) => void;
 }
 
 export const TilesSection = ({
@@ -19,15 +21,24 @@ export const TilesSection = ({
   endpoint,
   params,
   mainSection,
+  sendErrorStatus,
 }: TilesSectionProps) => {
   const { isLoading, error, dataResults } = useDataFromApi({
     endpoint,
     params,
   });
 
+  useEffect(() => {
+    error ? sendErrorStatus(true) : sendErrorStatus(false);
+  }, [error, sendErrorStatus]);
+
+  if (error) {
+    return null;
+  }
+
   switch (mainSection) {
     case true: {
-      if (isLoading)
+      if (isLoading || !dataResults)
         return (
           <Wrapper>
             <Title $mainSection={mainSection}>{title}</Title>
@@ -63,8 +74,6 @@ export const TilesSection = ({
           </Wrapper>
         );
 
-      if (error) return <div>Error: {error.message}</div>;
-
       return (
         <Wrapper>
           <Title $mainSection={mainSection}>{title}</Title>
@@ -99,7 +108,7 @@ export const TilesSection = ({
       );
     }
     default: {
-      if (isLoading)
+      if (isLoading || !dataResults)
         return (
           <Wrapper>
             <Title>{title}</Title>
@@ -119,8 +128,6 @@ export const TilesSection = ({
             </TilesContainer>
           </Wrapper>
         );
-
-      if (error) return <div>Error: {error.message}</div>;
 
       return (
         <Wrapper>

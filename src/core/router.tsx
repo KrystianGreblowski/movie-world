@@ -1,6 +1,6 @@
 import { createHashRouter } from "react-router-dom";
 import { App } from "./App";
-// import { MainPage } from "../features/MainPage";
+import { MainPage } from "../features/MainPage";
 import { SubPage } from "../features/SubPage";
 import { DetailsPage } from "../features/DetailsPage";
 import { ErrorPage } from "../common/ErrorPage";
@@ -22,12 +22,11 @@ import {
 export const router = createHashRouter([
   {
     element: <App />,
-    errorElement: <>Error</>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: toMainPage(),
-        // element: <MainPage />,
-        element: <ErrorPage />,
+        element: <MainPage />,
       },
 
       {

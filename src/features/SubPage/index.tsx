@@ -2,6 +2,7 @@ import { Wrapper, Title } from "./styled";
 import { Tile } from "./Tile";
 import { useDataFromApi } from "../../common/api/useDataFromApi";
 import { getArrayForPlaceholders } from "../../common/functions/getArrayForPlaceholders";
+import { ErrorPage } from "../../common/ErrorPage";
 
 interface SubPageProps {
   title: string;
@@ -50,7 +51,7 @@ export const SubPage = ({
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <ErrorPage />;
   }
 
   return (

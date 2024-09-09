@@ -4,6 +4,7 @@ import { useDetailsDataFromApi } from "./useDetailsDataFromApi";
 import { MainInfo } from "./MainInfo";
 import { ExtraInfo } from "./ExtraInfo";
 import { Header } from "./Header";
+import { ErrorPage } from "../../common/ErrorPage";
 
 interface DetailsPageProps {
   detailsType: "movie" | "tv" | "person";
@@ -45,7 +46,7 @@ export const DetailsPage = ({ detailsType, params }: DetailsPageProps) => {
       }
 
       if (error) {
-        return <>Error</>;
+        return <ErrorPage />;
       }
 
       return (
@@ -102,7 +103,7 @@ export const DetailsPage = ({ detailsType, params }: DetailsPageProps) => {
       }
 
       if (error) {
-        return <>Error</>;
+        return <ErrorPage />;
       }
 
       return (
