@@ -34,8 +34,8 @@ export const AboutMe = styled.p`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 13px;
+    margin-bottom: 6px;
   }
 `;
 
@@ -58,5 +58,9 @@ export const CopyrightNotice = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
     font-size: 12px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 10px;
   }
 `;
