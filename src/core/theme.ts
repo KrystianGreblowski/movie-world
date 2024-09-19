@@ -2,6 +2,7 @@ export const theme = {
   color: {
     white: "#FFFFFF",
     alto: "#DFDFDF",
+    silverChalice: "#B1B1B1",
     gray: "#8C8787",
     doveGray: "#616161",
     scorpion: "#565656",
