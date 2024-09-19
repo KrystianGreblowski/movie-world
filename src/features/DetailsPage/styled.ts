@@ -19,7 +19,12 @@ export const Wrapper = styled.main`
   grid-template-columns: 1fr;
   grid-gap: 64px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    margin: 0 auto 48px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 0 auto 32px;
     grid-gap: 32px;
   }
 

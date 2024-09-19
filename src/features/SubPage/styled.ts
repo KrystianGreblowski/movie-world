@@ -19,6 +19,10 @@ export const Wrapper = styled.main`
   opacity: 0;
   animation: ${fadeIn} 0.2s ease-in-out 0.5s forwards;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    margin: 48px auto;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
     grid-gap: 12px;
   }
