@@ -26,6 +26,11 @@ export const Url = styled.a`
     font-size: 13px;
   }
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 12px;
+    padding-bottom: 0;
+  }
+
   &:hover {
     color: ${({ theme }) => theme.color.silverChalice};
   }
