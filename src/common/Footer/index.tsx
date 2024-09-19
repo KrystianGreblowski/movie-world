@@ -6,7 +6,6 @@ import {
   CopyrightNotice,
 } from "./styled";
 import { Link } from "./Link";
-
 import { ReactComponent as GitHubIcon } from "./images/github.svg";
 import { ReactComponent as FacebookIcon } from "./images/facebook.svg";
 import { ReactComponent as LinkedInIcon } from "./images/linkedin.svg";
