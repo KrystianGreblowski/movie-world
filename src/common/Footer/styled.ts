@@ -13,6 +13,14 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    height: 108px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    height: 256px;
+  }
 `;
 
 export const AboutMe = styled.p`
@@ -20,12 +28,26 @@ export const AboutMe = styled.p`
   align-self: flex-start;
   font-size: 18px;
   font-weight: 400;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
 `;
 
 export const LinksContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    flex-direction: column;
+    align-self: flex-start;
+  }
 `;
 
 export const CopyrightNotice = styled.p`
@@ -33,4 +55,8 @@ export const CopyrightNotice = styled.p`
   align-self: flex-end;
   font-size: 15px;
   font-weight: 400;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 12px;
+  }
 `;
