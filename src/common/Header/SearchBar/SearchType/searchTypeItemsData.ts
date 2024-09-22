@@ -3,7 +3,6 @@ export interface SearchTypeItemsData {
 }
 
 export const searchTypeItemsData: SearchTypeItemsData[] = [
-  { title: "All" },
   { title: "Movies" },
   { title: "Series" },
   { title: "People" },
