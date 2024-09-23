@@ -3,12 +3,15 @@ import { Tile } from "./Tile";
 import { useDataFromApi } from "../../common/api/useDataFromApi";
 import { getArrayForPlaceholders } from "../../common/functions/getArrayForPlaceholders";
 import { ErrorPage } from "../../common/ErrorPage";
+import { useSearchParams } from "react-router-dom";
+import { searchQueryParameterName } from "../../common/Header/SearchBar/SearchInput/searchQueryParameterName";
 
 interface SubPageProps {
   title: string;
   endpoint: string;
   params: Record<string, string>;
   dataType: "movie" | "series";
+  searchResults: boolean;
   topRated?: boolean;
 }
 
@@ -17,11 +20,17 @@ export const SubPage = ({
   endpoint,
   params,
   dataType,
+  searchResults,
   topRated,
 }: SubPageProps) => {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get(searchQueryParameterName) || "";
+
+  const allParams = searchResults ? { ...params, query: query } : { ...params };
+
   const { isLoading, error, dataResults } = useDataFromApi({
     endpoint,
-    params,
+    params: allParams,
   });
 
   if (isLoading) {
