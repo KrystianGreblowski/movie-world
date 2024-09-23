@@ -8,11 +8,7 @@ export const useReplaceQueryParameter = () => {
   return ({ key, value }: { key: string; value: string }) => {
     const searchParams = new URLSearchParams(location.search);
 
-    if (value !== "") {
-      searchParams.set(key, value);
-    } else {
-      searchParams.delete(key);
-    }
+    value !== "" ? searchParams.set(key, value) : searchParams.delete(key);
 
     navigate(`${toSearchMovies()}?${searchParams.toString()}`, {
       replace: true,
