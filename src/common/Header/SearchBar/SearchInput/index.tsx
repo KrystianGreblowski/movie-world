@@ -1,3 +1,4 @@
+import React from "react";
 import {
   SearchInputContainer,
   SearchInputImage,
@@ -7,7 +8,15 @@ import { useGetQueryParameter } from "./useGetQueryParameter";
 import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 import { searchQueryParameterName } from "./searchQueryParameterName";
 
-export const SearchInput = () => {
+interface SearchInputProps {
+  searchTypeTitle: string;
+  searchTypeUrl: string;
+}
+
+export const SearchInput = ({
+  searchTypeTitle,
+  searchTypeUrl,
+}: SearchInputProps) => {
   const query = useGetQueryParameter(searchQueryParameterName) || "";
 
   const replaceQueryParameter = useReplaceQueryParameter();
@@ -16,14 +25,15 @@ export const SearchInput = () => {
     (key: string) =>
     ({ target }: React.ChangeEvent<HTMLInputElement>) => {
       const value = target.value;
+      const url = searchTypeUrl;
 
-      replaceQueryParameter({ key, value });
+      replaceQueryParameter({ url, key, value });
     };
 
   return (
     <SearchInputContainer>
       <SearchInputText
-        placeholder="Search Movie World"
+        placeholder={`Search ${searchTypeTitle}`}
         value={query}
         onChange={onInputChange(searchQueryParameterName)}
       />

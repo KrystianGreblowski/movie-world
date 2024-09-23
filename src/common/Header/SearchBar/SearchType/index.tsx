@@ -1,19 +1,26 @@
+import React, { useState } from "react";
 import {
   Wrapper,
   SearchTypeArrow,
   SearchTypeContainer,
   SearchTypeTitle,
 } from "./styled";
-import { useState } from "react";
 import { Dropdown } from "./Dropdown";
 import { searchTypeItemsData } from "./searchTypeItemsData";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
-export const SearchType = () => {
+interface SearchTypeProps {
+  searchTypeTitle: string;
+  setSearchTypeTitle: React.Dispatch<React.SetStateAction<string>>;
+  setSearchTypeUrl: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const SearchType = ({
+  searchTypeTitle,
+  setSearchTypeTitle,
+  setSearchTypeUrl,
+}: SearchTypeProps) => {
   const [open, setOpen] = useState(false);
-  const [searchTypeTitle, setSearchTypeTitle] = useState(
-    searchTypeItemsData[0].title,
-  );
 
   const ref = useOutsideClick(() => {
     setOpen(false);
@@ -21,6 +28,7 @@ export const SearchType = () => {
 
   const getSearchTypeTitle = (index: number) => {
     setSearchTypeTitle(searchTypeItemsData[index].title);
+    setSearchTypeUrl(searchTypeItemsData[index].url);
     setOpen(false);
   };
 
