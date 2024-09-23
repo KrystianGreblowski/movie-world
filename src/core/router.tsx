@@ -10,6 +10,7 @@ import {
   toPersonDetails,
   toPopularMovies,
   toPopularSeries,
+  toSearchMovies,
   toSeriesDetails,
   toTopRatedMovies,
   toTopRatedSeries,
@@ -37,6 +38,7 @@ export const router = createHashRouter([
             endpoint="movie/popular"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
+            searchResults={false}
           />
         ),
       },
@@ -49,6 +51,7 @@ export const router = createHashRouter([
             endpoint="trending/movie/day"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
+            searchResults={false}
           />
         ),
       },
@@ -61,6 +64,7 @@ export const router = createHashRouter([
             endpoint="movie/upcoming"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
+            searchResults={false}
           />
         ),
       },
@@ -73,6 +77,7 @@ export const router = createHashRouter([
             endpoint="movie/top_rated"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
+            searchResults={false}
             topRated
           />
         ),
@@ -85,6 +90,7 @@ export const router = createHashRouter([
             title="Popular Series"
             endpoint="tv/popular"
             params={{ language: "en-US", page: "1" }}
+            searchResults={false}
             dataType="series"
           />
         ),
@@ -97,6 +103,7 @@ export const router = createHashRouter([
             title="Trending Series"
             endpoint="trending/tv/day"
             params={{ language: "en-US", page: "1" }}
+            searchResults={false}
             dataType="series"
           />
         ),
@@ -109,6 +116,7 @@ export const router = createHashRouter([
             title="Upcoming Series"
             endpoint="tv/on_the_air"
             params={{ language: "en-US", page: "1" }}
+            searchResults={false}
             dataType="series"
           />
         ),
@@ -122,6 +130,7 @@ export const router = createHashRouter([
             endpoint="tv/top_rated"
             params={{ language: "en-US", page: "1" }}
             dataType="series"
+            searchResults={false}
             topRated
           />
         ),
@@ -150,6 +159,19 @@ export const router = createHashRouter([
           <DetailsPage
             detailsType="tv"
             params={{ language: "en-US", append_to_response: "credits" }}
+          />
+        ),
+      },
+
+      {
+        path: toSearchMovies(),
+        element: (
+          <SubPage
+            title="Search Movies"
+            endpoint="search/movie"
+            params={{ language: "en-US", page: "1" }}
+            dataType="movie"
+            searchResults={true}
           />
         ),
       },

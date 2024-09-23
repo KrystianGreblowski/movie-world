@@ -13,3 +13,5 @@ export const toTopRatedSeries = () => `/series/top-rated`;
 export const toMovieDetails = (id: string) => `/movie/${id}`;
 export const toSeriesDetails = (id: string) => `/series/${id}`;
 export const toPersonDetails = (id: string) => `/person/${id}`;
+
+export const toSearchMovies = () => `/search-results`;
