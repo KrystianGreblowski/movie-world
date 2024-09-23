@@ -11,6 +11,7 @@ import {
   toPopularMovies,
   toPopularSeries,
   toSearchMovies,
+  toSearchSeries,
   toSeriesDetails,
   toTopRatedMovies,
   toTopRatedSeries,
@@ -171,6 +172,19 @@ export const router = createHashRouter([
             endpoint="search/movie"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
+            searchResults={true}
+          />
+        ),
+      },
+
+      {
+        path: toSearchSeries(),
+        element: (
+          <SubPage
+            title="Search Series"
+            endpoint="search/tv"
+            params={{ language: "en-US", page: "1" }}
+            dataType="series"
             searchResults={true}
           />
         ),
