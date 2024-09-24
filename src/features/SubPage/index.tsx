@@ -26,11 +26,13 @@ export const SubPage = ({
   const [searchParams] = useSearchParams();
   const query = searchParams.get(searchQueryParameterName) || "";
 
-  const allParams = searchResults ? { ...params, query: query } : { ...params };
+  const finalParams = searchResults
+    ? { ...params, query: query }
+    : { ...params };
 
   const { isLoading, error, dataResults } = useDataFromApi({
     endpoint,
-    params: allParams,
+    params: finalParams,
   });
 
   if (isLoading) {
