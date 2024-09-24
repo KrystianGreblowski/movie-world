@@ -27,7 +27,7 @@ export const MainPage = () => {
       />
 
       <TilesSection
-        title="Popular Movies"
+        title="Popular movies"
         numberOfTiles={8}
         dataType="movie"
         endpoint="movie/popular"
@@ -36,7 +36,7 @@ export const MainPage = () => {
       />
 
       <TilesSection
-        title="Popular Series"
+        title="Popular series"
         numberOfTiles={8}
         dataType="series"
         endpoint="tv/popular"
