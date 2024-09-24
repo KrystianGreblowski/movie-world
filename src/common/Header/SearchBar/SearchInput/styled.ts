@@ -16,7 +16,7 @@ export const SearchInputText = styled.input`
   outline: none;
   padding: 0;
   margin-left: 12px;
-  font-size: 14px;
+  font-size: 13px;
   flex-grow: 1;
   width: 100px;
 
