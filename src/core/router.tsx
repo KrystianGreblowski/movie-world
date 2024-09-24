@@ -168,7 +168,7 @@ export const router = createHashRouter([
         path: toSearchMovies(),
         element: (
           <SubPage
-            title="Search Movies"
+            title="Search results"
             endpoint="search/movie"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
@@ -181,7 +181,7 @@ export const router = createHashRouter([
         path: toSearchSeries(),
         element: (
           <SubPage
-            title="Search Series"
+            title="Search results"
             endpoint="search/tv"
             params={{ language: "en-US", page: "1" }}
             dataType="series"
