@@ -35,7 +35,7 @@ export const router = createHashRouter([
         path: toPopularMovies(),
         element: (
           <SubPage
-            title="Popular Movies"
+            title="Popular movies"
             endpoint="movie/popular"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
@@ -48,7 +48,7 @@ export const router = createHashRouter([
         path: toTrendingMovies(),
         element: (
           <SubPage
-            title="Trending Movies"
+            title="Trending movies"
             endpoint="trending/movie/day"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
@@ -61,7 +61,7 @@ export const router = createHashRouter([
         path: toUpcomingMovies(),
         element: (
           <SubPage
-            title="Upcoming Movies"
+            title="Upcoming movies"
             endpoint="movie/upcoming"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
@@ -74,7 +74,7 @@ export const router = createHashRouter([
         path: toTopRatedMovies(),
         element: (
           <SubPage
-            title="Top Rated Movies"
+            title="Top rated movies"
             endpoint="movie/top_rated"
             params={{ language: "en-US", page: "1" }}
             dataType="movie"
@@ -88,7 +88,7 @@ export const router = createHashRouter([
         path: toPopularSeries(),
         element: (
           <SubPage
-            title="Popular Series"
+            title="Popular series"
             endpoint="tv/popular"
             params={{ language: "en-US", page: "1" }}
             searchResults={false}
@@ -101,7 +101,7 @@ export const router = createHashRouter([
         path: toTrendingSeries(),
         element: (
           <SubPage
-            title="Trending Series"
+            title="Trending series"
             endpoint="trending/tv/day"
             params={{ language: "en-US", page: "1" }}
             searchResults={false}
@@ -114,7 +114,7 @@ export const router = createHashRouter([
         path: toUpcomingSeries(),
         element: (
           <SubPage
-            title="Upcoming Series"
+            title="Upcoming series"
             endpoint="tv/on_the_air"
             params={{ language: "en-US", page: "1" }}
             searchResults={false}
@@ -127,7 +127,7 @@ export const router = createHashRouter([
         path: toTopRatedSeries(),
         element: (
           <SubPage
-            title="Top Rated Series"
+            title="Top rated series"
             endpoint="tv/top_rated"
             params={{ language: "en-US", page: "1" }}
             dataType="series"
