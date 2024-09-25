@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router";
+import { toMainPage } from "../../../../core/routes";
 
 export const useReplaceQueryParameter = () => {
   const location = useLocation();
@@ -7,10 +8,14 @@ export const useReplaceQueryParameter = () => {
   return ({ url, key, value }: { url: string; key: string; value: string }) => {
     const searchParams = new URLSearchParams(location.search);
 
-    value === "" ? searchParams.delete(key) : searchParams.set(key, value);
-
-    navigate(`${url}?${searchParams.toString()}`, {
-      replace: true,
-    });
+    if (value) {
+      searchParams.set(key, value);
+      navigate(`${url}?${searchParams.toString()}`, {
+        replace: true,
+      });
+    } else {
+      searchParams.delete(key);
+      navigate(toMainPage());
+    }
   };
 };
