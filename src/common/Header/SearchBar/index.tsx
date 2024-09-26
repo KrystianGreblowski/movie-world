@@ -10,8 +10,6 @@ export const SearchBar = () => {
     url: searchTypeItemsData[0].url,
   });
 
-  console.log(searchType);
-
   return (
     <Wrapper>
       <SearchContainer>
