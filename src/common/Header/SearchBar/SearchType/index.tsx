@@ -10,16 +10,19 @@ import { searchTypeItemsData } from "./searchTypeItemsData";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
 interface SearchTypeProps {
-  searchTypeTitle: string;
-  setSearchTypeTitle: React.Dispatch<React.SetStateAction<string>>;
-  setSearchTypeUrl: React.Dispatch<React.SetStateAction<string>>;
+  searchType: {
+    title: string;
+    url: string;
+  };
+  setSearchType: React.Dispatch<
+    React.SetStateAction<{
+      title: string;
+      url: string;
+    }>
+  >;
 }
 
-export const SearchType = ({
-  searchTypeTitle,
-  setSearchTypeTitle,
-  setSearchTypeUrl,
-}: SearchTypeProps) => {
+export const SearchType = ({ searchType, setSearchType }: SearchTypeProps) => {
   const [open, setOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
@@ -27,8 +30,10 @@ export const SearchType = ({
   });
 
   const getSearchTypeTitle = (index: number) => {
-    setSearchTypeTitle(searchTypeItemsData[index].title);
-    setSearchTypeUrl(searchTypeItemsData[index].url);
+    setSearchType({
+      title: searchTypeItemsData[index].title,
+      url: searchTypeItemsData[index].url,
+    });
     setOpen(false);
   };
 
@@ -37,7 +42,7 @@ export const SearchType = ({
       <SearchTypeContainer
         onClick={() => setOpen((previousOpenState) => !previousOpenState)}
       >
-        <SearchTypeTitle>{searchTypeTitle}</SearchTypeTitle>
+        <SearchTypeTitle>{searchType.title}</SearchTypeTitle>
         <SearchTypeArrow $open={open} />
       </SearchTypeContainer>
 

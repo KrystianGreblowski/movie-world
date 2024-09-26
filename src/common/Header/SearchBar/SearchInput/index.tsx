@@ -9,14 +9,13 @@ import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 import { searchQueryParameterName } from "./searchQueryParameterName";
 
 interface SearchInputProps {
-  searchTypeTitle: string;
-  searchTypeUrl: string;
+  searchType: {
+    title: string;
+    url: string;
+  };
 }
 
-export const SearchInput = ({
-  searchTypeTitle,
-  searchTypeUrl,
-}: SearchInputProps) => {
+export const SearchInput = ({ searchType }: SearchInputProps) => {
   const query = useGetQueryParameter(searchQueryParameterName) || "";
 
   const replaceQueryParameter = useReplaceQueryParameter();
@@ -25,7 +24,7 @@ export const SearchInput = ({
     (key: string) =>
     ({ target }: React.ChangeEvent<HTMLInputElement>) => {
       const value = target.value;
-      const url = searchTypeUrl;
+      const url = searchType.url;
 
       replaceQueryParameter({ url, key, value });
     };
@@ -33,7 +32,7 @@ export const SearchInput = ({
   return (
     <SearchInputContainer>
       <SearchInputText
-        placeholder={`Search ${searchTypeTitle}`}
+        placeholder={`Search ${searchType.title}`}
         value={query}
         onChange={onInputChange(searchQueryParameterName)}
       />

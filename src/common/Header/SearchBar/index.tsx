@@ -5,26 +5,18 @@ import { SearchInput } from "./SearchInput";
 import { searchTypeItemsData } from "./SearchType/searchTypeItemsData";
 
 export const SearchBar = () => {
-  const [searchTypeTitle, setSearchTypeTitle] = useState(
-    searchTypeItemsData[0].title,
-  );
+  const [searchType, setSearchType] = useState({
+    title: searchTypeItemsData[0].title,
+    url: searchTypeItemsData[0].url,
+  });
 
-  const [searchTypeUrl, setSearchTypeUrl] = useState(
-    searchTypeItemsData[0].url,
-  );
+  console.log(searchType);
 
   return (
     <Wrapper>
       <SearchContainer>
-        <SearchType
-          searchTypeTitle={searchTypeTitle}
-          setSearchTypeTitle={setSearchTypeTitle}
-          setSearchTypeUrl={setSearchTypeUrl}
-        />
-        <SearchInput
-          searchTypeTitle={searchTypeTitle}
-          searchTypeUrl={searchTypeUrl}
-        />
+        <SearchType searchType={searchType} setSearchType={setSearchType} />
+        <SearchInput searchType={searchType} />
       </SearchContainer>
     </Wrapper>
   );
