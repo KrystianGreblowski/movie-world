@@ -5,6 +5,7 @@ import { getArrayForPlaceholders } from "../../common/functions/getArrayForPlace
 import { ErrorPage } from "../../common/ErrorPage";
 import { useSearchParams } from "react-router-dom";
 import { searchQueryParameterName } from "../../common/Header/SearchBar/SearchInput/searchQueryParameterName";
+import { NoResults } from "./NoResults";
 
 interface SubPageProps {
   title: string;
@@ -63,6 +64,10 @@ export const SubPage = ({
 
   if (error) {
     return <ErrorPage />;
+  }
+
+  if (searchResults && !dataResults.length) {
+    return <NoResults searchInput={query} />;
   }
 
   return (
