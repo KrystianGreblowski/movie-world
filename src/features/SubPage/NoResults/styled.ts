@@ -4,7 +4,7 @@ import { ReactComponent as NoResults } from "./no-results.svg";
 export const Wrapper = styled.main`
   max-width: 1384px;
   padding: 0 8px;
-  margin: 128px 0 512px 0;
+  margin: 128px auto 512px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
