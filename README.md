@@ -4,7 +4,7 @@
 
 The application is still under development. I am working hard to release it as soon as possible :muscle:
 
-![Readme Preview](https://i.postimg.cc/t4B3s9dS/movie-world-main-page.png)
+![Readme Preview](https://i.postimg.cc/SKz5qKyy/main-page.png)
 
 ![Readme Preview](https://i.postimg.cc/wvG4Lhhr/movie-world-sub-page.png)
 
