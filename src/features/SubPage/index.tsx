@@ -6,6 +6,8 @@ import { ErrorPage } from "../../common/ErrorPage";
 import { useSearchParams } from "react-router-dom";
 import { searchQueryParameterName } from "../../common/Header/SearchBar/SearchInput/searchQueryParameterName";
 import { NoResults } from "./NoResults";
+import { Pagination } from "../../common/Pagination";
+import { paginationQueryParameterName } from "../../common/Pagination/paginationQueryParameterName";
 
 interface SubPageProps {
   title: string;
@@ -26,10 +28,12 @@ export const SubPage = ({
 }: SubPageProps) => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get(searchQueryParameterName) || "";
+  const pageNumber =
+    searchParams.get(paginationQueryParameterName) || params.page;
 
   const finalParams = searchResults
-    ? { ...params, query: query }
-    : { ...params };
+    ? { ...params, page: pageNumber, query: query }
+    : { ...params, page: pageNumber };
 
   const { isLoading, error, dataResults } = useDataFromApi({
     endpoint,
@@ -73,6 +77,8 @@ export const SubPage = ({
   return (
     <Wrapper>
       <Title>{title}</Title>
+
+      <Pagination />
 
       {dataResults?.map((dataResult, index) => (
         <Tile
