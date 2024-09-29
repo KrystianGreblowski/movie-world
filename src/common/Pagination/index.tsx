@@ -1,12 +1,19 @@
-import { NextPageButton, PreviousPageButton, Wrapper } from "./styled";
+import { useLocation } from "react-router-dom";
+import { Wrapper, ChangePageButton } from "./styled";
 import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
-import { toPopularMovies } from "../../core/routes";
 import { useGetQueryParameter } from "../Header/SearchBar/SearchInput/useGetQueryParameter";
 import { paginationQueryParameterName } from "./paginationQueryParameterName";
 
-export const Pagination = () => {
-  const queryNumber = useGetQueryParameter(paginationQueryParameterName) || "1";
-  const url = toPopularMovies();
+interface PaginationProps {
+  firstPage: string;
+  lastPage: string;
+}
+
+export const Pagination = ({ firstPage, lastPage }: PaginationProps) => {
+  const location = useLocation();
+  const queryNumber =
+    useGetQueryParameter(paginationQueryParameterName) || firstPage;
+  const url = location.pathname;
   const key = paginationQueryParameterName;
 
   let pageNumber = parseInt(queryNumber, 10);
@@ -17,16 +24,24 @@ export const Pagination = () => {
     (option: "nextPage" | "previousPage" | "firstPage" | "lastPage") => () => {
       switch (option) {
         case "nextPage":
+          if (pageNumber === parseInt(lastPage, 10)) {
+            break;
+          }
+
           pageNumber = pageNumber + 1;
           break;
         case "previousPage":
+          if (pageNumber === parseInt(firstPage, 10)) {
+            break;
+          }
           pageNumber = pageNumber - 1;
+
           break;
         case "firstPage":
-          pageNumber = 1;
+          pageNumber = parseInt(firstPage, 10);
           break;
         case "lastPage":
-          pageNumber = 500;
+          pageNumber = parseInt(lastPage, 10);
       }
 
       const pageNumberString = pageNumber.toString();
@@ -34,16 +49,23 @@ export const Pagination = () => {
       replaceQueryParameter({ url, key, value: pageNumberString });
     };
 
-  console.log(pageNumber);
-
   return (
     <Wrapper>
-      <PreviousPageButton onClick={changePageHandler("previousPage")}>
+      <ChangePageButton onClick={changePageHandler("firstPage")}>
+        First page
+      </ChangePageButton>
+
+      <ChangePageButton onClick={changePageHandler("previousPage")}>
         Previous page
-      </PreviousPageButton>
-      <NextPageButton onClick={changePageHandler("nextPage")}>
-        Next Page
-      </NextPageButton>
+      </ChangePageButton>
+
+      <ChangePageButton onClick={changePageHandler("nextPage")}>
+        Next page
+      </ChangePageButton>
+
+      <ChangePageButton onClick={changePageHandler("lastPage")}>
+        Last page
+      </ChangePageButton>
     </Wrapper>
   );
 };
