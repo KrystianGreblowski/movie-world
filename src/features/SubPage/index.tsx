@@ -78,7 +78,7 @@ export const SubPage = ({
     <Wrapper>
       <Title>{title}</Title>
 
-      <Pagination />
+      <Pagination firstPage={params.page} lastPage="500" />
 
       {dataResults?.map((dataResult, index) => (
         <Tile
