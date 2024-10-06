@@ -11,6 +11,7 @@ interface PaginationProps {
 
 export const Pagination = ({ firstPage, lastPage }: PaginationProps) => {
   const location = useLocation();
+
   const queryNumber =
     useGetQueryParameter(paginationQueryParameterName) || firstPage;
   const url = location.pathname;
