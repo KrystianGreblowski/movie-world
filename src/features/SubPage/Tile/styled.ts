@@ -51,8 +51,7 @@ export const TopRatedPosition = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  padding: 6px;
   border: 1px solid ${({ theme }) => theme.color.gray};
   border-radius: 2px;
   margin: 0;

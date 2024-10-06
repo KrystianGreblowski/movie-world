@@ -98,7 +98,7 @@ export const SubPage = ({
           numberOfVotes={dataResult.vote_count}
           overview={dataResult.overview}
           topRated={topRated}
-          topRatedPosition={index + 1}
+          topRatedPosition={(parseInt(pageNumber, 10) - 1) * 20 + index + 1}
           isLoading={isLoading}
         />
       ))}
