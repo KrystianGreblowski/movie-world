@@ -35,7 +35,7 @@ export const SubPage = ({
     ? { ...params, page: pageNumber, query: query }
     : { ...params, page: pageNumber };
 
-  const { isLoading, error, dataResults } = useDataFromApi({
+  const { isLoading, error, dataResults, dataInfo } = useDataFromApi({
     endpoint,
     params: finalParams,
   });
@@ -78,7 +78,14 @@ export const SubPage = ({
     <Wrapper>
       <Title>{title}</Title>
 
-      <Pagination firstPage={params.page} lastPage="500" />
+      <Pagination
+        firstPage={params.page}
+        lastPage={
+          dataInfo.totalPages === undefined || dataInfo.totalPages > 500
+            ? "500"
+            : dataInfo.totalPages.toString()
+        }
+      />
 
       {dataResults?.map((dataResult, index) => (
         <Tile

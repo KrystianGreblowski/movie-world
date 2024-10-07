@@ -17,6 +17,8 @@ interface Result {
 
 interface DataResults {
   results: Result[];
+  total_results: number;
+  total_pages: number;
 }
 
 interface useDataParameters {
@@ -32,5 +34,10 @@ export const useDataFromApi = ({ endpoint, params }: useDataParameters) => {
 
   const dataResults = data?.data?.results || [];
 
-  return { isLoading, error, dataResults };
+  const dataInfo = {
+    totalResults: data?.data.total_results,
+    totalPages: data?.data.total_pages,
+  };
+
+  return { isLoading, error, dataResults, dataInfo };
 };
