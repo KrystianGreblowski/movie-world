@@ -78,14 +78,14 @@ export const SubPage = ({
     <Wrapper>
       <Title>{title}</Title>
 
-      <Pagination
-        firstPage={params.page}
-        lastPage={
-          dataInfo.totalPages === undefined || dataInfo.totalPages > 500
-            ? "500"
-            : dataInfo.totalPages.toString()
-        }
-      />
+      {dataInfo.totalPages !== undefined && dataInfo.totalPages > 1 && (
+        <Pagination
+          firstPage={params.page}
+          lastPage={
+            dataInfo.totalPages > 500 ? "500" : dataInfo.totalPages.toString()
+          }
+        />
+      )}
 
       {dataResults?.map((dataResult, index) => (
         <Tile
