@@ -35,7 +35,6 @@ export const useDataFromApi = ({ endpoint, params }: useDataParameters) => {
   const dataResults = data?.data?.results || [];
 
   const dataInfo = {
-    totalResults: data?.data.total_results,
     totalPages: data?.data.total_pages,
   };
 
