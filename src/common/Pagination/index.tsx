@@ -83,6 +83,7 @@ export const Pagination = ({ firstPage, lastPage }: PaginationProps) => {
       <ChangePageButton
         onClick={changePageHandler("lastPage")}
         disabled={pageNumber === lastPageNumber}
+        $lastButton
       >
         Last
       </ChangePageButton>
