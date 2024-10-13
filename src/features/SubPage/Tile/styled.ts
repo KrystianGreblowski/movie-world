@@ -64,8 +64,7 @@ export const TopRatedPosition = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     font-size: 14px;
-    width: 24px;
-    height: 24px;
+    padding: 5px;
   }
 `;
 
