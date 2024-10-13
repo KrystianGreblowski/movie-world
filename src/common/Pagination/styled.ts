@@ -5,9 +5,21 @@ interface PaginationStyledProps {
 }
 
 export const Wrapper = styled.div`
-  margin: 0 auto;
+  margin: 48px auto 0;
   display: flex;
   align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.desktop}px) {
+    margin: 32px auto 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    margin: 36px auto 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin: 22px auto 0;
+  }
 `;
 
 export const ChangePageButton = styled.button<PaginationStyledProps>`

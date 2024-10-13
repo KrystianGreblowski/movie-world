@@ -78,15 +78,6 @@ export const SubPage = ({
     <Wrapper>
       <Title>{title}</Title>
 
-      {dataInfo.totalPages !== undefined && dataInfo.totalPages > 1 && (
-        <Pagination
-          firstPage={params.page}
-          lastPage={
-            dataInfo.totalPages > 500 ? "500" : dataInfo.totalPages.toString()
-          }
-        />
-      )}
-
       {dataResults?.map((dataResult, index) => (
         <Tile
           id={dataResult.id}
@@ -109,6 +100,15 @@ export const SubPage = ({
           isLoading={isLoading}
         />
       ))}
+
+      {dataInfo.totalPages !== undefined && dataInfo.totalPages > 1 && (
+        <Pagination
+          firstPage={params.page}
+          lastPage={
+            dataInfo.totalPages > 500 ? "500" : dataInfo.totalPages.toString()
+          }
+        />
+      )}
     </Wrapper>
   );
 };
