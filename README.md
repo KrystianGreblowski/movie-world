@@ -2,11 +2,22 @@
 
 ​Movie World is a place where you can find information about films, TV series and people from the film industry.
 
+## Description
 
+The application contains three main types of pages:
+
+### Main Page
+This is the first page you see when you open the application. Trending, popular and upcoming films and popular TV series are displayed.
 
 ![Main Page](https://i.postimg.cc/rFbK9074/main-page.png)
 
+### Sub Page
+This page shows popular, current, upcoming and top rated films or TV series. It is also used to display the search results when you enter something in the search bar.
+
 ![Sub Page](https://i.postimg.cc/vTKHXk2y/sub-page.png)
+
+### Details Page
+This page shows detailed information about a film or series.
 
 ![Details Page](https://i.postimg.cc/QxBMVNVd/details-page.png)
 
