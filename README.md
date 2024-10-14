@@ -2,12 +2,13 @@
 
 ​Movie World is a place where you can find information about films, TV series and people from the film industry.
 
-The application is still under development. I am working hard to release it as soon as possible :muscle:
 
-![Readme Preview](https://i.postimg.cc/SKz5qKyy/main-page.png)
 
-![Readme Preview](https://i.postimg.cc/wvG4Lhhr/movie-world-sub-page.png)
+![Main Page](https://i.postimg.cc/rFbK9074/main-page.png)
 
+![Sub Page](https://i.postimg.cc/vTKHXk2y/sub-page.png)
+
+![Details Page](https://i.postimg.cc/QxBMVNVd/details-page.png)
 
 
 ## Demo
