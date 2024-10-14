@@ -17,8 +17,8 @@ export const Footer = () => {
     <Container>
       <Content>
         <AboutMe>
-          The application was created by Krystian Greblowski. If you want to see
-          all my work - visit my GitHub profile.
+          This application was created by Krystian Greblowski. If you would like
+          to see more of my work or contact me, check out the profiles below.
         </AboutMe>
 
         <LinksContainer>
