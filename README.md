@@ -6,12 +6,12 @@ You can browse and search for films and series at any time.
 The application contains three main types of pages:
 
 ### Main page
-This is the first page you see when you open the application. Trending, popular and upcoming films and popular series are displayed.
+This is the first page you see when you open the application. Trending, popular and upcoming films or popular series are displayed.
 
 ![Main Page](https://i.postimg.cc/rFbK9074/main-page.png)
 
 ### Subpage
-This page displays popular, current, upcoming and top rated films or series. It is also used to display the search results when you enter something in the search bar.
+This page displays popular, trending, upcoming and top rated films or series. It is also used to display the search results when you enter something in the search bar.
 
 ![Sub Page](https://i.postimg.cc/vTKHXk2y/sub-page.png)
 
