@@ -1,5 +1,5 @@
 import { AppInfo, AppLogo, AppName } from "./styled";
-import { toMainPage } from "../../../../core/routes";
+import { toMainPage } from "../../../../../core/routes";
 
 export const Home = () => {
   return (

@@ -1,4 +1,4 @@
-import { toSearchMovies, toSearchSeries } from "../../../../core/routes";
+import { toSearchMovies, toSearchSeries } from "../../../../../core/routes";
 
 export interface SearchTypeItemsData {
   title: string;

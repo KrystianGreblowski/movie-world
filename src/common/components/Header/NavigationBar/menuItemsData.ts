@@ -7,7 +7,7 @@ import {
   toTrendingSeries,
   toUpcomingMovies,
   toUpcomingSeries,
-} from "../../../core/routes";
+} from "../../../../core/routes";
 
 export interface MenuItemsData {
   title: string;

@@ -7,7 +7,7 @@ import {
 } from "./styled";
 import { Dropdown } from "./Dropdown";
 import { searchTypeItemsData } from "./searchTypeItemsData";
-import { useOutsideClick } from "../../../hooks/useOutsideClick";
+import { useOutsideClick } from "../../../../hooks/useOutsideClick";
 
 interface SearchTypeProps {
   searchType: {
