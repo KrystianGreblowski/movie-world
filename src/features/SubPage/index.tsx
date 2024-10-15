@@ -2,12 +2,12 @@ import { Wrapper, Title } from "./styled";
 import { Tile } from "./Tile";
 import { useDataFromApi } from "../../common/api/useDataFromApi";
 import { getArrayForPlaceholders } from "../../common/functions/getArrayForPlaceholders";
-import { ErrorPage } from "../../common/ErrorPage";
+import { ErrorPage } from "../../common/components/ErrorPage";
 import { useSearchParams } from "react-router-dom";
-import { searchQueryParameterName } from "../../common/Header/SearchBar/SearchInput/searchQueryParameterName";
+import { searchQueryParameterName } from "../../common/components/Header/SearchBar/SearchInput/searchQueryParameterName";
 import { NoResults } from "./NoResults";
-import { Pagination } from "../../common/Pagination";
-import { paginationQueryParameterName } from "../../common/Pagination/paginationQueryParameterName";
+import { Pagination } from "../../common/components/Pagination";
+import { paginationQueryParameterName } from "../../common/components/Pagination/paginationQueryParameterName";
 
 interface SubPageProps {
   title: string;

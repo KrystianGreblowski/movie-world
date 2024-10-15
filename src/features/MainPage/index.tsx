@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Wrapper } from "./styled";
 import { TilesSection } from "./TilesSection";
-import { ErrorPage } from "../../common/ErrorPage";
+import { ErrorPage } from "../../common/components/ErrorPage";
 
 export const MainPage = () => {
   const [error, setError] = useState(false);

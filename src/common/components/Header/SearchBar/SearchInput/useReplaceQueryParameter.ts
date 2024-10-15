@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router";
 import { toMainPage } from "../../../../../core/routes";
-import { paginationQueryParameterName } from "../../../../Pagination/paginationQueryParameterName";
+import { paginationQueryParameterName } from "../../../Pagination/paginationQueryParameterName";
 
 export const useReplaceQueryParameter = () => {
   const location = useLocation();

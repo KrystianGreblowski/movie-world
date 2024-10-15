@@ -3,7 +3,7 @@ import { App } from "./App";
 import { MainPage } from "../features/MainPage";
 import { SubPage } from "../features/SubPage";
 import { DetailsPage } from "../features/DetailsPage";
-import { ErrorPage } from "../common/ErrorPage";
+import { ErrorPage } from "../common/components/ErrorPage";
 import {
   toMainPage,
   toMovieDetails,

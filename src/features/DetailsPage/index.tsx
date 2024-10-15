@@ -4,7 +4,7 @@ import { useDetailsDataFromApi } from "./useDetailsDataFromApi";
 import { MainInfo } from "./MainInfo";
 import { ExtraInfo } from "./ExtraInfo";
 import { Header } from "./Header";
-import { ErrorPage } from "../../common/ErrorPage";
+import { ErrorPage } from "../../common/components/ErrorPage";
 
 interface DetailsPageProps {
   detailsType: "movie" | "tv" | "person";
