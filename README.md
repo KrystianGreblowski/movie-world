@@ -1,14 +1,31 @@
 # MOVIE WORLD
 
-​Movie World is a place where you can find information about films, TV series and people from the film industry.
+​Movie World is a place where you can find information about films, series and people from the film industry.
+You can browse and search for your favourite films and series at any time.
 
-The application is still under development. I am working hard to release it as soon as possible :muscle:
+The application has such features as:
 
-![Readme Preview](https://i.postimg.cc/SKz5qKyy/main-page.png)
+### MainPage
+This is the first page you see when you open the application. There you will find the latest, most popular and upcoming films or series.
 
-![Readme Preview](https://i.postimg.cc/wvG4Lhhr/movie-world-sub-page.png)
+![Main Page](https://i.postimg.cc/rFbK9074/main-page.png)
 
+### SubPage
+This page displays popular, trending, upcoming and top-rated films or series, depending on what you have selected. It is also used to display search results when you enter an item you are interested in.
 
+![Sub Page](https://i.postimg.cc/vTKHXk2y/sub-page.png)
+
+### DetailsPage
+On this page you will find detailed information about a specific film or series.
+
+![Details Page](https://i.postimg.cc/QxBMVNVd/details-page.png)
+
+## Other features
+
+The application also contains:
+- search bar,
+- dropdown menu,
+- pagination.
 
 ## Demo
 [Click here](https://krystiangreblowski.github.io/movie-world/)
