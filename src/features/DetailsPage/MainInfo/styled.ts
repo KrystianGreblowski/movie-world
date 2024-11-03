@@ -10,7 +10,8 @@ export const Container = styled.div`
   width: 100%;
   border-radius: 2px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
   grid-gap: 12px;
   margin-top: 64px;
 
@@ -22,16 +23,6 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     grid-gap: 8px;
     margin-top: 24px;
-  }
-`;
-
-export const InformationContainer = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 12px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    grid-gap: 8px;
   }
 `;
 
@@ -176,6 +167,8 @@ export const Genre = styled.p`
 `;
 
 export const Overview = styled.p<MainInfoStyledProps>`
+  grid-column: 2;
+  grid-row: 2;
   margin: 0;
   font-size: 22px;
   font-weight: 400;
