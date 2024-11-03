@@ -181,11 +181,7 @@ export const NumberOfVotes = styled.p`
   margin: 0;
   font-size: 16px;
   font-weight: 400;
-  padding-bottom: 1px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    padding-bottom: 2px;
-  }
+  padding-bottom: 2px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     font-size: 14px;
