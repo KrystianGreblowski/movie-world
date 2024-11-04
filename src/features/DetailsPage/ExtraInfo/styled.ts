@@ -6,7 +6,19 @@ export const Container = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 16px;
+  grid-gap: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    grid-gap: 10px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    grid-gap: 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    grid-gap: 6px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -20,12 +32,16 @@ export const Title = styled.h1`
     font-size: 3.2vw;
   }
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
+    font-size: 3.6vw;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 5vw;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: 7vw;
+    font-size: 6.6vw;
   }
 `;
 
