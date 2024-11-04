@@ -165,7 +165,7 @@ export const Overview = styled.p`
   margin: 0;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.3;
   background-color: ${({ theme }) => theme.color.mineShaftDark};
 
   border-radius: 2px;
