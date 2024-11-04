@@ -21,12 +21,12 @@ interface DataResults {
   total_pages: number;
 }
 
-interface useDataParameters {
+interface DataParameters {
   endpoint: string;
   params: Record<string, string>;
 }
 
-export const useDataFromApi = ({ endpoint, params }: useDataParameters) => {
+export const useDataFromApi = ({ endpoint, params }: DataParameters) => {
   const { isLoading, error, data } = useQuery({
     queryKey: [endpoint, params],
     queryFn: fetchDataFromApi<DataResults>,
