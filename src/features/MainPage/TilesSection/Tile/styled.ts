@@ -149,18 +149,26 @@ export const GenresContainer = styled.div<TileProps>`
 `;
 
 export const Genre = styled.p<TileProps>`
-  margin: 0 0.4vw 0 0;
+  margin: 0 8px 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    margin: 0 4px 0 0;
+  }
 
   ${({ $mainTile }) =>
     $mainTile &&
     css`
-      margin: 0 0.7vw 0 0;
+      margin: 0 10px 0 0;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        margin: 0 6px 0 0;
+      }
     `}
 
   ${({ $asideTile }) =>
     $asideTile &&
     css`
-      margin: 0 0.5vw 0 0;
+      margin: 0 8px 0 0;
     `}
 `;
 
