@@ -9,10 +9,10 @@ interface QueryKey {
 export const fetchDataFromApi = async <TypeData>({
   queryKey,
 }: QueryKey): Promise<AxiosResponse<TypeData>> => {
-  const [endPoint, params] = queryKey;
+  const [endpoint, params] = queryKey;
   const searchParams = new URLSearchParams(params);
 
-  const API_URL = `https://api.themoviedb.org/3/${endPoint}?api_key=${API_KEY}&${searchParams}`;
+  const API_URL = `https://api.themoviedb.org/3/${endpoint}?api_key=${API_KEY}&${searchParams}`;
 
   return await axios.get(API_URL);
 };
