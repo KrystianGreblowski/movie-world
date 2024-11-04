@@ -86,11 +86,11 @@ export const MainInfo = ({
                   <ExtraInfoContent>{formatDate(dateOfDeath)}</ExtraInfoContent>
                 </ExtraInfoContainer>
               )}
+
+              {overview && <Overview>{overview}</Overview>}
             </Details>
           )}
         </Information>
-
-        {overview && <Overview $isLoading={isLoading}>{overview}</Overview>}
       </Container>
     );
   }
@@ -137,6 +137,8 @@ export const MainInfo = ({
                 <Genre key={name}>{name}</Genre>
               ))}
             </GenresContainer>
+
+            {overview && <Overview>{overview}</Overview>}
           </Details>
         )}
 
@@ -156,8 +158,6 @@ export const MainInfo = ({
           </>
         )}
       </Information>
-
-      {overview && <Overview $isLoading={isLoading}>{overview}</Overview>}
     </Container>
   );
 };

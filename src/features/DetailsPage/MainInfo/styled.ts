@@ -1,9 +1,5 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { ReactComponent as Star } from "./star.svg";
-
-interface MainInfoStyledProps {
-  $isLoading?: boolean;
-}
 
 export const Container = styled.div`
   height: auto;
@@ -11,7 +7,6 @@ export const Container = styled.div`
   border-radius: 2px;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
   grid-gap: 12px;
   margin-top: 64px;
 
@@ -166,38 +161,22 @@ export const Genre = styled.p`
   }
 `;
 
-export const Overview = styled.p<MainInfoStyledProps>`
-  grid-column: 2;
-  grid-row: 2;
+export const Overview = styled.p`
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.4;
   background-color: ${({ theme }) => theme.color.mineShaftDark};
-  padding: 10px;
+
   border-radius: 2px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
-    font-size: 2.2vw;
+    font-size: 2vw;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    font-size: 2.9vw;
+    font-size: 2.4vw;
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    padding: 6px;
-  }
-
-  ${({ $isLoading }) =>
-    $isLoading &&
-    css`
-      height: 400px;
-
-      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-        height: 200px;
-      }
-    `}
 `;
 
 export const RatingContainer = styled.div`
@@ -206,7 +185,11 @@ export const RatingContainer = styled.div`
   margin-top: 12px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    margin-top: 0;
+    margin-top: 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    margin-top: 6px;
   }
 `;
 
