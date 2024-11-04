@@ -209,9 +209,10 @@ export const RatingIcon = styled(Star)`
     margin-right: 8px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    width: 20px;
-    height: 20px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
   }
 `;
 
@@ -231,7 +232,8 @@ export const Rating = styled.p`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: 14px;
+    font-size: 12px;
+    margin: 0 4px 0 0;
   }
 `;
 
@@ -252,7 +254,7 @@ export const NumberOfVotes = styled.p`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    font-size: 11px;
+    font-size: 9px;
   }
 `;
 
