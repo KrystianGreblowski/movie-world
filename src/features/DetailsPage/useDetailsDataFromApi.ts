@@ -47,15 +47,12 @@ interface Data {
   };
 }
 
-interface useDataParameters {
+interface DataParameters {
   endpoint: string;
   params: Record<string, string>;
 }
 
-export const useDetailsDataFromApi = ({
-  endpoint,
-  params,
-}: useDataParameters) => {
+export const useDetailsDataFromApi = ({ endpoint, params }: DataParameters) => {
   const { isLoading, error, data } = useQuery({
     queryKey: [endpoint, params],
     queryFn: fetchDataFromApi<Data>,
