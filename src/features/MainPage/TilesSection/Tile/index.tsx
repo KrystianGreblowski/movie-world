@@ -15,6 +15,7 @@ interface MainPageTileProps {
   tileType: "movie" | "series";
   title: string;
   genres: number[];
+  numberOfGenres: number;
   imagePath: string;
   imageSize: string;
   mainTile?: boolean;
@@ -26,6 +27,7 @@ export const Tile = ({
   tileType,
   title,
   genres,
+  numberOfGenres,
   imagePath,
   imageSize,
   mainTile,
@@ -44,11 +46,13 @@ export const Tile = ({
       </Title>
 
       <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
-        {getGenresNamesFromGenresIds(genres, tileType, 3)?.map((name) => (
-          <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
-            {name}
-          </Genre>
-        ))}
+        {getGenresNamesFromGenresIds(genres, tileType, numberOfGenres)?.map(
+          (name) => (
+            <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
+              {name}
+            </Genre>
+          ),
+        )}
       </GenresContainer>
 
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>

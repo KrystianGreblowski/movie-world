@@ -50,6 +50,7 @@ export const TilesSection = ({
                 tileType={dataType}
                 title=""
                 genres={[]}
+                numberOfGenres={0}
                 imagePath="placeholder"
                 imageSize="w1280"
               />
@@ -64,6 +65,7 @@ export const TilesSection = ({
                       tileType={dataType}
                       title=""
                       genres={[]}
+                      numberOfGenres={0}
                       imagePath="placeholder"
                       imageSize="w780"
                     />
@@ -85,6 +87,7 @@ export const TilesSection = ({
               tileType={dataType}
               title={dataResults[0].title}
               genres={dataResults[0].genre_ids}
+              numberOfGenres={2}
               imagePath={dataResults[0].backdrop_path}
               imageSize="w1280"
             />
@@ -98,6 +101,7 @@ export const TilesSection = ({
                   tileType={dataType}
                   title={result.title}
                   genres={result.genre_ids}
+                  numberOfGenres={2}
                   imagePath={result.backdrop_path}
                   imageSize="w780"
                 />
@@ -121,6 +125,7 @@ export const TilesSection = ({
                   tileType={dataType}
                   title=""
                   genres={[]}
+                  numberOfGenres={0}
                   imagePath="placeholder"
                   imageSize="w780"
                 />
@@ -143,6 +148,7 @@ export const TilesSection = ({
                   dataType === "movie" ? dataResult.title : dataResult.name
                 }
                 genres={dataResult.genre_ids}
+                numberOfGenres={2}
                 imagePath={dataResult.backdrop_path}
                 imageSize="w780"
               />
