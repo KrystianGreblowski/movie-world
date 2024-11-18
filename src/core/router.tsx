@@ -140,7 +140,10 @@ export const router = createHashRouter([
       {
         path: toPersonDetails(":id"),
         element: (
-          <DetailsPage detailsType="person" params={{ language: "en-US" }} />
+          <DetailsPage
+            detailsType="person"
+            params={{ language: "en-US", append_to_response: "movie_credits" }}
+          />
         ),
       },
 
