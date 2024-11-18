@@ -16,6 +16,9 @@ export interface CastMember {
   profile_path: string;
   name: string;
   character: string;
+  title: string;
+  genre_ids: number[];
+  backdrop_path: string;
 }
 
 interface CrewMember {
@@ -44,6 +47,9 @@ interface Data {
   credits: {
     cast: CastMember[];
     crew: CrewMember[];
+  };
+  movie_credits: {
+    cast: CastMember[];
   };
 }
 

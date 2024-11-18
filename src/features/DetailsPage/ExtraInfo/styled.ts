@@ -1,5 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
+
+interface ExtraInfoStyledProps {
+  $movieTile?: boolean;
+}
 
 export const Container = styled.div`
   height: auto;
@@ -45,18 +49,36 @@ export const Title = styled.h1`
   }
 `;
 
-export const TilesContainer = styled.div`
+export const TilesContainer = styled.div<ExtraInfoStyledProps>`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 12px;
 
+  ${({ $movieTile }) =>
+    $movieTile &&
+    css`
+      grid-template-columns: repeat(4, 1fr);
+    `};
+
   @media (max-width: ${({ theme }) => theme.breakpoint.laptop}px) {
     grid-template-columns: repeat(5, 1fr);
+
+    ${({ $movieTile }) =>
+      $movieTile &&
+      css`
+        grid-template-columns: repeat(4, 1fr);
+      `};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 8px;
+
+    ${({ $movieTile }) =>
+      $movieTile &&
+      css`
+        grid-template-columns: repeat(2, 1fr);
+      `};
   }
 `;
 

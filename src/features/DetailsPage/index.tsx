@@ -41,6 +41,8 @@ export const DetailsPage = ({ detailsType, params }: DetailsPageProps) => {
               placeOfBirth=""
               isLoading
             />
+
+            <ExtraInfo dataType="person" title="" data={[]} />
           </Wrapper>
         );
       }
@@ -67,6 +69,14 @@ export const DetailsPage = ({ detailsType, params }: DetailsPageProps) => {
               dateOfBirth={dataResults.birthday}
               dateOfDeath={dataResults.deathday}
               placeOfBirth={dataResults.place_of_birth}
+            />
+          )}
+
+          {dataResults && (
+            <ExtraInfo
+              dataType="person"
+              title="Known for"
+              data={dataResults.movie_credits.cast}
             />
           )}
         </Wrapper>
@@ -97,7 +107,7 @@ export const DetailsPage = ({ detailsType, params }: DetailsPageProps) => {
               isLoading
             />
 
-            <ExtraInfo title="" data={[]} />
+            <ExtraInfo dataType="movie/series" title="" data={[]} />
           </Wrapper>
         );
       }
@@ -149,7 +159,11 @@ export const DetailsPage = ({ detailsType, params }: DetailsPageProps) => {
           )}
 
           {dataResults && (
-            <ExtraInfo title="Cast" data={dataResults.credits.cast} />
+            <ExtraInfo
+              dataType="movie/series"
+              title="Cast"
+              data={dataResults.credits.cast}
+            />
           )}
         </Wrapper>
       );
