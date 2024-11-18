@@ -10,7 +10,7 @@ import { getGenresNamesFromGenresIds } from "../../../../common/functions/getGen
 import { getImageSrc } from "./getImageSrc/getImageSrc";
 import { toMovieDetails, toSeriesDetails } from "../../../../core/routes";
 
-interface MainPageTileProps {
+interface TileProps {
   id: number;
   tileType: "movie" | "series";
   title: string;
@@ -32,7 +32,7 @@ export const Tile = ({
   imageSize,
   mainTile,
   asideTile,
-}: MainPageTileProps) => {
+}: TileProps) => {
   return (
     <Container
       to={
