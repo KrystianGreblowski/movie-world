@@ -19,6 +19,7 @@ export interface CastMember {
   title: string;
   genre_ids: number[];
   backdrop_path: string;
+  popularity: number;
 }
 
 interface CrewMember {

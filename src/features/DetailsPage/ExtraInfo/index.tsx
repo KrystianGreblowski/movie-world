@@ -26,19 +26,22 @@ export const ExtraInfo = ({ dataType, title, data }: ExtraInfoProps) => {
         {data.length > 0 && <Title>{title}</Title>}
 
         <TilesContainer $movieTile>
-          {data.map((movie) => (
-            <MovieTile
-              id={movie.id}
-              key={movie.id}
-              tileType="movie"
-              title={movie.title}
-              genres={movie.genre_ids}
-              numberOfGenres={2}
-              imagePath={movie.backdrop_path}
-              imageSize="w780"
-              character={movie.character}
-            />
-          ))}
+          {data
+            .slice()
+            .sort((a, b) => b.popularity - a.popularity)
+            .map((movie) => (
+              <MovieTile
+                id={movie.id}
+                key={movie.id}
+                tileType="movie"
+                title={movie.title}
+                genres={movie.genre_ids}
+                numberOfGenres={2}
+                imagePath={movie.backdrop_path}
+                imageSize="w780"
+                character={movie.character}
+              />
+            ))}
         </TilesContainer>
       </Container>
     );
