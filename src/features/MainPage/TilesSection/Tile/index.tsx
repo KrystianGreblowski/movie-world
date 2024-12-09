@@ -33,7 +33,6 @@ export const Tile = ({
   imageSize,
   mainTile,
   asideTile,
-  character,
 }: TileProps) => {
   return (
     <Container
@@ -47,23 +46,15 @@ export const Tile = ({
         {title}
       </Title>
 
-      {!character?.length ? (
-        <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
-          {getGenresNamesFromGenresIds(genres, tileType, numberOfGenres)?.map(
-            (name) => (
-              <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
-                {name}
-              </Genre>
-            ),
-          )}
-        </GenresContainer>
-      ) : (
-        <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
-          <Genre $mainTile={mainTile} $asideTile={asideTile}>
-            as {character}
-          </Genre>
-        </GenresContainer>
-      )}
+      <GenresContainer $mainTile={mainTile} $asideTile={asideTile}>
+        {getGenresNamesFromGenresIds(genres, tileType, numberOfGenres)?.map(
+          (name) => (
+            <Genre key={name} $mainTile={mainTile} $asideTile={asideTile}>
+              {name}
+            </Genre>
+          ),
+        )}
+      </GenresContainer>
 
       <ImageContainer $mainTile={mainTile} $asideTile={asideTile}>
         <Image src={getImageSrc(imagePath, imageSize)} alt={title} />

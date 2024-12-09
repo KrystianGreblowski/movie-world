@@ -39,7 +39,6 @@ export const ExtraInfo = ({ dataType, title, data }: ExtraInfoProps) => {
                 numberOfGenres={2}
                 imagePath={movie.backdrop_path}
                 imageSize="w780"
-                character={movie.character}
               />
             ))}
         </TilesContainer>
